@@ -1,0 +1,25 @@
+- name: Riccardo Bellazzi
+  cluster: bergamo
+  affiliations:
+    - University of Pavia
+    - IRCCS ICS Maugeri Hospital
+- name: Arianna Dagliati
+  cluster: bergamo
+  affiliations:
+    - University of Pavia
+- name: Valentina Tibollo
+  cluster: bergamo
+  affiliations:
+    - IRCCS ICS Maugeri Hospital
+- name: Alberto Malovini
+  cluster: bergamo
+  affiliations:
+    - IRCCS ICS Maugeri Hospital
+- name: Paola Baiardi
+  cluster: bergamo
+  affiliations:
+    - IRCCS ICS Maugeri Hospital
+- name: Luca Chiovato
+  cluster: bergamo
+  affiliations:
+    - IRCCS ICS Maugeri Hospital

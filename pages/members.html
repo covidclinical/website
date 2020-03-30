@@ -1,0 +1,35 @@
+---
+layout: page
+title: Members
+permalink: /members/
+---
+
+<div>
+    <table class="members">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Cluster</th>
+                <th>Affiliations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in site.data.members %}
+                {% assign cluster = site.data.clusters[member.cluster] %}
+                <tr>
+                    <td>
+                        {{ member.name }}
+                    </td>
+                    <td>
+                        {{ cluster.name }}
+                    </td>
+                    <td>
+                        {% for institution in member.affiliations %}
+                            <li>{{ institution }}</li>
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
