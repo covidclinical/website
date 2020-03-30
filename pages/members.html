@@ -8,27 +8,31 @@ permalink: /members/
     <table class="members">
         <thead>
             <tr>
-                <th>Name</th>
                 <th>Cluster</th>
+                <th>Name</th>
                 <th>Affiliations</th>
             </tr>
         </thead>
         <tbody>
-            {% for member in site.data.members %}
-                {% assign cluster = site.data.clusters[member.cluster] %}
-                <tr>
-                    <td>
-                        {{ member.name }}
-                    </td>
-                    <td>
-                        {{ cluster.name }}
-                    </td>
-                    <td>
-                        {% for institution in member.affiliations %}
-                            <li>{{ institution }}</li>
-                        {% endfor %}
+            {% for cluster in site.data.members %}
+                <tr class="cluster">
+                    <td colspan="3">
+                        {{ cluster.cluster }}, {{ cluster.country }}
                     </td>
                 </tr>
+                {% for member in cluster.members %}
+                    <tr>
+                        <td class="cluster-space"></td>
+                        <td class="member-name">
+                            {{ member.name }}
+                        </td>
+                        <td>
+                            {% for institution in member.affiliations %}
+                                <li>{{ institution }}</li>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
             {% endfor %}
         </tbody>
     </table>

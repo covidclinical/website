@@ -25,3 +25,11 @@ For me, this meant adding the following to my `~/.zshrc` file:
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
 ```
+
+## Deployment
+
+```
+bundle exec jekyll build
+```
+
+Transfer files in `_site/` via FTP.

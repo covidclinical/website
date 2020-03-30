@@ -569,4 +569,10 @@ table.members {
       content: ",";
     }
   }
+  tbody td.cluster-space {
+    border-right: none;
+  }
+  tbody td.member-name {
+    border-left: none;
+  }
 }
