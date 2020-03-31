@@ -525,7 +525,7 @@ $on-laptop:        800px !default;
 }
 
 .post-title {
-  @include relative-font-size(2.625);
+  @include relative-font-size(2);
   letter-spacing: -1px;
   line-height: 1;
 
@@ -597,34 +597,47 @@ table.members {
   }
 }
 
-.home {
+.home-page {
   .map-container {
     display: block;
     margin-top: 35px;
   }
-  .icons {
-    display: flex;
-    flex-direction: row;
-    margin-top: 80px;
+  .icons-container {
+    width: 100%;
+    overflow: hidden;
+    height: 160px;
+    .icons {
+      display: flex;
+      flex-direction: row;
+      margin-top: 50px;
 
-    div {
-      height: 60px;
-      width: 100%;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      opacity: 0.6;
-
-      &:nth-child(even) {
-        margin-top: 20px;
+      @include media-query($on-palm) {
+        width: 125%;
       }
-    }
 
-    div.map-container {
-      opacity: 1;
-      margin-top: -10px;
-      #map {
+      div {
+        height: 60px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        opacity: 0.6;
+
+        &:nth-child(even) {
+          margin-top: 20px;
+        }
+      }
+
+      div.map-container {
         opacity: 1;
+        margin-top: -10px;
+        #map {
+          opacity: 1;
+
+          @include media-query($on-palm) {
+            display: none;
+          }
+        }
       }
     }
   }

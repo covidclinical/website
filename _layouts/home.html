@@ -2,19 +2,21 @@
 layout: default
 ---
 
-<div class="home">
+<div class="page home-page">
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
   {{ content }}
 
-  <div class="icons">
-    <div style="background-image: url({{ "/assets/icon_computer.png" | relative_url }}"></div>
-    <div style="background-image: url({{ "/assets/icon_hospital.png" | relative_url }}"></div>
-    <div style="background-image: url({{ "/assets/icon_monitor.png" | relative_url }}"></div>
-    <div class="map-container">
-      <div id="map" style="margin: 0 auto; width: 100px; height: 100px;"></div>
+  <div class="icons-container">
+    <div class="icons">
+      <div style="background-image: url({{ "/assets/icon_computer.png" | relative_url }}"></div>
+      <div style="background-image: url({{ "/assets/icon_hospital.png" | relative_url }}"></div>
+      <div style="background-image: url({{ "/assets/icon_monitor.png" | relative_url }}"></div>
+      <div class="map-container">
+        <div id="map" style="margin: 0 auto; width: 100px; height: 100px;"></div>
+      </div>
     </div>
   </div>
 </div>
