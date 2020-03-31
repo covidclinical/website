@@ -1,5 +1,5 @@
 - cluster: Boston
-  country: United States
+  location: Massachusetts, United States
   institutions:
     - Harvard Medical School
     - Boston Children's Hospital
@@ -19,8 +19,38 @@
       working_groups:
         - MDS
         - AT
+    - name: Griffin Weber
+      affiliations:
+        - Harvard Medical School
+        - Beth Israel Deaconess Medical Center
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Nathan Palmer
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - MDS
+        - AT
+    - name: Paul Avillach
+      affiliations:
+        - Harvard Medical School
+        - Boston Children's Hospital
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Tianxi Cai
+      affiliations:
+        - Harvard Medical School
+    - name: Brett Beaulieu-Jones
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - AT
 - cluster: Bergamo
-  country: Italy
+  location: Italy
   institutions:
     - University of Pavia
     - IRCCS ICS Maugeri Hospital
@@ -50,3 +80,85 @@
     - name: Luca Chiovato
       affiliations:
         - IRCCS ICS Maugeri Hospital
+- cluster: Philadelphia
+  location: Pennsylvania, United States
+  institutions:
+    - University of Pennsylvania
+  members:
+    - name: Jason Moore
+      affiliations:
+        - University of Pennsylvania
+      working_groups:
+        - AT
+    - name: Danielle Mowery
+      affiliations:
+        - University of Pennsylvania
+      working_groups:
+        - MDS
+        - DSI
+- cluster: Mannheim
+  location: Germany
+  institutions:
+    - University Medicine Mannheim
+  members:
+    - name: Thomas Ganslandt
+      affiliations:
+        - University Medicine Mannheim
+      working_groups:
+        - MDS
+        - AT
+- cluster: San Antonio
+  location: Texas, United States
+  institutions:
+    - UTHealth San Antonio
+  members:
+    - name: Alex Bokov
+      affiliations:
+        - UTHealth San Antonio
+      working_groups:
+        - AT
+- cluster: Bloomington
+  location: Indiana, United States
+  institutions:
+    - Indiana University Bloomington
+  members:
+    - name: Katy Borner
+      affiliations:
+        - Indiana University Bloomington
+      working_groups:
+        - AT
+- cluster: Bordeaux
+  location: France
+  institutions:
+    - Bordeaux University Hospital
+    - University of Bordeaux
+  members:
+    - name: Sebastien Cossin
+      affiliations:
+        - Bordeaux University Hospital
+        - University of Bordeaux
+      working_groups:
+        - MDS
+    - name: Vianney Jouhet
+      affiliations:
+        - Bordeaux University Hospital
+        - University of Bordeaux
+      working_groups:
+        - DSI
+    - name: Romain Griffier
+      affiliations:
+        - Bordeaux University Hospital
+        - University of Bordeaux
+      working_groups:
+        - AT
+- cluster: Ann Arbor
+  location: Michigan, United States
+  institution:
+    - University of Michigan
+  members:
+    - name: Gil Omenn
+      affiliations:
+        - University of Michigan
+      working_groups:
+        - MDS
+        - AT

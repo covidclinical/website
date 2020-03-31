@@ -2,7 +2,7 @@
 
 // Define defaults for each variable.
 
-$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-family: "Inter", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -306,7 +306,7 @@ $on-laptop:        800px !default;
  * Site header
  */
  .site-header {
-  border-top: 5px solid $grey-color-dark;
+  border-top: 0px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
 
@@ -325,6 +325,10 @@ $on-laptop:        800px !default;
   &,
   &:visited {
     color: $grey-color-dark;
+  }
+
+  &:hover {
+    text-decoration: none;
   }
 }
 
@@ -566,7 +570,16 @@ table.members {
     list-style-type: none;
 
     &:not(:last-child)::after {
-      content: ",";
+      content: " / ";
+    }
+  }
+  tbody tr.cluster {
+    background-color: #f7f7f7;
+  }
+  tbody tr:not(.cluster) {
+    background-color: #ffffff;
+    td {
+      padding: 5px 15px;
     }
   }
   tbody td.cluster-space {
@@ -574,5 +587,24 @@ table.members {
   }
   tbody td.member-name {
     border-left: none;
+  }
+}
+
+.home .icons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+
+  div {
+    height: 60px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.6;
+
+    &:nth-child(even) {
+      margin-top: 20px;
+    }
   }
 }
