@@ -143,11 +143,12 @@
         - Harvard Medical School
       working_groups:
         - AT
-- cluster: Bergamo
+- cluster: Lombardy
   location: Italy
   institutions:
     - University of Pavia
     - IRCCS ICS Maugeri Hospital
+    - Biomeris
   members:
     - name: Riccardo Bellazzi
       affiliations:
@@ -174,6 +175,18 @@
     - name: Luca Chiovato
       affiliations:
         - IRCCS ICS Maugeri Hospital
+    - name: Mauro Bucalo
+      affiliations:
+        - Biomeris
+      working_groups:
+        - MDS
+        - DSI
+    - name: Matteo Gabetta
+      affiliations:
+        - Biomeris
+      working_groups:
+        - MDS
+        - DSI
 - cluster: Philadelphia
   location: Pennsylvania, United States
   institutions:
