@@ -588,23 +588,44 @@ table.members {
   tbody td.member-name {
     border-left: none;
   }
+
+  @include media-query($on-palm) {
+    font-size: 12px;
+    thead tr th, tbody tr td.cluster, tbody tr td:not(.cluster) {
+      padding: 2px 4px;
+    }
+  }
 }
 
-.home .icons {
-  display: flex;
-  flex-direction: row;
-  margin-top: 60px;
+.home {
+  .map-container {
+    display: block;
+    margin-top: 35px;
+  }
+  .icons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
 
-  div {
-    height: 60px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    opacity: 0.6;
+    div {
+      height: 60px;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      opacity: 0.6;
 
-    &:nth-child(even) {
-      margin-top: 20px;
+      &:nth-child(even) {
+        margin-top: 20px;
+      }
+    }
+
+    div.map-container {
+      opacity: 1;
+      margin-top: -10px;
+      #map {
+        opacity: 1;
+      }
     }
   }
 }

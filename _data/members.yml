@@ -49,6 +49,100 @@
         - Harvard Medical School
       working_groups:
         - AT
+    - name: Gabriel Brat
+      affiliations:
+        - Harvard Medical School
+        - Beth Israel Deaconess Medical Center
+      working_groups:
+        - MDS
+    - name: Amelia Tan
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - AT
+    - name: Jim Abraham
+      affiliations:
+        - Boston Children's Hospital
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Shawn Murphy
+      affiliations:
+        - Mass General Brigham
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Mohamad Daniar
+      affiliations:
+        - Boston Children's Hospital
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Jason Stedman
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - DSI
+        - AT
+    - name: Piotr Sliz
+      affiliations:
+        - Boston Children's Hospital
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Ken Mandl
+      affiliations:
+        - Boston Children's Hospital
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Jamie Jones
+      affiliations:
+        - Boston Children's Hospital
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Arnaud Serret-Larmande
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Alba Gutierrez
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Sehi L'Yi
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - MDS
+        - AT
+    - name: Mark Keller
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - AT
+    - name: Carolina Nobre
+      affiliations:
+        - Harvard School of Engineering and Applied Sciences
+      working_groups:
+        - AT
+    - name: Qianwen Wang
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - AT
 - cluster: Bergamo
   location: Italy
   institutions:
@@ -96,6 +190,11 @@
       working_groups:
         - MDS
         - DSI
+    - name: Jeff Morris
+      affiliations:
+        - University of Pennsylvania
+      working_groups:
+        - AT
 - cluster: Mannheim
   location: Germany
   institutions:
@@ -151,9 +250,19 @@
         - University of Bordeaux
       working_groups:
         - AT
+    - name: Rodolphe Thiébaut
+      affiliations:
+        - Bordeaux University Hospital
+        - University of Bordeaux
+      working_groups:
+        - AT
+    - name: Bertrand Moal
+      affiliations:
+      working_groups:
+        - MDS
 - cluster: Ann Arbor
   location: Michigan, United States
-  institution:
+  institutions:
     - University of Michigan
   members:
     - name: Gil Omenn
@@ -162,3 +271,126 @@
       working_groups:
         - MDS
         - AT
+- cluster: Birmingham
+  location: Alabama, United States
+  institutions:
+    - University of Alabama-Birmingham
+  members:
+    - name: Jim Cimino
+      affiliations:
+        - University of Alabama-Birmingham
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+- cluster: Paris
+  location: France
+  institutions:
+    - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+  members:
+    - name: Christel Daniel
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+      working_groups:
+        - MDS
+        - AT
+    - name: Nicolas Paris
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+      working_groups:
+        - MDS
+        - AT
+    - name: Nicolas Griffon
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+      working_groups:
+        - MDS
+        - AT
+    - name: Mélodie Bernaux
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+      working_groups:
+        - MDS
+        - AT
+    - name: Anita Burgun
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+      working_groups:
+        - MDS
+        - AT
+- cluster: Lawrence
+  location: Kansas, United States
+  institutions:
+    - University of Kansas
+  members:
+    - name: Russ Waitman
+      affiliations:
+        - University of Kansas
+      working_groups:
+        - DSI
+        - AT
+- cluster: Los Angeles
+  location: California, United States
+  institutions:
+    - David Geffen School of Medicine at UCLA
+  members:
+    - name: Douglas Bell
+      affiliations:
+        - David Geffen School of Medicine at UCLA
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+- cluster: St. Louis
+  location: Missouri, United States
+  institutions:
+    - Washington University in Saint Louis
+  members:
+    - name: Snehil Gupta
+      affiliations:
+        - Washington University in Saint Louis
+      working_groups:
+        - MDS
+        - AT
+- cluster: Göttingen
+  location: Germany
+  institutions:
+    - University Medical Center Göttingen
+  members:
+    - name: Theresa Bender
+      affiliations:
+        - University Medical Center Göttingen
+      working_groups:
+        - AT
+    - name: Christian Bauer
+      affiliations:
+        - University Medical Center Göttingen
+      working_groups:
+        - AT
+    - name: Ulrich Sax
+      affiliations:
+        - University Medical Center Göttingen
+      working_groups:
+        - MDS
+        - AT
+- cluster: Lausanne
+  location: Switzerland
+  institutions:
+    - University Hospital of Lausanne
+  members:
+    - name: Jean Louis Raisaro
+      affiliations:
+        - University Hospital of Lausanne
+      working_groups:
+        - DSI
+        - AT
+- cluster: Winston-Salem
+  location: North Carolina, United States
+  institutions:
+    - Wake Forest School of Medicine
+  members:
+    - name: Andrew South
+      affiliations:
+        - Wake Forest School of Medicine
+      working_groups:
+        - MDS

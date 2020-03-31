@@ -9,15 +9,13 @@ layout: default
 
   {{ content }}
 
-  <div style="display: block;">
-    <div id="map" style="margin: 0 auto; width: 300px; height: 300px;"></div>
-  </div>
-
   <div class="icons">
     <div style="background-image: url({{ "/assets/icon_computer.png" | relative_url }}"></div>
     <div style="background-image: url({{ "/assets/icon_hospital.png" | relative_url }}"></div>
     <div style="background-image: url({{ "/assets/icon_monitor.png" | relative_url }}"></div>
-    <div style="background-image: url({{ "/assets/icon_journal.png" | relative_url }}"></div>
+    <div class="map-container">
+      <div id="map" style="margin: 0 auto; width: 100px; height: 100px;"></div>
+    </div>
   </div>
 </div>
 
