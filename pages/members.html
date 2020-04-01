@@ -14,7 +14,8 @@ permalink: /members/
             </tr>
         </thead>
         <tbody>
-            {% for cluster in site.data.members %}
+            {% assign clusters = site.data.members | sort: "cluster" %}
+            {% for cluster in clusters %}
                 <tr class="cluster">
                     <td colspan="3">
                         {{ cluster.cluster }}, {{ cluster.location }}

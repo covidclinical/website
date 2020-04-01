@@ -169,10 +169,19 @@
     - name: Alberto Malovini
       affiliations:
         - IRCCS ICS Maugeri Hospital
-    - name: Paola Baiardi
+    - name: Luca Chiovato
       affiliations:
         - IRCCS ICS Maugeri Hospital
-    - name: Luca Chiovato
+    - name: Piero Ceriana
+      affiliations:
+        - IRCCS ICS Maugeri Hospital
+    - name: Michele Vitacca
+      affiliations:
+        - IRCCS ICS Maugeri Hospital
+    - name: Fabio Angeli
+      affiliations:
+        - IRCCS ICS Maugeri Hospital
+    - name: Paola Baiardi
       affiliations:
         - IRCCS ICS Maugeri Hospital
     - name: Mauro Bucalo
