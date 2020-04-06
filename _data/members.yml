@@ -69,6 +69,15 @@
         - AT
     - name: Shawn Murphy
       affiliations:
+        - Harvard Medical School
+        - Mass General Brigham
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Jeffrey Klann
+      affiliations:
+        - Harvard Medical School
         - Mass General Brigham
       working_groups:
         - MDS
@@ -115,7 +124,7 @@
         - MDS
         - DSI
         - AT
-    - name: Alba Gutierrez
+    - name: Alba Gutiérrez-Sacristán
       affiliations:
         - Harvard Medical School
       working_groups:

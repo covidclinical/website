@@ -18,11 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: CovidClinical
-description: >- # this means to ignore newlines until "baseurl:"
-  International Consortium for EHR data-driven studies of the COVID19 Pandemic
+title: "4CE"
+#description: "4CE: Consortium for Clinical Characterization of COVID-19 by EHR"
+description: International Consortium for EHR data-driven studies of the COVID19 Pandemic
+url: "https://covidclinical.net" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://covidclinical.net" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: minima
