@@ -7,19 +7,4 @@ layout: default
 
   {{ content }}
 
-  <div class="icons-container">
-    <div class="icons">
-      <div style="background-image: url({{ "/assets/icon_computer.png" | relative_url }}"></div>
-      <div style="background-image: url({{ "/assets/icon_hospital.png" | relative_url }}"></div>
-      <div style="background-image: url({{ "/assets/icon_monitor.png" | relative_url }}"></div>
-      <div class="map-container">
-        <div id="map" style="margin: 0 auto; width: 100px; height: 100px;"></div>
-      </div>
-    </div>
-  </div>
 </div>
-
-
-<script type="text/javascript" src="https://unpkg.com/d3-selection@1.4.1/dist/d3-selection.min.js"></script>
-<script type="text/javascript" src="https://unpkg.com/d3-delaunay@5.2.1/dist/d3-delaunay.min.js"></script>
-<script type="text/javascript" src="{{ "/assets/map.js" | relative_url }}"></script>

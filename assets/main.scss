@@ -655,58 +655,42 @@ table.members {
 
 .home-page {
 
-    .important-box {
-        background-color: $blue-color;
-    }
+  a {
+      color: $black-color;
+      text-decoration: underline;
 
-    a {
-        color: $black-color;
-        text-decoration: underline;
-
-        &:visited {
-            color: $black-color;
-        }
-    }
-  .map-container {
-    display: block;
-    margin-top: 35px;
+      &:visited {
+          color: $black-color;
+      }
   }
-  .icons-container {
-    width: 100%;
-    overflow: hidden;
-    height: 160px;
-    .icons {
-      display: flex;
-      flex-direction: row;
-      margin-top: 50px;
 
-      @include media-query($on-palm) {
-        width: 125%;
+  .box {
+    margin-bottom: 30px;
+
+    h3 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+
+      &:last-child {
+        margin-bottom: 0;
       }
+    }
 
-      div {
-        height: 60px;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        opacity: 0.6;
+    &.main p {
+      font-size: 16px;
+    }
 
-        &:nth-child(even) {
-          margin-top: 20px;
-        }
+    &.important {
+      padding: 20px 20px;
+      background-color: $blue-color;
+      h3 {
+        color: $blue-color-light;
       }
-
-      div.map-container {
-        opacity: 1;
-        margin-top: -10px;
-        #map {
-          opacity: 1;
-
-          @include media-query($on-palm) {
-            display: none;
-          }
-        }
+      p {
+        color: $white-color;
       }
     }
   }
