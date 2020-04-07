@@ -344,6 +344,10 @@ $on-laptop:        800px !default;
   &:hover {
     text-decoration: none;
   }
+
+  img {
+    width: 100px;
+  }
 }
 
 .site-nav {
@@ -461,8 +465,8 @@ $on-laptop:        800px !default;
 }
 
 .footer-col-1 {
-    width: -webkit-calc(75% - (#{$spacing-unit} / 2));
-    width:         calc(75% - (#{$spacing-unit} / 2));
+    width: -webkit-calc(75%);
+    width:         calc(75%);
     p {
         font-size: 13px;
     }
@@ -473,8 +477,16 @@ $on-laptop:        800px !default;
 }
 
 .footer-col-2 {
-  width: -webkit-calc(25% - (#{$spacing-unit} / 2));
-  width:         calc(25% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(25%);
+  width:         calc(25%);
+
+  position: relative;
+  img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+  }
 }
 
 @include media-query($on-laptop) {
