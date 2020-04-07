@@ -123,7 +123,7 @@ function offsetWorldMap(poi, offset) {
         .attr("opacity", 0);
     }
     
-    svg.on("mousemove", () => {
+    /*svg.on("mousemove", () => {
       const [mouseX, mouseY] = d3.mouse(svg.node());
       
       if(!inCircle(mouseX, mouseY, s)) {
@@ -145,7 +145,7 @@ function offsetWorldMap(poi, offset) {
         .attr("transform", `translate(${place.coord[0]-10},${place.coord[1]-26}) scale(2)`);
       poiIcon
         .attr("opacity", 1);
-    });
+    });*/
 }
 
 function drawWorldMap() {
