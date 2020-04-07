@@ -1,5 +1,5 @@
-# c19i2b2-website
-Website for c19i2b2 consortium project.
+# 4CE Website
+Website for 4CE Consortium
 
 ## Development
 
