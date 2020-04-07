@@ -4,7 +4,7 @@
     {%- assign default_paths = (site.pages | sort: "order") | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <a class="site-title" href="{{ "/" | relative_url }}">
-      <img src="{{ "/assets/images/4ce-logo-navbar.png" | relative_url }}" alt="{{ site.title | escape }}" />
+      {% include logo-blue.html %}
     </a>
 
     {%- if page_paths -%}

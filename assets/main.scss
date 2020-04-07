@@ -345,8 +345,9 @@ $on-laptop:        800px !default;
     text-decoration: none;
   }
 
-  img {
+  svg {
     width: 100px;
+    margin-top: 10px;
   }
 }
 
@@ -481,11 +482,11 @@ $on-laptop:        800px !default;
   width:         calc(25%);
 
   position: relative;
-  img {
+  svg {
     position: absolute;
     right: 0;
-    top: 0;
-    width: 30px;
+    top: 3px;
+    width: 40px;
   }
 }
 
