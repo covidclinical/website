@@ -19,8 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 title: "4CE"
-#description: "4CE: Consortium for Clinical Characterization of COVID-19 by EHR"
-description: International Consortium for EHR data-driven studies of the COVID19 Pandemic
+description: "4CE: Consortium for Clinical Characterization of COVID-19 by EHR"
+#description: International Consortium for EHR data-driven studies of the COVID19 Pandemic
 url: "https://covidclinical.net" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
 

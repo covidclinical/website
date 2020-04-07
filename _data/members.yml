@@ -4,7 +4,7 @@
     - Harvard Medical School
     - Boston Children's Hospital
     - Beth Israel Deaconess Medical Center
-    - Mass General Brigham
+    - Mass General Brigham (Partners Healthcare)
     - Harvard School of Engineering and Applied Sciences
   members:
     - name: Isaac Kohane
@@ -44,9 +44,6 @@
     - name: Tianxi Cai
       affiliations:
         - Harvard Medical School
-    - name: Brett Beaulieu-Jones
-      affiliations:
-        - Harvard Medical School
       working_groups:
         - AT
     - name: Gabriel Brat
@@ -55,6 +52,22 @@
         - Beth Israel Deaconess Medical Center
       working_groups:
         - MDS
+    - name: Brett Beaulieu-Jones
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - AT
+    - name: Yidi Huang
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - DSI
+        - AT
+    - name: Chuan Hong
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - AT
     - name: Amelia Tan
       affiliations:
         - Harvard Medical School
@@ -70,7 +83,7 @@
     - name: Shawn Murphy
       affiliations:
         - Harvard Medical School
-        - Mass General Brigham
+        - Mass General Brigham (Partners Healthcare)
       working_groups:
         - MDS
         - DSI
@@ -78,7 +91,14 @@
     - name: Jeffrey Klann
       affiliations:
         - Harvard Medical School
-        - Mass General Brigham
+        - Mass General Brigham (Partners Healthcare)
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Kavishwar Wagholikar
+      affiliations:
+        - Mass General Brigham (Partners Healthcare)
       working_groups:
         - MDS
         - DSI
@@ -137,11 +157,6 @@
       working_groups:
         - MDS
         - AT
-    - name: Mark Keller
-      affiliations:
-        - Harvard Medical School
-      working_groups:
-        - AT
     - name: Carolina Nobre
       affiliations:
         - Harvard School of Engineering and Applied Sciences
@@ -152,17 +167,23 @@
         - Harvard Medical School
       working_groups:
         - AT
+    - name: Mark Keller
+      affiliations:
+        - Harvard Medical School
+      working_groups:
+        - AT
 - cluster: Lombardy
   location: Italy
   institutions:
     - University of Pavia
-    - IRCCS ICS Maugeri Hospital
+    - ICS Maugeri Hospitals
     - Biomeris
+    - IRCCS Ca' Granda Ospedale Maggiore Policlinico di Milano Foundation
   members:
     - name: Riccardo Bellazzi
       affiliations:
         - University of Pavia
-        - IRCCS ICS Maugeri Hospital
+        - ICS Maugeri Hospitals
       working_groups:
         - DSI
         - AT
@@ -172,27 +193,33 @@
       working_groups:
         - MDS
         - AT
-    - name: Valentina Tibollo
-      affiliations:
-        - IRCCS ICS Maugeri Hospital
     - name: Alberto Malovini
       affiliations:
-        - IRCCS ICS Maugeri Hospital
+        - ICS Maugeri Hospitals
+      working_groups:
+        - MDS
+        - AT
+    - name: Valentina Tibollo
+      affiliations:
+        - ICS Maugeri Hospitals
+      working_groups:
+        - MDS
+        - DSI
     - name: Luca Chiovato
       affiliations:
-        - IRCCS ICS Maugeri Hospital
+        - ICS Maugeri Hospitals
     - name: Piero Ceriana
       affiliations:
-        - IRCCS ICS Maugeri Hospital
+        - ICS Maugeri Hospitals
     - name: Michele Vitacca
       affiliations:
-        - IRCCS ICS Maugeri Hospital
+        - ICS Maugeri Hospitals
     - name: Fabio Angeli
       affiliations:
-        - IRCCS ICS Maugeri Hospital
+        - ICS Maugeri Hospitals
     - name: Paola Baiardi
       affiliations:
-        - IRCCS ICS Maugeri Hospital
+        - ICS Maugeri Hospitals
     - name: Mauro Bucalo
       affiliations:
         - Biomeris
@@ -205,10 +232,22 @@
       working_groups:
         - MDS
         - DSI
+    - name: Nicola Barbarini
+      affiliations:
+        - Biomeris
+      working_groups:
+        - MDS
+        - DSI
+    - name: Luigia Scudeller
+      affiliations:
+        - IRCCS Ca' Granda Ospedale Maggiore Policlinico di Milano Foundation
+      working_groups:
+        - MDS
 - cluster: Philadelphia
   location: Pennsylvania, United States
   institutions:
     - University of Pennsylvania
+    - Children's Hospital of Philadelphia
   members:
     - name: Jason Moore
       affiliations:
@@ -226,6 +265,19 @@
         - University of Pennsylvania
       working_groups:
         - AT
+    - name: Batsal Devkota
+      affiliations:
+        - Children's Hospital of Philadelphia
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: John H. Holmes
+      affiliations:
+        - University of Pennsylvania
+      working_groups:
+        - MDS
+        - AT
 - cluster: Mannheim
   location: Germany
   institutions:
@@ -240,13 +292,40 @@
 - cluster: San Antonio
   location: Texas, United States
   institutions:
-    - UTHealth San Antonio
+    - University of Texas Health Science Center at San Antonio
   members:
     - name: Alex Bokov
       affiliations:
-        - UTHealth San Antonio
+        - University of Texas Health Science Center at San Antonio
       working_groups:
         - AT
+- cluster: Dallas
+  location: Texas, United States
+  institutions:
+    - University of Texas Southwestern Medical Center
+  members:
+    - name: Lindsay Cowell
+      affiliations:
+        - University of Texas Southwestern Medical Center
+      working_groups:
+        - MDS
+        - DSI
+    - name: Donglu Xie
+      affiliations:
+        - University of Texas Southwestern Medical Center
+      working_groups:
+        - MDS
+        - DSI
+    - name: Phillip Reeder
+      affiliations:
+        - University of Texas Southwestern Medical Center
+      working_groups:
+        - MDS
+    - name: Jennifer Cai
+      affiliations:
+        - University of Texas Southwestern Medical Center
+      working_groups:
+        - MDS
 - cluster: Bloomington
   location: Indiana, United States
   institutions:
@@ -302,6 +381,12 @@
       working_groups:
         - MDS
         - AT
+    - name: David Hanauer
+      affiliations:
+        - University of Michigan
+      working_groups:
+        - MDS
+        - DSI
 - cluster: Birmingham
   location: Alabama, United States
   institutions:
@@ -317,60 +402,89 @@
 - cluster: Paris
   location: France
   institutions:
-    - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+    - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+    - Western Academic Hospitals Network - LTSI
+    - Inserm
   members:
     - name: Christel Daniel
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
       working_groups:
         - MDS
         - AT
     - name: Nicolas Paris
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
       working_groups:
         - MDS
         - AT
     - name: Nicolas Griffon
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
       working_groups:
         - MDS
         - AT
     - name: Mélodie Bernaux
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
       working_groups:
         - MDS
         - AT
+    - name: Romain Bey
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+      working_groups:
+        - MDS
+        - AT
+    - name: Vincent Benoit
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+      working_groups:
+        - MDS
     - name: Anita Burgun
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
       working_groups:
         - MDS
         - AT
+    - name: Marc Cuggia
+      affiliations:
+        - Western Academic Hospitals Network - LTSI
+        - Inserm
 - cluster: Lawrence
   location: Kansas, United States
   institutions:
-    - University of Kansas
+    - University of Kansas Medical Center
   members:
-    - name: Russ Waitman
+    - name: Lemuel Russell Waitman
       affiliations:
-        - University of Kansas
-      working_groups:
-        - DSI
-        - AT
-- cluster: Los Angeles
-  location: California, United States
-  institutions:
-    - David Geffen School of Medicine at UCLA
-  members:
-    - name: Douglas Bell
-      affiliations:
-        - David Geffen School of Medicine at UCLA
+        - University of Kansas Medical Center
       working_groups:
         - MDS
         - DSI
+        - AT
+    - name: Lav Parshottambhai Patel
+      affiliations:
+        - University of Kansas Medical Center
+      working_groups:
+        - MDS
+        - DSI
+- cluster: Los Angeles
+  location: California, United States
+  institutions:
+    - UCLA, David Geffen School of Medicine
+  members:
+    - name: Douglas Bell
+      affiliations:
+        - UCLA, David Geffen School of Medicine
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Douglas Murad
+      affiliations:
+        - UCLA, David Geffen School of Medicine
+      working_groups:
         - AT
 - cluster: St. Louis
   location: Missouri, United States
@@ -407,11 +521,11 @@
 - cluster: Lausanne
   location: Switzerland
   institutions:
-    - University Hospital of Lausanne
+    - University Hospital of Lausanne (CHUV)
   members:
     - name: Jean Louis Raisaro
       affiliations:
-        - University Hospital of Lausanne
+        - University Hospital of Lausanne (CHUV)
       working_groups:
         - DSI
         - AT
@@ -423,5 +537,65 @@
     - name: Andrew South
       affiliations:
         - Wake Forest School of Medicine
+      working_groups:
+        - MDS
+- cluster: Singapore
+  institutions:
+    - National University of Singapore
+  members:
+    - name: Ngiam Kee Yuan
+      affiliations:
+        - National University of Singapore
+- cluster: Chapel Hill
+  location: North Carolina, United States
+  institutions:
+    - University of North Carolina at Chapel Hill
+  members:
+    - name: Robert Bradford
+      affiliations:
+        - University of North Carolina at Chapel Hill
+      working_groups:
+        - MDS
+        - DSI
+- cluster: Charleston
+  location: South Carolina, United States
+  institutions:
+    - Medical University of South Carolina
+  members:
+    - name: Katie Kirchoff
+      affiliations:
+        - Medical University of South Carolina
+      working_groups:
+        - MDS
+        - DSI
+- cluster: Erlangen
+  location: Germany
+  institutions:
+    - Erlangen University Hospital
+    - Friedrich-Alexander-Universität Erlangen-Nürnberg
+  members:
+    - name: Detlef Kraska
+      affiliations:
+        - Erlangen University Hospital
+      working_groups:
+        - MDS
+    - name: Hans-Ulrich Prokosch
+      affiliations:
+        - Friedrich-Alexander-Universität Erlangen-Nürnberg
+      working_groups:
+        - MDS
+- cluster: Freiburg
+  location: Germany
+  institutions:
+    - University Medical Center, University of Freiburg
+  members:
+    - name: Martin Boeker
+      affiliations:
+        - University Medical Center, University of Freiburg
+      working_groups:
+        - MDS
+    - name: Christian Haverkamp
+      affiliations:
+        - University Medical Center, University of Freiburg
       working_groups:
         - MDS

@@ -18,7 +18,7 @@ permalink: /members/index.html
             {% for cluster in clusters %}
                 <tr class="cluster">
                     <td colspan="3">
-                        {{ cluster.cluster }}, {{ cluster.location }}
+                        {{ cluster.cluster }}{% if cluster.location %}, {{ cluster.location }}{% endif %}
                     </td>
                 </tr>
                 {% for member in cluster.members %}

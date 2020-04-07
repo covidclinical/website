@@ -4,11 +4,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  
+  <link rel="shortcut icon" href="{{ "/assets/favicon.ico" | relative_url }}" type="image/x-icon">
+  <link rel="icon" href="{{ "/assets/favicon.ico" | relative_url }}" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ "/assets/favicon-96x96.png" | relative_url }}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ "/assets/favicon-120x120.png" | relative_url }}">
 
   {%- if page.title -%}
     <title>{{ page.title }} - {{ site.title }}</title>
   {%- else -%}
   <title>{{ site.title }}</title>
   {%- endif -%}
-  
+
 </head>
