@@ -63,11 +63,14 @@ permalink: /your-page-name-here/
 ---
 ```
 
-
 ## Deployment
 
-```
-bundle exec jekyll build
-```
+Set the `S3_BUCKET_4CE_DEV` and `S3_BUCKET_4CE_PROD` environment variables.
 
-Transfer files in `_site/` via FTP.
+Build and deploy to one of the buckets:
+
+```sh
+bash ./build-and-deploy.sh
+# or
+bash ./build-and-deploy.sh --prod
+```
