@@ -1,16 +1,24 @@
 ---
 layout: page
+title: Data
 permalink: /data/index.html
 order: 20
 ---
 
-<div>
-    The visualizations and data on this page are from our publication "Title Here".
-
+<div class="page data-page">
+    <div class="category-card-container">
+        {% assign plots_by_category = site.plots | group_by: 'category' %}
+        {% for plot_category in plots_by_category %}
+            <div class="category-card">
+                <h3 class="category-name">{{ plot_category.name }}</h3>
+                <div class="category-plots">
+                    {% for plot in plot_category.items %}
+                        <a href="{{ plot.url | relative_url }}">{{ plot.title }}</a>
+                        <h5>{{ plot.subtitle }}</h5>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
 </div>
-
-<!-- Vega-Lite and Vega-Embed -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>

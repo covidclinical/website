@@ -351,6 +351,11 @@ $on-laptop:        800px !default;
   }
 }
 
+.site-subtitle {
+  text-align: center;
+  font-size: 20px;
+}
+
 .site-nav {
   float: right;
   line-height: $base-line-height * $base-font-size * 2.25;
@@ -451,8 +456,7 @@ $on-laptop:        800px !default;
 
 .footer-col-wrapper {
   @include relative-font-size(0.9375);
-  color: $grey-color;
-  margin-left: -$spacing-unit / 2;
+  color: lighten($black-color-light, 10%);
   @extend %clearfix;
 
   border-top: 2px solid $brand-color;
@@ -522,7 +526,7 @@ $on-laptop:        800px !default;
 }
 
 .page-heading {
-  @include relative-font-size(2);
+  @include relative-font-size(1.75);
 }
 
 .post-list-heading {
@@ -549,13 +553,6 @@ $on-laptop:        800px !default;
 }
 
 
-.page {
-    .subtitle {
-        text-align: center;
-        font-size: 20px;
-    }
-}
-
 /**
  * Posts
  */
@@ -564,7 +561,7 @@ $on-laptop:        800px !default;
 }
 
 .post-title {
-  @include relative-font-size(2);
+  @include relative-font-size(1.75);
   letter-spacing: -1px;
   line-height: 1;
 
@@ -575,6 +572,7 @@ $on-laptop:        800px !default;
 
 .post-content {
   margin-bottom: $spacing-unit;
+  font-weight: 300;
 
   h2 {
     @include relative-font-size(2);
@@ -642,6 +640,9 @@ table.members {
 
     tbody {
         tr {
+            td {
+              border-bottom: 1px solid lighten($table-border-color, 15%);
+            }
             td:first-child {
                 border-left: 1px solid $table-border-color;
             }
@@ -667,7 +668,6 @@ table.members {
 }
 
 .home-page {
-
   a {
       color: $black-color;
       text-decoration: underline;
@@ -681,11 +681,15 @@ table.members {
     margin-bottom: 30px;
 
     h3 {
+      font-weight: 600;
       font-size: 16px;
+      color: $black-color-light;
     }
 
     p {
+      font-weight: 300;
       font-size: 14px;
+      color: $black-color-light;
 
       &:last-child {
         margin-bottom: 0;
@@ -704,6 +708,92 @@ table.members {
       }
       p {
         color: $white-color;
+      }
+    }
+  }
+}
+
+.plot-page {
+  .paper-info {
+    margin-top: 40px;
+  }
+  p {
+    font-weight: 300;
+  }
+}
+
+
+.plot-container {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  .title {
+    font-weight: 600;
+    color: $black-color-light;
+  }
+
+  .subtitle {
+    font-weight: 600;
+    color: $brand-color;
+    font-size: 14px;
+  }
+
+  .inner {
+    position: relative;
+    border-top: 4px solid $blue-color-light;
+    border-bottom: 4px solid $blue-color-light;
+    background-color: $white-color;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+    font-weight: 300;
+
+    .description {
+      font-style: italic;
+    }
+  }
+
+  .notebook-link {
+    font-weight: 400;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+  }
+}
+
+.data-page {
+  .category-card-container {
+    columns: 2;
+    column-gap: 1rem;
+
+    .category-card {
+      
+      box-sizing: border-box;
+      background: white;
+      width: 100%;
+      display: inline-block;
+      border-radius: 5px;
+      padding: 10px 10px;
+      margin-bottom: 20px;
+
+      .category-name {
+        border-bottom: 1px solid lighten($table-border-color, 25%);
+      }
+
+      .category-plots {
+        a {
+          color: $brand-color;
+        }
+      }
+
+      
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
       }
     }
   }

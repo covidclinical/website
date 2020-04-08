@@ -23,6 +23,17 @@ description: "Consortium for Clinical Characterization of COVID-19 by EHR"
 url: "https://covidclinical.net" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
 
+collections:
+  plots:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "plots"
+    values:
+      layout: "plot"
+
 # Build settings
 theme: minima
 
