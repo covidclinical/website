@@ -35,10 +35,10 @@ $table-border-color: #ABA7A7;
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width:    800px !default;
+$content-width:    1000px !default;
 
 $on-palm:          600px !default;
-$on-laptop:        800px !default;
+$on-laptop:        1000px !default;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -523,6 +523,10 @@ $on-laptop:        800px !default;
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
+
+  .wrapper.wrapper-wide {
+    max-width: none;
+  }
 }
 
 .page-heading {
@@ -742,23 +746,50 @@ table.members {
     border-top: 4px solid $blue-color-light;
     border-bottom: 4px solid $blue-color-light;
     background-color: $white-color;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 0px;
     box-sizing: border-box;
     font-weight: 300;
 
+    .vega-plot-container {
+      overflow-x: scroll;
+    }
+
     .description {
+      margin-top: 20px;
       font-style: italic;
     }
   }
 
-  .notebook-link {
+  .top-actions {
     font-weight: 400;
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 5px;
+
+    a, button {
+      cursor: pointer;
+      font-size: 14px;
+      color: $blue-color;
+      background-color: $blue-color-light;
+      border: 0;
+      padding: 2px 4px;
+      margin-left: 5px;
+      border-radius: 2px;
+
+      &:hover {
+        text-decoration: none;
+        color: $black-color-light;
+      }
+    }
+  }
+
+  @include media-query($on-laptop) {
+    #expand-width {
+      display: none;
+    }
   }
 }
 

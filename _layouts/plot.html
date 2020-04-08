@@ -14,9 +14,18 @@ layout: default
         <p class="subtitle">{{ page.subtitle }}</p>
 
         <div class="inner">
-            <a class="notebook-link" href="https://github.com/hms-dbmi/c19i2b2-notebooks" target="_blank">Jupyter Notebook</a>
+            <div class="top-actions">
+                <a href="https://github.com/hms-dbmi/c19i2b2-notebooks/blob/master/notebooks/{{ page.notebook }}" target="_blank">
+                    View Jupyter Notebook
+                </a>
+                <button id="expand-width">Expand</button>
+            </div>
 
-            <div id="plot-01" class="vega-plot"></div>
+            <div class="vega-plot-container">
+                {% for plot in page.plots %}
+                    <div id="{{ plot }}" class="vega-plot"></div>
+                {%  endfor %}
+            </div>
 
             <div class="description">
                 {{ content }}
@@ -35,10 +44,45 @@ layout: default
 
 </div>
 
-<!-- Vega-Lite and Vega-Embed -->
+<!-- Vega-Lite -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<!-- The plots -->
 <script type="text/javascript">
-    
+
+    {% for plot in page.plots %}
+        vegaEmbed(
+            "#{{ plot }}", 
+            "/assets/plots/{{ plot }}.json",
+            {
+                renderer: "canvas",
+                downloadFileName: "4CE-COVID-19_{{ plot }}",
+                actions: {
+                    export: true,
+                    editor: false,
+                    compiled: false,
+                    source: false,
+                }
+            }
+        );
+    {% endfor %}
+
+</script>
+<!-- Extra stuff -->
+<script type="text/javascript">
+    const expandButton = document.querySelector('#expand-width');
+    expandButton.addEventListener('click', () => {
+        const wrapper = document.querySelector('.page-content .wrapper');
+
+        if(wrapper) {
+            wrapper.classList.toggle("wrapper-wide");
+
+            if(wrapper.classList.contains("wrapper-wide")) {
+                expandButton.innerHTML = "Minimize";
+            } else {
+                expandButton.innerHTML = "Expand";
+            }
+        }
+    });
 </script>

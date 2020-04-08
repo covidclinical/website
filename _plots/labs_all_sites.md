@@ -1,14 +1,13 @@
 ---
 title: Lab Values for All Participating Sites
-subtitle: This is another subtitle
+subtitle: This is a subtitle
 category: Labs
+notebook: 09_combined_country_level_data.ipynb
 plots:
-  - plot_file: plot_labs_lab-values-for-all-participating-sites.json
-    data_file: data_labs_lab-values-for-all-participating-sites.json
-  - plot_file: plot_labs_lab-values-by-site.json
-    data_file: data_labs_lab-values-by-site.json
 ---
 
-This is a
-multiline plot
-description.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Integer venenatis justo ac odio commodo, vel consequat lectus ornare. 
+Sed a feugiat sem. Nulla tristique efficitur ante sit amet tristique. 
+Quisque vitae dui quis mauris venenatis posuere at id nisl. 
+Mauris aliquet felis in efficitur lacinia.

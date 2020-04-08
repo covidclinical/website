@@ -2,9 +2,8 @@
 title: Demographics for All Participating Sites
 subtitle: This is a subtitle
 category: Demographics
+notebook: 06_demographics_by_site.ipynb
 plots:
-  - plot_file: plot_demographics_all.json
-    data_file: data_demographics_all.json
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
