@@ -88,7 +88,7 @@
         - MDS
         - DSI
         - AT
-    - name: Jeffrey Klann
+    - name: Jeff Klann
       affiliations:
         - Harvard Medical School
         - Mass General Brigham (Partners Healthcare)
@@ -208,18 +208,24 @@
     - name: Luca Chiovato
       affiliations:
         - ICS Maugeri Hospitals
+      working_groups:
+        - MDS
     - name: Piero Ceriana
       affiliations:
         - ICS Maugeri Hospitals
     - name: Michele Vitacca
       affiliations:
         - ICS Maugeri Hospitals
+      working_groups:
+        - MDS
     - name: Fabio Angeli
       affiliations:
         - ICS Maugeri Hospitals
     - name: Paola Baiardi
       affiliations:
         - ICS Maugeri Hospitals
+      working_groups:
+        - MDS
     - name: Mauro Bucalo
       affiliations:
         - Biomeris
@@ -260,7 +266,7 @@
       working_groups:
         - MDS
         - DSI
-    - name: Jeff Morris
+    - name: Jeffrey S. Morris
       affiliations:
         - University of Pennsylvania
       working_groups:
@@ -299,6 +305,9 @@
         - University of Texas Health Science Center at San Antonio
       working_groups:
         - AT
+    - name: Meredith Zozus
+      affiliations:
+        - University of Texas Health Science Center at San Antonio
 - cluster: Dallas
   location: Texas, United States
   institutions:
@@ -368,6 +377,7 @@
         - AT
     - name: Bertrand Moal
       affiliations:
+        - Bordeaux University Hospital
       working_groups:
         - MDS
 - cluster: Ann Arbor
@@ -447,6 +457,11 @@
       working_groups:
         - MDS
         - AT
+    - name: Antoine Neuraz
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+      working_groups:
+        - AT
     - name: Marc Cuggia
       affiliations:
         - Western Academic Hospitals Network - LTSI
@@ -469,6 +484,21 @@
       working_groups:
         - MDS
         - DSI
+    - name: Maren Lowrance
+      affiliations:
+        - University of Kansas Medical Center
+      working_groups:
+        - MDS
+    - name: Dan Connolly
+      affiliations:
+        - University of Kansas Medical Center
+      working_groups:
+        - MDS
+    - name: Sravani Chandaka
+      affiliations:
+        - University of Kansas Medical Center
+      working_groups:
+        - MDS
 - cluster: Los Angeles
   location: California, United States
   institutions:
