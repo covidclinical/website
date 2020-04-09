@@ -32,10 +32,12 @@ bundle exec jekyll serve
 
 #### Adding plot pages
 
-- Add vega-lite `.json` files to `_plots/{release}/vega/{my_plot_file}.json`
-- Add a markdown file for each plot page that should appear separately, in `_plots/{release}/{my_plot_page}.md`.
-    - A single markdown plot page can contain multiple plots (either stacked vertically or in a tabbed interface).
-- Add plot page properties as "frontmatter" to the top of the markdown file:
+- Add plot files to the release directory
+    - Add Vega-Lite files: `_plots/{release}/vega/{my_vega_plot_file}.json`
+    - Add LineUp files: `_plots/{release}/lineup/{my_lineup_plot_file}.json`
+- Add a markdown file for each plot page: `_plots/{release}/{my_plot_page}.md`
+    - A plot page can contain multiple plots.
+    - Add page properties as "frontmatter" to the top of the markdown file:
 
 ```yml
 ---
@@ -47,6 +49,7 @@ release: release-2020-mm-dd
 plots:
     - vega/plot_age_by_country.json
     - vega/plot_age_by_site.json
+    - lineup/plot_demographics_all.json
 ---
 
 The plots can be given a description in markdown here...
