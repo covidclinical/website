@@ -5,7 +5,7 @@ layout: default
 <div class="page plot-page">
 
     <p class="paper-info">
-        The visualizations and data on this page...
+        The visualizations and data on this page are from our publication "International electronic health record driven COVID-19 clinical course profile" (see <a href="https://www.medrxiv.org/">medRxiv preprint</a>).
     </p>
 
     <div class="plot-page-container">
@@ -20,10 +20,12 @@ layout: default
                 <button id="expand-width">Expand</button>
             </div>
 
-            <div class="plot-container">
+            <div class="plot-list">
                 {% for plot in page.plots %}
                     {% assign plot_type = plot | to_plot_type %}
-                    <div id="{{ plot | to_plot_id }}" class="{{ plot_type }}-plot-type"></div>
+                    <div class="{{ plot_type }}-plot-container">
+                        <div id="{{ plot | to_plot_id }}" class="{{ plot_type }}-plot-item"></div>
+                    </div>
                 {%  endfor %}
             </div>
 
@@ -35,9 +37,11 @@ layout: default
 
     <h3>Source Code</h3>
     <p>
-        These plots on this page were developed in Python and R notebooks.
-        These notebooks are located in the <a href="https://github.com/covidclinical/notebooks">covidclinical/notebooks</a> GitHub repository.
-        The code used to generate this website is located in the <a href="https://github.com/covidclinical/notebooks">covidclinical/website</a> GitHub repository.
+        The code used to generate the plots on this page is available in the 
+        <a href="https://github.com/hms-dbmi/c19i2b2-notebooks">covidclinical/notebooks</a>
+        and 
+        <a href="https://github.com/covidclinical/website">covidclinical/website</a>
+        GitHub repositories.
     </p>
 
 </div>

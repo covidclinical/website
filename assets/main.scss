@@ -57,6 +57,21 @@ $on-laptop:        1000px !default;
   font-size: $base-font-size * $ratio;
 }
 
+@mixin vega-right-offset($right-offset) {
+  width: -webkit-calc(100% - (#{$right-offset}px));
+  width:         calc(100% - (#{$right-offset}px));
+
+  summary {
+    right: #{- $right-offset + 50}px;
+  }
+
+  .vega-actions {
+    right: #{ - $right-offset + 50 - 9}px;
+  }
+}
+
+
+
 // Base (from minima)
 
 /**
@@ -762,17 +777,34 @@ table.members {
     box-sizing: border-box;
     font-weight: 300;
 
-    .plot-container {
-      overflow-x: scroll;
+    .plot-list {
 
-      .vega-plot-type {
-        width: -webkit-calc(100% - (49px));
-        width:         calc(100% - (49px));
+      .vega-plot-container {
+        overflow-x: scroll;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        .vega-plot-item {
+
+          @include vega-right-offset(38);
+
+          .vega-bind {
+            select {
+              margin-left: 5px;
+            }
+          }
+
+          &#vega_plot_labs_lab-values-by-country_json,
+          &#vega_plot_labs_lab-values-by-site_json {
+            @include vega-right-offset(260);
+          }
+        }
       }
-      .lineup-plot-type {
-        width: 100%;
 
-        height: 500px;
+      .lineup-plot-container {
+        .lineup-plot-item {
+          width: 100%;
+          height: 500px;
+        }
       }
     }
 

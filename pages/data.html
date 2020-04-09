@@ -9,9 +9,10 @@ order: 20
         
         {% for release in site.data.releases %}
         <div class="release-container">
+            <p class="release-name">{{ release.name }}</p>
             <div class="category-card-container">
 
-                {% assign plots_by_category = site.plots | where: "release", release.name | group_by: 'category' %}
+                {% assign plots_by_category = site.plots | where: "release", release.key | group_by: 'category' %}
                 {% for plot_category in plots_by_category %}
                     <div class="category-card">
                         <h3 class="category-name">{{ plot_category.name }}</h3>
