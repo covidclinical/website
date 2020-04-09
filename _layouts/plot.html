@@ -8,9 +8,11 @@ layout: default
         The visualizations and data on this page...
     </p>
 
-    <div class="plot-container">
+    <div class="plot-page-container">
         <p class="title">{{ page.title }}</p>
         <p class="subtitle">{{ page.subtitle }}</p>
+
+       
 
         <div class="inner">
             <div class="top-actions">
@@ -18,9 +20,10 @@ layout: default
                 <button id="expand-width">Expand</button>
             </div>
 
-            <div class="vega-plot-container">
+            <div class="plot-container">
                 {% for plot in page.plots %}
-                    <div id="{{ plot }}" class="vega-plot"></div>
+                    {% assign plot_type = plot | to_plot_type %}
+                    <div id="{{ plot | to_plot_id }}" class="{{ plot_type }}-plot-type"></div>
                 {%  endfor %}
             </div>
 
@@ -30,32 +33,56 @@ layout: default
         </div>
     </div>
 
-    <!--<h3>Source Code</h3>
+    <h3>Source Code</h3>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Integer venenatis justo ac odio commodo, vel consequat lectus ornare. 
-        Sed a feugiat sem. Nulla tristique efficitur ante sit amet tristique. 
-        Quisque vitae dui quis mauris venenatis posuere at id nisl. 
-        Mauris aliquet felis in efficitur lacinia.
-    </p>-->
+        These plots on this page were developed in Python and R notebooks.
+        These notebooks are located in the <a href="https://github.com/covidclinical/notebooks">covidclinical/notebooks</a> GitHub repository.
+        The code used to generate this website is located in the <a href="https://github.com/covidclinical/notebooks">covidclinical/website</a> GitHub repository.
+    </p>
 
 </div>
 
-<!-- Vega-Lite -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-<!-- The plots -->
+<!-- External -->
+<script type="text/javascript" src="{{ "/assets/js/vega.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/vega-lite.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/vega-embed.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/d3-fetch.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/lineup.js" | relative_url }}"></script>
+
+<!-- Plots -->
 <script type="text/javascript">
 
+    function unknownEmbed() {
+        console.log("Unknown plot type.");
+    }
+
+    function lineupEmbed(selector, fileUrl, options) {
+        const el = document.querySelector(selector);
+
+        d3.json(fileUrl).then(function(data) {
+            const lineup = LineUpJS.asLineUp(el, data);
+        });
+    }
+
     function renderPlots() {
+        let plotEmbed;
         {% for plot in page.plots %}
-            vegaEmbed(
-                "#{{ plot }}",
-                "{{ plot | plot_url: page.url }}",
+            {% assign plot_type = plot | to_plot_type %}
+            {% case plot_type %}
+                {%  when "vega" %}
+                    plotEmbed = vegaEmbed;
+                {%  when "lineup" %}
+                    plotEmbed = lineupEmbed;
+                {% else %}
+                    plotEmbed = unknownEmbed;
+            {% endcase %}
+
+            plotEmbed(
+                "#{{ plot | to_plot_id }}",
+                "{{ plot | to_plot_url: page.url }}",
                 {
                     renderer: "canvas",
-                    downloadFileName: "4CE-COVID-19_{{ plot }}",
+                    downloadFileName: "4CE-COVID-19_{{ plot | to_plot_id }}",
                     actions: {
                         export: true,
                         editor: false,

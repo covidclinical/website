@@ -736,7 +736,7 @@ table.members {
 }
 
 
-.plot-container {
+.plot-page-container {
   margin-top: 40px;
   margin-bottom: 50px;
   .title {
@@ -762,12 +762,17 @@ table.members {
     box-sizing: border-box;
     font-weight: 300;
 
-    .vega-plot-container {
+    .plot-container {
       overflow-x: scroll;
 
-      .vega-plot {
+      .vega-plot-type {
         width: -webkit-calc(100% - (49px));
         width:         calc(100% - (49px));
+      }
+      .lineup-plot-type {
+        width: 100%;
+
+        height: 500px;
       }
     }
 
