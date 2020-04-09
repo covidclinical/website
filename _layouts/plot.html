@@ -49,32 +49,35 @@ layout: default
 <!-- The plots -->
 <script type="text/javascript">
 
-    {% for plot in page.plots %}
-        vegaEmbed(
-            "#{{ plot }}", 
-            "/assets/plots/{{ plot }}.json",
-            {
-                renderer: "canvas",
-                downloadFileName: "4CE-COVID-19_{{ plot }}",
-                actions: {
-                    export: true,
-                    editor: false,
-                    compiled: false,
-                    source: false,
+    function renderPlots() {
+        {% for plot in page.plots %}
+            vegaEmbed(
+                "#{{ plot }}",
+                "{{ plot | plot_url: page.url }}",
+                {
+                    renderer: "canvas",
+                    downloadFileName: "4CE-COVID-19_{{ plot }}",
+                    actions: {
+                        export: true,
+                        editor: false,
+                        compiled: false,
+                        source: false,
+                    }
                 }
-            }
-        );
-    {% endfor %}
+            );
+        {% endfor %}
+    }
 
-</script>
-<!-- Extra stuff -->
-<script type="text/javascript">
+    window.onload = renderPlots;
+
+
     const expandButton = document.querySelector('#expand-width');
     expandButton.addEventListener('click', () => {
         const wrapper = document.querySelector('.page-content .wrapper');
 
         if(wrapper) {
             wrapper.classList.toggle("wrapper-wide");
+            renderPlots();
 
             if(wrapper.classList.contains("wrapper-wide")) {
                 expandButton.innerHTML = "Minimize";

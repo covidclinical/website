@@ -1,8 +1,9 @@
 ---
-title: Demographics for All Participating Sites
+title: Lab Values for All Participating Sites
 subtitle: This is a subtitle
-category: Demographics
-notebook: 06_demographics_by_site.ipynb
+category: Labs
+notebook: 09_combined_country_level_data.ipynb
+release: release-2020-04-09
 plots:
 ---
 

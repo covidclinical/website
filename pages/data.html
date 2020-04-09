@@ -6,19 +6,29 @@ order: 20
 ---
 
 <div class="page data-page">
-    <div class="category-card-container">
-        {% assign plots_by_category = site.plots | group_by: 'category' %}
-        {% for plot_category in plots_by_category %}
-            <div class="category-card">
-                <h3 class="category-name">{{ plot_category.name }}</h3>
-                <div class="category-plots">
-                    {% for plot in plot_category.items %}
-                        <a href="{{ plot.url | relative_url }}">{{ plot.title }}</a>
-                        <h5>{{ plot.subtitle }}</h5>
-                    {% endfor %}
-                </div>
+        
+        {% for release in site.data.releases %}
+        <div class="release-container">
+            {{ release.name }}
+            <div class="category-card-container">
+
+                {% assign plots_by_category = site.plots | where: "release", release.name | group_by: 'category' %}
+                {% for plot_category in plots_by_category %}
+                    <div class="category-card">
+                        <h3 class="category-name">{{ plot_category.name }}</h3>
+                        <div class="category-plots">
+                            {% for plot in plot_category.items %}
+                                <a href="{{ plot.url | relative_url }}">{{ plot.title }}</a>
+                                <h5>{{ plot.subtitle }}</h5>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+
             </div>
-        {% endfor %}
-    </div>
+        </div>
+        {%  endfor %}
+
+   
 
 </div>

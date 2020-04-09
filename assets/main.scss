@@ -755,6 +755,11 @@ table.members {
 
     .vega-plot-container {
       overflow-x: scroll;
+
+      .vega-plot {
+        width: -webkit-calc(100% - (49px));
+        width:         calc(100% - (49px));
+      }
     }
 
     .description {
@@ -794,37 +799,39 @@ table.members {
 }
 
 .data-page {
-  .category-card-container {
-    columns: 2;
-    column-gap: 1rem;
+  .release-container {
+    .category-card-container {
+      columns: 2;
+      column-gap: 1rem;
 
-    .category-card {
-      
-      box-sizing: border-box;
-      background: white;
-      width: 100%;
-      display: inline-block;
-      border-radius: 5px;
-      padding: 10px 10px;
-      margin-bottom: 20px;
+      .category-card {
+        
+        box-sizing: border-box;
+        background: white;
+        width: 100%;
+        display: inline-block;
+        border-radius: 5px;
+        padding: 10px 10px;
+        margin-bottom: 20px;
 
-      .category-name {
-        border-bottom: 1px solid lighten($table-border-color, 25%);
-      }
-
-      .category-plots {
-        a {
-          color: $brand-color;
+        .category-name {
+          border-bottom: 1px solid lighten($table-border-color, 25%);
         }
-      }
 
-      
+        .category-plots {
+          a {
+            color: $brand-color;
+          }
+        }
 
-      &:first-child {
-        margin-left: 0;
-      }
-      &:last-child {
-        margin-right: 0;
+        
+
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }

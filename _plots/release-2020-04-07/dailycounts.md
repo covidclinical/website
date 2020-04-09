@@ -1,9 +1,12 @@
 ---
-title: Lab Values for All Participating Sites
+title: Daily Counts for All Participating Sites
 subtitle: This is a subtitle
-category: Labs
-notebook: 09_combined_country_level_data.ipynb
+category: DailyCounts
+notebook: 08_combined_data.ipynb
+release: release-2020-04-09
 plots:
+    - plot_dailycounts_all
+    - plot_age_sex_all
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
