@@ -58,15 +58,17 @@ $on-laptop:        1000px !default;
 }
 
 @mixin vega-right-offset($right-offset) {
-  width: -webkit-calc(100% - (#{$right-offset}px));
-  width:         calc(100% - (#{$right-offset}px));
+  @media screen and (min-width: $on-palm) {
+    width: -webkit-calc(100% - (#{$right-offset}px));
+    width:         calc(100% - (#{$right-offset}px));
 
-  summary {
-    right: #{- $right-offset + 50}px;
-  }
+    summary {
+      right: #{- $right-offset + 50}px;
+    }
 
-  .vega-actions {
-    right: #{ - $right-offset + 50 - 9}px;
+    .vega-actions {
+      right: #{ - $right-offset + 50 - 9}px;
+    }
   }
 }
 
@@ -491,21 +493,23 @@ $on-laptop:        1000px !default;
 }
 
 .footer-col-1 {
-    width: -webkit-calc(75%);
-    width:         calc(75%);
+    width: 60%;
     p {
         font-size: 13px;
-    }
-
-    @include media-query($on-laptop) {
-        padding-left: 15px;
     }
 }
 
 .footer-col-2 {
-  width: -webkit-calc(25%);
-  width:         calc(25%);
+  width: 30%;
 
+  a {
+    float: right;
+    margin: 0 5px;
+  }
+}
+
+.footer-col-3 {
+  width: 10%;
   position: relative;
   svg {
     position: absolute;
@@ -515,24 +519,27 @@ $on-laptop:        1000px !default;
   }
 }
 
-@include media-query($on-laptop) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
+@include media-query($on-palm) {
+  .footer-col {
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-1 {
+    float: none;
   }
 
   .footer-col-3 {
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-
-@include media-query($on-palm) {
-  .footer-col {
+    margin-top: 60px;
     float: none;
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-2 {
+    margin-top: 60px;
+    float: none;
+    a {
+      float: left;
+    }
   }
 }
 
@@ -827,6 +834,7 @@ table.members {
     position: absolute;
     right: 15px;
     top: 5px;
+    width: 100%;
 
     a, button {
       cursor: pointer;
@@ -834,9 +842,17 @@ table.members {
       color: $blue-color;
       background-color: $blue-color-light;
       border: 0;
-      padding: 2px 4px;
       margin-left: 5px;
+      margin-top: 0;
+      margin-bottom: 0;
       border-radius: 2px;
+      padding: 0 4px;
+      display: inline-block;
+      float: right;
+      white-space: nowrap;
+
+      height: 22px;
+      line-height: 22px;
 
       &:hover {
         text-decoration: none;
