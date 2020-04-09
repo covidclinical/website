@@ -9,7 +9,6 @@ order: 20
         
         {% for release in site.data.releases %}
         <div class="release-container">
-            {{ release.name }}
             <div class="category-card-container">
 
                 {% assign plots_by_category = site.plots | where: "release", release.name | group_by: 'category' %}

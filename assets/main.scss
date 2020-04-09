@@ -348,12 +348,18 @@ $on-laptop:        1000px !default;
   svg {
     width: 100px;
     margin-top: 10px;
+    margin-left: -22px;
+
+    @include media-query($on-laptop) {
+      margin-left: 0;
+    }
   }
 }
 
 .site-subtitle {
-  text-align: center;
+  text-align: left;
   font-size: 20px;
+  margin-top: 10px;
 }
 
 .site-nav {
@@ -521,7 +527,10 @@ $on-laptop:        1000px !default;
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
+  padding-bottom: $spacing-unit;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
   flex: 1;
 
   .wrapper.wrapper-wide {
@@ -719,7 +728,7 @@ table.members {
 
 .plot-page {
   .paper-info {
-    margin-top: 40px;
+    margin-top: 20px;
   }
   p {
     font-weight: 300;
