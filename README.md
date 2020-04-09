@@ -30,7 +30,7 @@ bundle exec jekyll serve
 - List the data release in `_data/releases.yml` and provide a name, unique key, and description.
 - Add a new directory in `_plots` with the new release name, for example `_plots/release-2020-mm-dd/`
 
-#### Adding plots
+#### Adding plot pages
 
 - Add vega-lite `.json` files to `_plots/{release}/vega/{my_plot_file}.json`
 - Add a markdown file for each plot page that should appear separately, in `_plots/{release}/{my_plot_page}.md`.
