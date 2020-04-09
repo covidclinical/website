@@ -3,7 +3,7 @@
   <div class="wrapper">
     {%- assign default_paths = (site.pages | sort: "order") | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" href="{{ "/" | relative_url }}">
+    <a class="site-title" href="{{ "/index.html" | relative_url }}">
       {% include logo-blue.html %}
     </a>
 

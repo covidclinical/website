@@ -18,34 +18,23 @@ bundle exec jekyll serve
 
 ### Updating content
 
-#### Members list
-
-Edit `_data/members.yml`
-
-#### News posts
-
-Edit `_posts/{year}-{month}-{day}-your-post-title-here.markdown`
-
-#### Home page
-
-Edit `pages/index.html`
-
-#### Styles
-
-Edit `assets/main.scss`
+- Home page: edit `pages/index.html`
+- Members list: edit `_data/members.yml`
+- News: edit/add `_posts/{year}-{month}-{day}-your-post-title-here.markdown`
+- styles: edit `assets/main.scss`
 
 ### Adding plots
 
 #### Making a new data release
 
-- List the data release in `_data/releases.yml` and provide a name and description.
+- List the data release in `_data/releases.yml` and provide a name, unique key, and description.
 - Add a new directory in `_plots` with the new release name, for example `_plots/release-2020-mm-dd/`
 
 #### Adding plots
 
 - Add vega-lite `.json` files to `_plots/{release}/vega/{my_plot_file}.json`
 - Add a markdown file for each plot page that should appear separately, in `_plots/{release}/{my_plot_page}.md`.
-    - A single markdown plot page can contain multiple plots (either in a list or a tabbed interface).
+    - A single markdown plot page can contain multiple plots (either stacked vertically or in a tabbed interface).
 - Add plot page properties as "frontmatter" to the top of the markdown file:
 
 ```yml
@@ -53,14 +42,14 @@ Edit `assets/main.scss`
 title: Demographics for All Participating Sites
 subtitle: This is a subtitle
 category: Demographics
-notebook: 08_combined_data.ipynb
+notebook: 02_demographics.ipynb
 release: release-2020-mm-dd
 plots:
-    - plot_age_all
-    - plot_age_by_country
+    - vega/plot_age_by_country.json
+    - vega/plot_age_by_site.json
 ---
 
-The plot can be given a description in markdown here...
+The plots can be given a description in markdown here...
 ```
 
 ### Adding a new page

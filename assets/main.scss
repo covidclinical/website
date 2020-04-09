@@ -744,6 +744,14 @@ table.members {
 .plot-page {
   .paper-info {
     margin-top: 20px;
+    a {
+      color: $black-color-light;
+      text-decoration: underline;
+
+      &:hover {
+        color: $black-color;
+      }
+    }
   }
   p {
     font-weight: 300;
