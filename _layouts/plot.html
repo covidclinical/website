@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% assign plots_type = page.plots | to_plots_type %}
+
 <div class="page plot-page">
 
     <p class="paper-info">
@@ -12,22 +14,17 @@ layout: default
         <p class="title">{{ page.title }}</p>
         <p class="subtitle">{{ page.subtitle }}</p>
 
-       
-
         <div class="inner">
             <div class="top-actions">
-                <button id="expand-width">Expand</button>
-                <a href="https://github.com/hms-dbmi/c19i2b2-notebooks/blob/master/notebooks/{{ page.notebook }}" target="_blank">View Jupyter Notebook</a>
+                <a 
+                    href="https://github.com/hms-dbmi/c19i2b2-notebooks/blob/master/notebooks/{{ page.notebook }}" 
+                    target="_blank"
+                >
+                    View Jupyter Notebook
+                </a>
             </div>
 
-            <div class="plot-list">
-                {% for plot in page.plots %}
-                    {% assign plot_type = plot | to_plot_type %}
-                    <div class="{{ plot_type }}-plot-container">
-                        <div id="{{ plot | to_plot_id }}" class="{{ plot_type }}-plot-item"></div>
-                    </div>
-                {%  endfor %}
-            </div>
+            <div id="m-plots"></div>
 
             <div class="description">
                 {{ content }}
@@ -47,6 +44,7 @@ layout: default
 </div>
 
 <!-- External -->
+<script type="text/javascript" src="{{ "/assets/js/mithril.min.js" | relative_url }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/vega.js" | relative_url }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/vega-lite.js" | relative_url }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/vega-embed.js" | relative_url }}"></script>
@@ -56,8 +54,25 @@ layout: default
 <!-- Plots -->
 <script type="text/javascript">
 
-    function unknownEmbed() {
-        console.log("Unknown plot type.");
+    // Global variables.
+    const plotsType = "{{ plots_type }}";
+    const allPlots = {{ page.plots | jsonify }};
+    const pageUrl = "{{ page.url | relative_url }}";
+
+    let currTab;
+
+    // Helper functions.
+    function toPlotType(plotPath) {
+        return plotPath.substring(0, plotPath.indexOf('/'));
+    }
+
+    function toPlotId(plotPath) {
+        return plotPath.replace("/", "_").replace(".", "_");
+    }
+
+    function toPlotUrl(plotPath) {
+        const relativeUrl = pageUrl.substring(0, pageUrl.lastIndexOf('/'));
+        return `${relativeUrl}/${plotPath}`;
     }
 
     function lineupEmbed(selector, fileUrl, options) {
@@ -68,40 +83,102 @@ layout: default
         });
     }
 
-    function renderPlots() {
-        let plotEmbed;
-        {% for plot in page.plots %}
-            {% assign plot_type = plot | to_plot_type %}
-            {% case plot_type %}
-                {%  when "vega" %}
-                    plotEmbed = vegaEmbed;
-                {%  when "lineup" %}
-                    plotEmbed = lineupEmbed;
-                {% else %}
-                    plotEmbed = unknownEmbed;
-            {% endcase %}
-
+    const toEmbedFunction = {
+        vega: vegaEmbed,
+        lineup: lineupEmbed
+    };
+    
+    // Components.
+    const PlotComponent = {
+        oncreate: (vnode) => {
+            const plotPath = vnode.attrs.plotPath;
+            const plotEmbed = toEmbedFunction[toPlotType(plotPath)];
+            const plotUrl = toPlotUrl(plotPath);
+            const plotId = toPlotId(plotPath);
             plotEmbed(
-                "#{{ plot | to_plot_id }}",
-                "{{ plot | to_plot_url: page.url }}",
+                `#${plotId}`,
+                plotUrl,
                 {
+                    downloadFileName: `4CE-COVID-19_${plotId}`,
                     renderer: "canvas",
-                    downloadFileName: "4CE-COVID-19_{{ plot | to_plot_id }}",
-                    actions: {
-                        export: true,
-                        editor: false,
-                        compiled: false,
-                        source: false,
-                    }
+                    actions: false
                 }
             );
-        {% endfor %}
-    }
+        },
+        view: (vnode) => {
+            const plotPath = vnode.attrs.plotPath;
+            const plotType = toPlotType(plotPath);
+            const plotId = toPlotId(plotPath);
+            return m("div", { class:  `${plotType}-plot-container` }, 
+                m("div", { class: "plot-item", id: plotId })
+            );
+        }
+    };
 
-    window.onload = renderPlots;
+    const ListComponent = {
+        view: (vnode) => {
+            console.log("list content: ", vnode.attrs.plots);
+            return m("div", { class: "plot-list" }, 
+                vnode.attrs.plots.map(plotPath => m(PlotComponent, { plotPath, key: plotPath }))
+            );
+        }
+    };
+
+    const TabComponent = {
+        view: (vnode) => {
+            const tab = vnode.attrs.tab;
+            const currTab = vnode.attrs.currTab;
+            const onTabClick = () => {
+                vnode.attrs.onTabClick(tab);
+            };
+            return m("div", { class: `tab ${tab === currTab ? "active" : ""}`, onclick: onTabClick }, tab);
+        }
+    };
+
+    const TabNavComponent = {
+        view: (vnode) => {
+            return m("div", { class: "tabs" }, vnode.attrs.tabs.map(
+                d => m(TabComponent, { tab: d, currTab: vnode.attrs.currTab, onTabClick: vnode.attrs.onTabClick })
+            ));
+        }
+    };
+
+    let TabContentComponent = {
+        view: function(vnode) {
+            console.log("tabs content: ", vnode.attrs.currTab);
+            return m("div", { class: "tab-content" }, m(ListComponent, { plots: allPlots[vnode.attrs.currTab] }));
+        }
+    };
 
 
-    const expandButton = document.querySelector('#expand-width');
+    const tabs = Object.keys(allPlots);
+    
+    const TabsComponent = {
+        setCurrTab: function(newTab) {
+            console.log(newTab);
+            currTab = newTab;
+        },
+        view: function(vnode) {
+            return m("div", [ m(TabNavComponent, { currTab, tabs, onTabClick: this.setCurrTab }), m(TabContentComponent, { currTab }) ]);
+        }
+    };
+
+    
+
+    // Initialization.
+    window.onload = () => {
+        const mPlotsDiv = document.querySelector("#m-plots");
+
+        if(plotsType === "hash") {
+            currTab = tabs[0];
+            m.mount(mPlotsDiv, TabsComponent);
+        } else {
+            m.render(mPlotsDiv, m(ListComponent, { plots: allPlots }));
+        }
+    };
+
+
+  /*  const expandButton = document.querySelector('#expand-width');
     expandButton.addEventListener('click', () => {
         const wrapper = document.querySelector('.page-content .wrapper');
 
@@ -115,5 +192,5 @@ layout: default
                 expandButton.innerHTML = "Expand";
             }
         }
-    });
+    });*/
 </script>
