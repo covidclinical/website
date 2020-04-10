@@ -824,7 +824,7 @@ table.members {
         overflow-x: scroll;
         margin-bottom: 20px;
         padding-bottom: 20px;
-        .vega-plot-item {
+        .plot-item {
 
           @include vega-right-offset(38);
 
@@ -835,14 +835,19 @@ table.members {
           }
 
           &#vega_plot_labs_lab-values-by-country_json,
-          &#vega_plot_labs_lab-values-by-site_json {
+          &#vega_plot_labs_lab-values-by-site_json,
+          &#vega_plot_labs_lab-values_json,
+          &#vega_plot_daily-count_daily-counts-by-country_json,
+          &#vega_plot_daily-count_cumulative-daily-counts-by-country_json,
+          &#vega_plot_daily-count_daily-counts-by-site_json,
+          &#vega_plot_daily-count_cumulative-daily-counts-by-site_json {
             @include vega-right-offset(260);
           }
         }
       }
 
       .lineup-plot-container {
-        .lineup-plot-item {
+        .plot-item {
           width: 100%;
           height: 500px;
         }
