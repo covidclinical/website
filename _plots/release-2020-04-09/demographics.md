@@ -8,6 +8,6 @@ plots:
     - vega/plot_demographics_demographics-by-country.json
 ---
 
-The plot on this page display the number of patients by sex and age group.
+The plot on this page displays the number of patients by sex and age group.
 
 Country can be selected using the drop down menu below the plot.

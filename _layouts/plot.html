@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% assign plots_type = page.plots | to_plots_type %}
+
 <div class="page plot-page">
 
     <p class="paper-info">
@@ -12,21 +14,72 @@ layout: default
         <p class="title">{{ page.title }}</p>
         <p class="subtitle">{{ page.subtitle }}</p>
 
-       
-
         <div class="inner">
+            <!-- Top-right buttons -->
             <div class="top-actions">
-                <button id="expand-width">Expand</button>
-                <a href="https://github.com/hms-dbmi/c19i2b2-notebooks/blob/master/notebooks/{{ page.notebook }}" target="_blank">View Jupyter Notebook</a>
+                <a 
+                    href="https://github.com/hms-dbmi/c19i2b2-notebooks/blob/master/notebooks/{{ page.notebook }}" 
+                    target="_blank"
+                >
+                    View Jupyter Notebook
+                </a>
             </div>
 
-            <div class="plot-list">
-                {% for plot in page.plots %}
-                    {% assign plot_type = plot | to_plot_type %}
-                    <div class="{{ plot_type }}-plot-container">
-                        <div id="{{ plot | to_plot_id }}" class="{{ plot_type }}-plot-item"></div>
-                    </div>
-                {%  endfor %}
+            <!-- Tabs (if applicable) -->
+            {% comment %}
+            {% if plots_type == "hash" %}
+                <div class="tabs">
+                    {% for tab in page.plots %}
+                        <div 
+                            class="tab" 
+                            id="tab_{{ tab[0] | slugify }}"
+                        >
+                            {{ tab[0] }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% endcomment %}
+            
+            <!-- Plots -->
+            <div class="plot-wrapper">
+                {% if plots_type == "hash" %}
+                    <!-- Tabbed plots -->
+                    {% for tab in page.plots %}
+                        <!-- Content for a single tab -->
+                        <div 
+                            class="tab-content"
+                            id="tab_content_{{ tab[0] | slugify }}">
+                            <div class="plot-list">
+                                <!--Vertically stacked plots within a tab -->
+                                {% for plot in tab[1] %}
+                                    <!-- Content for a single plot -->
+                                    {% assign plot_type = plot | to_plot_type %}
+                                    <div class="{{ plot_type }}-plot-container">
+                                        <div 
+                                            id="{{ plot | to_plot_id }}" 
+                                            class="{{ plot_type }}-plot-item"
+                                        >
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <!-- Non-tabbed (vertically stacked) plots -->
+                    {% for plot in page.plots %}
+                        <!-- Content for a single plot -->
+                        {% assign plot_type = plot | to_plot_type %}
+                        <div class="{{ plot_type }}-plot-container">
+                            <div 
+                                id="{{ plot | to_plot_id }}" 
+                                class="{{ plot_type }}-plot-item"
+                            >
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
             </div>
 
             <div class="description">
@@ -47,6 +100,7 @@ layout: default
 </div>
 
 <!-- External -->
+<script src="https://unpkg.com/mithril/mithril.js"></script>
 <script type="text/javascript" src="{{ "/assets/js/vega.js" | relative_url }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/vega-lite.js" | relative_url }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/vega-embed.js" | relative_url }}"></script>
@@ -56,8 +110,21 @@ layout: default
 <!-- Plots -->
 <script type="text/javascript">
 
-    function unknownEmbed() {
-        console.log("Unknown plot type.");
+    const plotsType = "{{ plots_type }}";
+    const allPlots = {{ page.plots | jsonify }};
+    const pageUrl = "{{ page.url | relative_url }}";
+
+    function toPlotType(plotPath) {
+        return plotPath.substring(0, plotPath.indexOf('/'));
+    }
+
+    function toPlotId(plotPath) {
+        return plotPath.replace("/", "_").replace(".", "_");
+    }
+
+    function toPlotUrl(plotPath) {
+        const relativeUrl = pageUrl.substring(0, pageUrl.lastIndexOf('/'));
+        return `${relativeUrl}/${plotPath}`;
     }
 
     function lineupEmbed(selector, fileUrl, options) {
@@ -68,40 +135,47 @@ layout: default
         });
     }
 
-    function renderPlots() {
-        let plotEmbed;
-        {% for plot in page.plots %}
-            {% assign plot_type = plot | to_plot_type %}
-            {% case plot_type %}
-                {%  when "vega" %}
-                    plotEmbed = vegaEmbed;
-                {%  when "lineup" %}
-                    plotEmbed = lineupEmbed;
-                {% else %}
-                    plotEmbed = unknownEmbed;
-            {% endcase %}
+    const toEmbedFunction = {
+        vega: vegaEmbed,
+        lineup: lineupEmbed
+    };
 
+    function renderPlots(plots) {
+        for(let plotPath of plots) {
+            const plotType = toPlotType(plotPath);
+            const plotEmbed = toEmbedFunction[plotType];
+            const plotUrl = toPlotUrl(plotPath);
+            const plotId = toPlotId(plotPath);
             plotEmbed(
-                "#{{ plot | to_plot_id }}",
-                "{{ plot | to_plot_url: page.url }}",
+                `#${plotId}`,
+                plotUrl,
                 {
                     renderer: "canvas",
-                    downloadFileName: "4CE-COVID-19_{{ plot | to_plot_id }}",
+                    downloadFileName: `4CE-COVID-19_${plotId}`,
                     actions: {
                         export: true,
                         editor: false,
                         compiled: false,
-                        source: false,
+                        source: true,
                     }
                 }
             );
-        {% endfor %}
+        }
     }
 
-    window.onload = renderPlots;
+    function plotsInit() {
+        if(plotsType === "hash") {
+            let firstTabPlots = Object.entries(allPlots)[0][1];
+            renderPlots(firstTabPlots);
+        } else {
+            renderPlots(allPlots);
+        }
+    }
+
+    window.onload = plotsInit;
 
 
-    const expandButton = document.querySelector('#expand-width');
+  /*  const expandButton = document.querySelector('#expand-width');
     expandButton.addEventListener('click', () => {
         const wrapper = document.querySelector('.page-content .wrapper');
 
@@ -115,5 +189,5 @@ layout: default
                 expandButton.innerHTML = "Expand";
             }
         }
-    });
+    });*/
 </script>

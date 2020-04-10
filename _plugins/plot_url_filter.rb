@@ -17,6 +17,15 @@ module Jekyll::C19Filters
       plot_type
     end
 
+    def to_plots_type(input)
+      case input
+      when Hash
+         return "hash"
+      when Array
+         return "array"
+      end
+    end
+
 end
 
 Liquid::Template.register_filter(Jekyll::C19Filters)
