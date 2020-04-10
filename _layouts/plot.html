@@ -15,7 +15,6 @@ layout: default
         <p class="subtitle">{{ page.subtitle }}</p>
 
         <div class="inner">
-            <!-- Top-right buttons -->
             <div class="top-actions">
                 <a 
                     href="https://github.com/hms-dbmi/c19i2b2-notebooks/blob/master/notebooks/{{ page.notebook }}" 
@@ -25,62 +24,7 @@ layout: default
                 </a>
             </div>
 
-            <!-- Tabs (if applicable) -->
-            {% comment %}
-            {% if plots_type == "hash" %}
-                <div class="tabs">
-                    {% for tab in page.plots %}
-                        <div 
-                            class="tab" 
-                            id="tab_{{ tab[0] | slugify }}"
-                        >
-                            {{ tab[0] }}
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-            {% endcomment %}
-            
-            <!-- Plots -->
-            <div class="plot-wrapper">
-                {% if plots_type == "hash" %}
-                    <!-- Tabbed plots -->
-                    {% for tab in page.plots %}
-                        <!-- Content for a single tab -->
-                        <div 
-                            class="tab-content"
-                            id="tab_content_{{ tab[0] | slugify }}">
-                            <div class="plot-list">
-                                <!--Vertically stacked plots within a tab -->
-                                {% for plot in tab[1] %}
-                                    <!-- Content for a single plot -->
-                                    {% assign plot_type = plot | to_plot_type %}
-                                    <div class="{{ plot_type }}-plot-container">
-                                        <div 
-                                            id="{{ plot | to_plot_id }}" 
-                                            class="{{ plot_type }}-plot-item"
-                                        >
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% else %}
-                    <!-- Non-tabbed (vertically stacked) plots -->
-                    {% for plot in page.plots %}
-                        <!-- Content for a single plot -->
-                        {% assign plot_type = plot | to_plot_type %}
-                        <div class="{{ plot_type }}-plot-container">
-                            <div 
-                                id="{{ plot | to_plot_id }}" 
-                                class="{{ plot_type }}-plot-item"
-                            >
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
+            <div id="m-plots"></div>
 
             <div class="description">
                 {{ content }}
@@ -100,7 +44,7 @@ layout: default
 </div>
 
 <!-- External -->
-<script src="https://unpkg.com/mithril/mithril.js"></script>
+<script type="text/javascript" src="{{ "/assets/js/mithril.min.js" | relative_url }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/vega.js" | relative_url }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/vega-lite.js" | relative_url }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/vega-embed.js" | relative_url }}"></script>
@@ -110,10 +54,14 @@ layout: default
 <!-- Plots -->
 <script type="text/javascript">
 
+    // Global variables.
     const plotsType = "{{ plots_type }}";
     const allPlots = {{ page.plots | jsonify }};
     const pageUrl = "{{ page.url | relative_url }}";
 
+    let currTab;
+
+    // Helper functions.
     function toPlotType(plotPath) {
         return plotPath.substring(0, plotPath.indexOf('/'));
     }
@@ -139,40 +87,95 @@ layout: default
         vega: vegaEmbed,
         lineup: lineupEmbed
     };
-
-    function renderPlots(plots) {
-        for(let plotPath of plots) {
-            const plotType = toPlotType(plotPath);
-            const plotEmbed = toEmbedFunction[plotType];
+    
+    // Components.
+    const PlotComponent = {
+        oncreate: (vnode) => {
+            const plotPath = vnode.attrs.plotPath;
+            const plotEmbed = toEmbedFunction[toPlotType(plotPath)];
             const plotUrl = toPlotUrl(plotPath);
             const plotId = toPlotId(plotPath);
             plotEmbed(
                 `#${plotId}`,
                 plotUrl,
                 {
-                    renderer: "canvas",
                     downloadFileName: `4CE-COVID-19_${plotId}`,
-                    actions: {
-                        export: true,
-                        editor: false,
-                        compiled: false,
-                        source: true,
-                    }
+                    renderer: "canvas",
+                    actions: false
                 }
             );
+        },
+        view: (vnode) => {
+            const plotPath = vnode.attrs.plotPath;
+            const plotType = toPlotType(plotPath);
+            const plotId = toPlotId(plotPath);
+            return m("div", { class:  `${plotType}-plot-container` }, 
+                m("div", { class: "plot-item", id: plotId })
+            );
         }
-    }
+    };
 
-    function plotsInit() {
+    const ListComponent = {
+        view: (vnode) => {
+            console.log("list content: ", vnode.attrs.plots);
+            return m("div", { class: "plot-list" }, 
+                vnode.attrs.plots.map(plotPath => m(PlotComponent, { plotPath, key: plotPath }))
+            );
+        }
+    };
+
+    const TabComponent = {
+        view: (vnode) => {
+            const tab = vnode.attrs.tab;
+            const currTab = vnode.attrs.currTab;
+            const onTabClick = () => {
+                vnode.attrs.onTabClick(tab);
+            };
+            return m("div", { class: `tab ${tab === currTab ? "active" : ""}`, onclick: onTabClick }, tab);
+        }
+    };
+
+    const TabNavComponent = {
+        view: (vnode) => {
+            return m("div", { class: "tabs" }, vnode.attrs.tabs.map(
+                d => m(TabComponent, { tab: d, currTab: vnode.attrs.currTab, onTabClick: vnode.attrs.onTabClick })
+            ));
+        }
+    };
+
+    let TabContentComponent = {
+        view: function(vnode) {
+            console.log("tabs content: ", vnode.attrs.currTab);
+            return m("div", { class: "tab-content" }, m(ListComponent, { plots: allPlots[vnode.attrs.currTab] }));
+        }
+    };
+
+
+    const tabs = Object.keys(allPlots);
+    
+    const TabsComponent = {
+        setCurrTab: function(newTab) {
+            console.log(newTab);
+            currTab = newTab;
+        },
+        view: function(vnode) {
+            return m("div", [ m(TabNavComponent, { currTab, tabs, onTabClick: this.setCurrTab }), m(TabContentComponent, { currTab }) ]);
+        }
+    };
+
+    
+
+    // Initialization.
+    window.onload = () => {
+        const mPlotsDiv = document.querySelector("#m-plots");
+
         if(plotsType === "hash") {
-            let firstTabPlots = Object.entries(allPlots)[0][1];
-            renderPlots(firstTabPlots);
+            currTab = tabs[0];
+            m.mount(mPlotsDiv, TabsComponent);
         } else {
-            renderPlots(allPlots);
+            m.render(mPlotsDiv, m(ListComponent, { plots: allPlots }));
         }
-    }
-
-    window.onload = plotsInit;
+    };
 
 
   /*  const expandButton = document.querySelector('#expand-width');

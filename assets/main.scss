@@ -780,12 +780,38 @@ table.members {
     font-size: 14px;
   }
 
+  .tabs {
+    border-bottom: 1px solid $grey-color;
+    display: inline-block;
+
+    .tab {
+      cursor: pointer;
+      display: inline;
+      float: left;
+      border: 1px solid $grey-color;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom: 0;
+      background-color: #fff;
+      margin: 0 4px;
+      padding: 2px 4px;
+
+      &.active {
+        background-color: $blue-color-light;
+      }
+
+      &:not(.active):hover {
+        background-color: #f7f7f7;
+      }
+    }
+  }
+
   .inner {
     position: relative;
     border-top: 4px solid $blue-color-light;
     border-bottom: 4px solid $blue-color-light;
     background-color: $white-color;
-    padding-top: 40px;
+    padding-top: 30px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 0px;

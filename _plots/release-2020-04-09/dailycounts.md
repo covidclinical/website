@@ -5,10 +5,12 @@ category: Daily Counts
 notebook: 02_daily_counts_altair.ipynb
 release: release-2020-04-09
 plots:
-    - vega/plot_daily-count_daily-counts-by-country.json
-    - vega/plot_daily-count_cumulative-daily-counts-by-country.json
-    - vega/plot_daily-count_daily-counts-by-site.json
-    - vega/plot_daily-count_cumulative-daily-counts-by-site.json
+    By Country:
+        - vega/plot_daily-count_daily-counts-by-country.json
+        - vega/plot_daily-count_cumulative-daily-counts-by-country.json
+    By Site:
+        - vega/plot_daily-count_daily-counts-by-site.json
+        - vega/plot_daily-count_cumulative-daily-counts-by-site.json
 ---
 
 The plots on this page display positive cases, new deaths, ICU admissions over time by country.
