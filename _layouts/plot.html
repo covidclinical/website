@@ -59,6 +59,16 @@ layout: default
     const allPlots = {{ page.plots | jsonify }};
     const pageUrl = "{{ page.url | relative_url }}";
 
+    const vegaLabelMap = new Map(Object.entries({
+        "Lab_loinc_name": "Lab LOINC Name",
+        "Value_category": "Value category",
+        "new_positive_cases": "New positive cases",
+        "new_deaths": "New deaths",
+        "patients_in_icu": "Patients in ICU",
+        "Country_siteid": "Country",
+        "Sex_sex": "Sex"
+    }));
+
     let currTab;
 
     // Helper functions.
@@ -87,6 +97,23 @@ layout: default
         vega: vegaEmbed,
         lineup: lineupEmbed
     };
+
+    function fixVegaText() {
+        const vegaBindEls = document.querySelectorAll(".vega-bind");
+        console.log(vegaBindEls);
+        for(let vegaBindEl of vegaBindEls) {
+            const spanEls = Array.from(vegaBindEl.querySelectorAll('.vega-bind-name'));
+            const optionEls = Array.from(vegaBindEl.querySelectorAll('select > option'));
+            const els = spanEls.concat(optionEls);
+            for(let el of els) {
+                const content = el.innerHTML;
+                if(vegaLabelMap.has(content)) {
+                    const newContent = vegaLabelMap.get(content);
+                    el.innerHTML = newContent;
+                }
+            }
+        }
+    }
     
     // Components.
     const PlotComponent = {
@@ -95,7 +122,7 @@ layout: default
             const plotEmbed = toEmbedFunction[toPlotType(plotPath)];
             const plotUrl = toPlotUrl(plotPath);
             const plotId = toPlotId(plotPath);
-            plotEmbed(
+            const result = plotEmbed(
                 `#${plotId}`,
                 plotUrl,
                 {
@@ -104,6 +131,12 @@ layout: default
                     actions: false
                 }
             );
+
+            if(result && result.then) {
+                result.then(() => {
+                    fixVegaText();
+                });
+            }
         },
         view: (vnode) => {
             const plotPath = vnode.attrs.plotPath;
@@ -117,7 +150,6 @@ layout: default
 
     const ListComponent = {
         view: (vnode) => {
-            console.log("list content: ", vnode.attrs.plots);
             return m("div", { class: "plot-list" }, 
                 vnode.attrs.plots.map(plotPath => m(PlotComponent, { plotPath, key: plotPath }))
             );
@@ -145,7 +177,6 @@ layout: default
 
     let TabContentComponent = {
         view: function(vnode) {
-            console.log("tabs content: ", vnode.attrs.currTab);
             return m("div", { class: "tab-content" }, m(ListComponent, { plots: allPlots[vnode.attrs.currTab] }));
         }
     };
@@ -155,7 +186,6 @@ layout: default
     
     const TabsComponent = {
         setCurrTab: function(newTab) {
-            console.log(newTab);
             currTab = newTab;
         },
         view: function(vnode) {

@@ -1,4 +1,4 @@
-- name: Release April 9, 2020
-  key: release-2020-04-09
+- name: Release April 10, 2020
+  key: release-2020-04-10
   description: >-
-    This initial release includes data from 19 institutions.
+    This initial release includes data from 23 institutions.

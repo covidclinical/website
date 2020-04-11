@@ -818,6 +818,10 @@ table.members {
     box-sizing: border-box;
     font-weight: 300;
 
+    .tab-content {
+      margin-top: 10px;
+    }
+
     .plot-list {
 
       .vega-plot-container {
@@ -829,8 +833,20 @@ table.members {
           @include vega-right-offset(38);
 
           .vega-bind {
+            margin-left: 20px;
+            background-color: $blue-color-light;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+
+            .vega-bind-name {
+              font-weight: 400;
+            }
             select {
               margin-left: 5px;
+
+              font-weight: 400;
             }
           }
 
@@ -871,7 +887,6 @@ table.members {
       cursor: pointer;
       font-size: 14px;
       color: $blue-color;
-      background-color: $blue-color-light;
       border: 0;
       margin-left: 5px;
       margin-top: 0;
@@ -886,8 +901,8 @@ table.members {
       line-height: 22px;
 
       &:hover {
-        text-decoration: none;
-        color: $black-color-light;
+        text-decoration: underline;
+        color: $blue-color;
       }
     }
   }
