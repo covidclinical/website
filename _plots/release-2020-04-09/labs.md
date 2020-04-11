@@ -13,7 +13,7 @@ plots:
         - vega/plot_labs_five-lab-values-by-site.json
 ---
 
-The plots on this page display values corresponding to a single LOINC code, stratified by country or by site.
+The plots on this page display values corresponding to LOINC codes, stratified by country or by site.
 
 ### How to use
 - LOINC codes can be selected using the drop down menu below each plot.
