@@ -33,12 +33,17 @@ bundle exec jekyll serve
 #### Adding plot pages
 
 - Add plot files to the release directory
-    - Add Vega-Lite files: `_plots/{release}/vega/{my_vega_plot_file}.json`
-    - Add LineUp files: `_plots/{release}/lineup/{my_lineup_plot_file}.json`
+    - Add Vega-Lite files: `_plots/{release}/vega/{my_plot_file}.json`
+    - Add LineUp files: `_plots/{release}/lineup/{my_plot_file}.json`
+    - Add image files:
+        - as PNG: `_plots/{release}/png/{my_plot_file}.png`
+        - as SVG: `_plots/{release}/svg/{my_plot_file}.svg`
+
 - Add a markdown file for each plot page: `_plots/{release}/{my_plot_page}.md`
-    - A plot page can contain multiple plots.
+    - A plot page can contain multiple plots, either vertically stacked or in a tabbed layout.
     - Add page properties as "frontmatter" to the top of the markdown file:
 
+Vertical stack example (use a list as the `plots` value):
 ```yml
 ---
 title: Demographics for All Participating Sites
@@ -50,6 +55,28 @@ plots:
     - vega/plot_age_by_country.json
     - vega/plot_age_by_site.json
     - lineup/plot_demographics_all.json
+    - png/plot_demographics_overview.png
+---
+
+The plots can be given a description in markdown here...
+```
+
+Tabbed layout example (use a dictionary as the `plots` value, mapping tabs to lists of plots):
+```yml
+---
+title: Demographics for All Participating Sites
+subtitle: This is a subtitle
+category: Demographics
+notebook: 02_demographics.ipynb
+release: release-2020-mm-dd
+plots:
+    Overview:
+        - png/plot_demographics_all.png
+        - svg/plot_labs_all.svg
+    By Country:
+        - vega/plot_age_by_country.json
+    By Site:
+        - vega/plot_age_by_site.json
 ---
 
 The plots can be given a description in markdown here...

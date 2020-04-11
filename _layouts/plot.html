@@ -93,9 +93,18 @@ layout: default
         });
     }
 
+    function imgEmbed(selector, fileUrl, options) {
+        const el = document.querySelector(selector);
+        const imgEl = document.createElement("img"); 
+        imgEl.src = fileUrl;
+        el.appendChild(imgEl);
+    }
+
     const toEmbedFunction = {
         vega: vegaEmbed,
-        lineup: lineupEmbed
+        lineup: lineupEmbed,
+        svg: imgEmbed,
+        png: imgEmbed
     };
 
     function fixVegaText() {
