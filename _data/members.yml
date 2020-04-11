@@ -179,6 +179,7 @@
     - ICS Maugeri Hospitals
     - Biomeris
     - IRCCS Ca' Granda Ospedale Maggiore Policlinico di Milano Foundation
+    - Papa Giovanni XXIII Hospital, Bergamo
   members:
     - name: Riccardo Bellazzi
       affiliations:
@@ -249,6 +250,18 @@
         - IRCCS Ca' Granda Ospedale Maggiore Policlinico di Milano Foundation
       working_groups:
         - MDS
+    - name: Antonio Bellasi
+      affiliations:
+        - Papa Giovanni XXIII Hospital, Bergamo
+      working_groups:
+        - MDS
+        - DSI
+    - name: Alberto Zambelli
+      affiliations:
+        - Papa Giovanni XXIII Hospital, Bergamo
+      working_groups:
+        - MDS
+        - DSI
 - cluster: Philadelphia
   location: Pennsylvania, United States
   institutions:
@@ -271,18 +284,18 @@
         - University of Pennsylvania
       working_groups:
         - AT
+    - name: John H. Holmes
+      affiliations:
+        - University of Pennsylvania
+      working_groups:
+        - MDS
+        - AT
     - name: Batsal Devkota
       affiliations:
         - Children's Hospital of Philadelphia
       working_groups:
         - MDS
         - DSI
-        - AT
-    - name: John H. Holmes
-      affiliations:
-        - University of Pennsylvania
-      working_groups:
-        - MDS
         - AT
 - cluster: Mannheim
   location: Germany
@@ -412,13 +425,15 @@
 - cluster: Paris
   location: France
   institutions:
-    - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+    - Assistance Publique-Hôpitaux de Paris (AP-HP)
     - Western Academic Hospitals Network - LTSI
     - Inserm
+    - Imagine
   members:
     - name: Christel Daniel
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP)
+        - UMRS1142 INSERM
       working_groups:
         - MDS
         - AT
@@ -430,42 +445,87 @@
         - AT
     - name: Nicolas Griffon
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP)
+        - UMRS1142 INSERM
       working_groups:
         - MDS
         - AT
     - name: Mélodie Bernaux
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP)
+      working_groups:
+        - MDS
+        - AT
+    - name: Arnaud Sandrin
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris (AP-HP)
       working_groups:
         - MDS
         - AT
     - name: Romain Bey
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP)
       working_groups:
         - MDS
         - AT
     - name: Vincent Benoit
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP)
       working_groups:
         - MDS
+    - name: Stéphane Bréant
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris (AP-HP)
+      working_groups:
+        - MDS
+        - DSI
+        - AT
     - name: Anita Burgun
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - University of Paris
       working_groups:
         - MDS
         - AT
     - name: Antoine Neuraz
       affiliations:
-        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - University of Paris
       working_groups:
+        - AT
+    - name: Judith Leblanc
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Greater Paris University Hospital
+        - Sorbonne Université IPLESP
+      working_groups:
+        - MDS
+        - AT
+    - name: Martel Patricia
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - Unité de Recherche Clinique Paris Saclay
+      working_groups:
+        - MDS
+        - AT
+    - name: Jannot Anne-Sophie
+      affiliations:
+        - Assistance Publique-Hôpitaux de Paris (AP-HP) - University of Paris
+      working_groups:
+        - MDS
         - AT
     - name: Marc Cuggia
       affiliations:
         - Western Academic Hospitals Network - LTSI
         - Inserm
+    - name: Champ Julien
+      affiliations:
+        - INRIA Sophia-Antipolis - ZENITH team, LIRMM, Montpellier
+      working_groups:
+        - MDS
+        - AT
+    - name: Nicolas Garcelon
+      affiliations:
+        - Imagine
+      working_groups:
+        - MDS
+        - AT
 - cluster: Lawrence
   location: Kansas, United States
   institutions:

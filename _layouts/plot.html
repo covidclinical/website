@@ -100,7 +100,6 @@ layout: default
 
     function fixVegaText() {
         const vegaBindEls = document.querySelectorAll(".vega-bind");
-        console.log(vegaBindEls);
         for(let vegaBindEl of vegaBindEls) {
             const spanEls = Array.from(vegaBindEl.querySelectorAll('.vega-bind-name'));
             const optionEls = Array.from(vegaBindEl.querySelectorAll('select > option'));
@@ -175,12 +174,11 @@ layout: default
         }
     };
 
-    let TabContentComponent = {
+    const TabContentComponent = {
         view: function(vnode) {
             return m("div", { class: "tab-content" }, m(ListComponent, { plots: allPlots[vnode.attrs.currTab] }));
         }
     };
-
 
     const tabs = Object.keys(allPlots);
     
@@ -192,8 +190,6 @@ layout: default
             return m("div", [ m(TabNavComponent, { currTab, tabs, onTabClick: this.setCurrTab }), m(TabContentComponent, { currTab }) ]);
         }
     };
-
-    
 
     // Initialization.
     window.onload = () => {
