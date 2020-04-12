@@ -920,6 +920,7 @@ table.members {
       columns: 2;
       column-gap: 1rem;
 
+
       .category-card {
         
         box-sizing: border-box;
@@ -948,6 +949,12 @@ table.members {
         &:last-child {
           margin-right: 0;
         }
+      }
+    }
+
+    @include media-query($on-palm) {
+      .category-card-container {
+        columns: 1;
       }
     }
   }
