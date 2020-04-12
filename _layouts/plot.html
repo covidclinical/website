@@ -136,7 +136,12 @@ layout: default
                 {
                     downloadFileName: `4CE-COVID-19_${plotId}`,
                     renderer: "canvas",
-                    actions: true
+                    actions: {
+                        export: true,
+                        source: false,
+                        compiled: false,
+                        editor: false
+                    }
                 }
             );
 
