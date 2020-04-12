@@ -58,9 +58,19 @@ $on-laptop:        1100px !default;
 }
 
 @mixin vega-right-offset($right-offset) {
-  @media screen and (min-width: $on-palm) {
     width: -webkit-calc(100% - (#{$right-offset}px));
     width:         calc(100% - (#{$right-offset}px));
+
+    /*@include media-query($on-palm) {
+      width: -webkit-calc(200% - (#{$right-offset}px));
+      width:         calc(200% - (#{$right-offset}px));
+      transform: scale(0.5) translate(-50%, -50%);
+    }*/
+
+    @include media-query($on-palm) {
+      width: -webkit-calc(200% - (#{$right-offset}px));
+      width:         calc(200% - (#{$right-offset}px));
+    }
 
     summary {
       right: #{- $right-offset + 50}px;
@@ -69,7 +79,6 @@ $on-laptop:        1100px !default;
     .vega-actions {
       right: #{ - $right-offset + 50 - 9}px;
     }
-  }
 }
 
 
@@ -343,6 +352,7 @@ $on-laptop:        1100px !default;
 
   // Positioning context for the mobile navigation icon
   position: relative;
+  padding-top: 30px;
 }
 
 .site-title {
@@ -824,10 +834,21 @@ table.members {
 
     .plot-list {
 
+      @include media-query($on-palm) {
+        overflow-x: scroll;
+      }
+
       .vega-plot-container {
         overflow-x: scroll;
         margin-bottom: 20px;
         padding-bottom: 20px;
+
+        @include media-query($on-palm) {
+          overflow-x: visible;
+          transform: scale(0.5) translate(-50%, -50%);
+          height: 360px;
+        }
+
         .plot-item {
 
           @include vega-right-offset(38);
@@ -839,6 +860,11 @@ table.members {
             padding: 5px 10px;
             border-radius: 5px;
             margin-top: 5px;
+
+            @include media-query($on-palm) {
+              margin-top: 50px;
+              transform: scale(2) translate(25%, 0);
+            }
 
             .vega-bind-name {
               font-weight: 400;

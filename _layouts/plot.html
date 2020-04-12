@@ -61,6 +61,7 @@ layout: default
 
     const vegaLabelMap = new Map(Object.entries({
         "Lab_loinc_name": "Lab LOINC Name",
+        "Lab_Lab": "Lab LOINC Name",
         "Value_category": "Value category",
         "new_positive_cases": "New positive cases",
         "new_deaths": "New deaths",
@@ -141,12 +142,13 @@ layout: default
                         source: false,
                         compiled: false,
                         editor: false
-                    }
+                    },
+                    scaleFactor: 3
                 }
             );
 
             if(result && result.then) {
-                result.then(() => {
+                result.then((d) => {
                     fixVegaText();
                 });
             }
