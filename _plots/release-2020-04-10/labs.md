@@ -5,8 +5,6 @@ category: Labs
 notebook: 03_lab_results_altair.ipynb
 release: release-2020-04-10
 plots:
-    Overview:
-        - vega/plot_labs_lab-values.json
     By Country:
         - vega/plot_labs_lab-values-by-country.json
     By Site:
