@@ -17,7 +17,8 @@ order: 20
                     <div class="category-card">
                         <h3 class="category-name">{{ plot_category.name }}</h3>
                         <div class="category-plots">
-                            {% for plot in plot_category.items %}
+                            {% assign plot_category_items = plot_category.items | sort: "order" %}
+                            {% for plot in plot_category_items %}
                                 <a href="{{ plot.url | relative_url }}">{{ plot.title }}</a>
                                 <h5>{{ plot.subtitle }}</h5>
                             {% endfor %}
