@@ -13,6 +13,11 @@ plots:
 The plots on this page display positive cases, new deaths, ICU admissions over time by country.
 
 ### How to use
+
 - One of `New positive cases` or `New deaths` can be selected using the drop down menu below each plot.
 
 - Zooming and panning is allowed using mouse wheel and dragging. Double-clicking on a white space resets the x- and y-axes to the original settings.
+
+### Note
+
+In some cases, the data reported by sites contained outliers or possibly incorrect units. These values were not removed from the visualizations to maintain the integrity of the data.

@@ -15,6 +15,11 @@ plots:
 The plot on this page displays the number of patients by country, sex, and age group.
 
 ### How to use
+
 - Country or sex can be selected using the drop down menu below the plot.
 
 - Multiple countries can be selected by clicking on the color legends with the shift button.
+
+### Note
+
+In some cases, the data reported by sites contained outliers or possibly incorrect units. These values were not removed from the visualizations to maintain the integrity of the data.

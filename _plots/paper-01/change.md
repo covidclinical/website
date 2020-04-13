@@ -14,3 +14,7 @@ The plots on this page display change in `New positive cases` by country, compar
 ### How to use
 
 - Zooming and panning is allowed using mouse wheel and dragging.
+
+### Note
+
+In some cases, the data reported by sites contained outliers or possibly incorrect units. These values were not removed from the visualizations to maintain the integrity of the data.
