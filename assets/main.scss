@@ -813,6 +813,10 @@ table.members {
     border-bottom: 1px solid $grey-color;
     display: inline-block;
 
+    @include media-query($on-palm) {
+      margin-top: 10px;
+    }
+
     .tab {
       cursor: pointer;
       display: inline;
@@ -824,6 +828,11 @@ table.members {
       background-color: #fff;
       margin: 0 4px;
       padding: 2px 4px;
+
+      @include media-query($on-palm) {
+        font-size: 14px;
+        font-weight: 400;
+      }
 
       &.active {
         background-color: $blue-color-light;
