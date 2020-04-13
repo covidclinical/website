@@ -3,7 +3,7 @@ title: Normalized Change by Country
 subtitle: Comparison to data from JHU CSSE
 category: Daily Counts
 notebook: 04_rate_of_change_per_site_vs_country.ipynb
-release: release-2020-04-11
+release: paper-01
 order: 2
 plots:
     - vega/plot_daily-count_normalized-change-by-country.json
