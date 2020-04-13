@@ -5,5 +5,5 @@ subtitle: Download information about participating sites
 category: Other
 order: 1
 release: paper-01
-file_url: https://ndownloader.figshare.com/files/22286607
+file_url: https://figshare.com/account/projects/78741/articles/12118911
 ---
