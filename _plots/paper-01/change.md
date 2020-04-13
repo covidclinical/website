@@ -14,8 +14,6 @@ The plots on this page display change in `New positive cases` by country, compar
 
 ### How to use
 
-- Zooming and panning is allowed using mouse wheel and dragging.
-
 - To download the figure click the button with the ellipsis in the top right corner and choose either "Save as SVG" or "Save as PNG". The figure will be saved reflecting the current state.
 
 ### Note
