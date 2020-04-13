@@ -15,6 +15,10 @@ plots:
         - vega/plot_labs_five-lab-values-by-site.json
     Variation:
         - vega/plot_labs_lab-variation-across-sites-on-day-0.json
+    Drop Ratio By Country:
+        - vega/plot_labs_percentage-of-measured-relative-to-baseline-by-country.json
+    Drop Ratio By Site:
+        - vega/plot_labs_percentage-of-measured-relative-to-baseline-by-site.json
 ---
 
 The plots on this page display values corresponding to LOINC codes, stratified by country or by site.
