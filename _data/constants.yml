@@ -1,0 +1,10 @@
+urls:
+  i2b2: https://transmartfoundation.org/
+  join: https://transmartfoundation.org/covid-19-community-project/
+  notebooks_repo: https://github.com/hms-dbmi/c19i2b2-notebooks
+  website_repo: https://github.com/covidclinical/website
+
+papers:
+  paper01:
+    url: https://www.medrxiv.org/
+    title: "International Electronic Health Record-Derived COVID-19 Clinical Course Profile: The 4CE Consortium"

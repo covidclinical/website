@@ -601,6 +601,12 @@ $on-laptop:        1100px !default;
 /**
  * Posts
  */
+.post-news-back {
+  font-size: 14px;
+  margin-right: 10px;
+
+  display: inline-block;
+}
 .post-header {
   margin-bottom: $spacing-unit;
 }
@@ -733,11 +739,24 @@ table.members {
 
     p {
       font-weight: 300;
-      font-size: 14px;
+      font-size: 15px;
       color: $black-color-light;
 
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+
+    .buttons {
+      a {
+        color: $white-color;
+        padding-right: 20px;
+
+        text-decoration: none;
+
+        span {
+          text-decoration: underline;
+        }
       }
     }
 
@@ -749,7 +768,7 @@ table.members {
       padding: 20px 20px;
       background-color: $blue-color;
       h3 {
-        color: $blue-color-light;
+        color: $white-color;
       }
       p {
         color: $white-color;

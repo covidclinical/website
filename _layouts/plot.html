@@ -7,7 +7,7 @@ layout: default
 <div class="page plot-page">
 
     <p class="paper-info">
-        The visualizations on this page are from our publication "International electronic health record driven COVID-19 clinical course profile" (see <a href="https://www.medrxiv.org/">medRxiv preprint</a>).
+        The visualizations on this page are from our publication "{{ site.data.constants.papers.paper01.title }}" (see <a href="{{ site.data.constants.papers.paper01.url }}" target="_blank">medRxiv preprint</a>).
     </p>
 
     <div class="plot-page-container">
@@ -17,7 +17,7 @@ layout: default
         <div class="inner">
             <div class="top-actions">
                 <a 
-                    href="https://github.com/hms-dbmi/c19i2b2-notebooks/blob/master/notebooks/{{ page.notebook }}" 
+                    href="{{ site.data.constants.urls.notebooks_repo }}/blob/master/notebooks/{{ page.notebook }}" 
                     target="_blank"
                 >
                     View Jupyter Notebook
@@ -34,10 +34,10 @@ layout: default
 
     <h3>Source Code</h3>
     <p>
-        The code used to generate the plots on this page is available in the 
-        <a href="https://github.com/hms-dbmi/c19i2b2-notebooks">covidclinical/notebooks</a>
+        The code used to generate the plots on this page can be found in the 
+        <a href="{{ site.data.constants.urls.notebooks_repo }}">covidclinical/notebooks</a>
         and 
-        <a href="https://github.com/covidclinical/website">covidclinical/website</a>
+        <a href="{{ site.data.constants.urls.website_repo }}">covidclinical/website</a>
         GitHub repositories.
     </p>
 
