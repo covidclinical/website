@@ -217,7 +217,18 @@ layout: default
         const mPlotsDiv = document.querySelector("#m-plots");
 
         if(plotsType === "hash") {
-            currTab = tabs[0];
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const tabParam = urlParams.get('tab');
+                const tabIndex = parseInt(tabParam);
+                if(tabIndex >= 0 && tabIndex < tabs.length) {
+                    currTab = tabs[tabIndex];
+                } else {
+                    currTab = tabs[0];
+                }
+            } catch(e) {
+                currTab = tabs[0];
+            }
             m.mount(mPlotsDiv, TabsComponent);
         } else {
             m.render(mPlotsDiv, m(ListComponent, { plots: allPlots }));

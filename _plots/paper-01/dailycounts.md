@@ -1,4 +1,5 @@
 ---
+type: plot
 title: Daily Counts by Country
 subtitle: Positive cases and new deaths over time by country
 category: Daily Counts
@@ -19,6 +20,8 @@ The plots on this page display positive cases, new deaths, ICU admissions over t
 - One of `New positive cases` or `New deaths` can be selected using the drop down menu below each plot.
 
 - Zooming and panning is allowed using mouse wheel and dragging. Double-clicking on a white space resets the x- and y-axes to the original settings.
+
+- To download the figure click the button with the ellipsis in the top right corner and choose either "Save as SVG" or "Save as PNG". The figure will be saved reflecting the current state.
 
 ### Note
 

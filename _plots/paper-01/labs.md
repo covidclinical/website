@@ -1,4 +1,5 @@
 ---
+type: plot
 title: Labs by Country and Site
 subtitle: Lab values corresponding to fourteen LOINC codes
 category: Labs
@@ -25,6 +26,8 @@ The plots on this page display values corresponding to LOINC codes, stratified b
 - Multiple countries or sites can be selected by clicking on the color legends with the shift button.
 
 - Zooming and panning is allowed using mouse wheel and dragging. Double-clicking on a white space resets the x- and y-axes to the original settings.
+
+- To download the figure click the button with the ellipsis in the top right corner and choose either "Save as SVG" or "Save as PNG". The figure will be saved reflecting the current state.
 
 ### Note
 

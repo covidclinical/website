@@ -28,7 +28,7 @@ bundle exec jekyll serve
 #### Making a new data release
 
 - List the data release in `_data/releases.yml` and provide a name, unique key, and description.
-- Add a new directory in `_plots` with the new release name, for example `_plots/release-2020-mm-dd/`
+- Add a new directory in `_plots` with the new release name, for example `_plots/release-2020-mm-dd/` or `_plots/paper-02`
 
 #### Adding plot pages
 
@@ -84,9 +84,9 @@ The plots can be given a description in markdown here...
 
 ### Adding a new page
 
-Add a file to `pages/your-page-name-here.html`
+Add a HTML or MD file to `pages/`
 
-and add the following "frontmatter" to the top of the HTML file:
+and add the following "frontmatter" to the top of the file:
 
 ```yml
 ---

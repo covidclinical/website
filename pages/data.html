@@ -10,23 +10,49 @@ order: 20
         {% for release in site.data.releases %}
         <div class="release-container">
             <p class="release-name">{{ release.name }}</p>
-            <div class="category-card-container">
+            {% assign items_by_category = site.plots | where: "release", release.key | group_by: 'category' | sort: "name" %}
+            {% for item_category in items_by_category %}
+                {% assign category_plots = item_category.items | where: "type", "plot" | sort: "order" %}
+                {% assign category_datasets = item_category.items | where: "type", "dataset" | sort: "order" %}
+                <div class="category-card">
+                    <div class="category-card-header">
+                        <h3 class="category-name">{{ item_category.name }}</h3>
+                        <!--<div class="category-column-name">
+                            <div>Plots</div>
+                            <div>Datasets</div>
+                        </div>-->
+                    </div>
 
-                {% assign plots_by_category = site.plots | where: "release", release.key | group_by: 'category' %}
-                {% for plot_category in plots_by_category %}
-                    <div class="category-card">
-                        <h3 class="category-name">{{ plot_category.name }}</h3>
-                        <div class="category-plots">
-                            {% assign plot_category_items = plot_category.items | sort: "order" %}
-                            {% for plot in plot_category_items %}
-                                <a href="{{ plot.url | relative_url }}">{{ plot.title }}</a>
-                                <h5>{{ plot.subtitle }}</h5>
+                    <div class="category-columns">
+                        <div class="category-column-plots">
+                            {% for plot in category_plots %}
+                                <div class="item">
+                                    <div class="item-info">
+                                        <a href="{{ plot.url | relative_url }}" title="View plots">{{ plot.title }}</a>
+                                        <h5>{{ plot.subtitle }}</h5>
+                                    </div>
+                                    <div class="item-icon">
+                                        <a href="{{ plot.url | relative_url }}" title="View plots">{% include icon-plot.html %}</a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="category-column-datasets">
+                            {% for dataset in category_datasets %}
+                                <div class="item">
+                                    <div class="item-info">
+                                        <a href="{{ dataset.file_url | relative_url }}" title="Download data">{{ dataset.title }}</a>
+                                        <h5>{{ dataset.subtitle }}</h5>
+                                    </div>
+                                    <div class="item-icon">
+                                        <a href="{{ dataset.file_url | relative_url }}" title="Download data">{% include icon-dataset.html %}</a>
+                                    </div>
+                                </div>
                             {% endfor %}
                         </div>
                     </div>
-                {% endfor %}
-
-            </div>
+                </div>
+            {% endfor %}
         </div>
         {%  endfor %}
 
