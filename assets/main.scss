@@ -623,6 +623,17 @@ $on-laptop:        1100px !default;
   font-size: 14px;
   margin-right: 10px;
 
+  color: $brand-color;
+  text-decoration: none;
+  
+  &:visited {
+    color: $brand-color;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
   display: inline-block;
 }
 .post-header {
@@ -959,6 +970,7 @@ table.members {
       cursor: pointer;
       font-size: 14px;
       color: $blue-color;
+      text-decoration: none;
       border: 0;
       margin-left: 5px;
       margin-top: 0;
@@ -992,30 +1004,29 @@ table.members {
     .category-columns {
       width: 100%;
       display: inline-block;
-      flex-direction: row;
 
       &> div:nth-child(2) {
-        padding-left: 10px;
-        border-left: 1px solid lighten($table-border-color, 25%);
+        padding-left: 0px;
       }
       
       .category-column-plots, .category-column-datasets {
         box-sizing: border-box;
         display: inline-block;
         position: relative;
+        vertical-align: top;
 
         .item {
           position: relative;
+
+          background-color: white;
+          border-radius: 5px;
+          margin-bottom: 10px;
 
           .item-info {
             padding-top: 10px;
             padding-left: 10px;
             padding-right: 50px;
-            padding-bottom: 5px;
-
-            @include media-query($on-palm) {
-              padding-left: 0;
-            }
+            padding-bottom: 10px;
 
             h5 {
               margin-bottom: 0;
@@ -1024,7 +1035,7 @@ table.members {
         }
         .item-icon {
           position: absolute;
-          right: 0;
+          right: 10px;
           top: 15px;
 
           svg {
@@ -1032,6 +1043,10 @@ table.members {
             height: 25px;
 
             fill: silver;
+
+            &:hover {
+              fill: gray;
+            }
           }
         }
       }
@@ -1046,7 +1061,10 @@ table.members {
 
 
         .item-icon {
-          right: 10px;
+          svg {
+            width: 20px;
+            height: 20px;
+          }
         }
       }
 
@@ -1054,7 +1072,7 @@ table.members {
         display: block;
 
         &> div:nth-child(2) {
-          padding-left: 0;
+          padding-right: 10px;
           border-left: none;
         }
 
@@ -1070,12 +1088,15 @@ table.members {
       .category-card {
         .category-card-header {
           border-bottom: 1px solid lighten($table-border-color, 25%);
+          position: relative;
           .category-name {
             margin-bottom: 0;
           }
 
           .category-column-name {
             width: 100%;
+            position: absolute;
+            top: 0;
 
             @include media-query($on-palm) {
               display: none;
@@ -1085,10 +1106,13 @@ table.members {
               box-sizing: border-box;
               display: inline-block;
               font-size: 14px;
-              padding-left: 10px;
+              text-align: right;
+              color: gray;
+              font-style: italic;
 
               &:first-child {
                 width: 50%;
+                padding-right: 10px;
               }
 
               &:nth-child(2) {
@@ -1100,11 +1124,9 @@ table.members {
         
         
         box-sizing: border-box;
-        background: white;
         width: 100%;
         display: inline-block;
         border-radius: 5px;
-        padding: 10px 10px;
         margin-bottom: 20px;
 
   
@@ -1118,9 +1140,6 @@ table.members {
               text-decoration: underline;
             }
 
-            &:visited {
-              color: darken($brand-color, 10%);
-            }
           }
 
 
@@ -1132,12 +1151,6 @@ table.members {
         &:last-child {
           margin-right: 0;
         }
-      }
-    }
-
-    @include media-query($on-palm) {
-      .category-card-container {
-        columns: 1;
       }
     }
 }
