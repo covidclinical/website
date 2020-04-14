@@ -4,8 +4,7 @@ title: Demographics by Country and Sex
 subtitle: The number of patients by country and sex
 category: Demographics
 notebook: 01_demographics_altair.ipynb
-release: paper-01
-order: 1
+order: 30
 plots:
     By Sex:
         - vega/plot_demographics_demographics-by-sex.json

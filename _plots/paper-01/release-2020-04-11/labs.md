@@ -4,8 +4,7 @@ title: Labs by Country and Site
 subtitle: Lab values corresponding to fourteen LOINC codes
 category: Labs
 notebook: 03_lab_results_altair.ipynb
-release: paper-01
-order: 1
+order: 50
 plots:
     Key Labs Overview:
         - vega/plot_labs_five-lab-values-by-site.json

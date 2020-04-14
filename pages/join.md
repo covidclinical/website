@@ -10,3 +10,7 @@ If you are interested in joining the consortium please [fill out the form on the
 
 
 In this first phase we are reaching out to other collaborators to join our 96 hospital collaboration who also have EHR data to share to augment the breadth and depth of the analyses we jointly work on.
+
+### Contact
+
+For any questions about the 4CE consortium please email [4CE@i2b2transmart.org](mailto:4CE@i2b2transmart.org).

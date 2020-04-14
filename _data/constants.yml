@@ -4,9 +4,4 @@ urls:
   notebooks_repo: https://github.com/covidclinical/visualization-notebooks
   website_repo: https://github.com/covidclinical/website
 
-papers:
-  paper01:
-    url: https://www.medrxiv.org/
-    title: "International Electronic Health Record-Derived COVID-19 Clinical Course Profile: The 4CE Consortium"
-
 ga: "UA-70908320-29"

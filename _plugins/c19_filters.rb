@@ -1,3 +1,4 @@
+# custom jekyll filter functions
 
 module Jekyll::C19Filters
     include Jekyll::Filters::URLFilters
@@ -24,6 +25,22 @@ module Jekyll::C19Filters
       when Array
          return "array"
       end
+    end
+
+    def to_publication_plots(site_plots, key)
+      result = site_plots.select do |plot|
+        path_items = plot.relative_path.split(File::SEPARATOR)
+        path_items[1] == key
+      end
+      result
+    end
+
+    def to_release_plots(publication_plots, key)
+      result = publication_plots.select do |plot|
+        path_items = plot.relative_path.split(File::SEPARATOR)
+        path_items[2] == key
+      end
+      result
     end
 
 end
