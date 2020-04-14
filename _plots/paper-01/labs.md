@@ -7,12 +7,12 @@ notebook: 03_lab_results_altair.ipynb
 release: paper-01
 order: 1
 plots:
+    Key Labs Overview:
+        - vega/plot_labs_five-lab-values-by-site.json
     By Country:
         - vega/plot_labs_lab-values-by-country.json
     By Site:
         - vega/plot_labs_lab-values-by-site.json
-    Five Lab Values:
-        - vega/plot_labs_five-lab-values-by-site.json
     Variation:
         - vega/plot_labs_lab-variation-across-sites-on-day-0.json
     Drop Ratio By Country:
