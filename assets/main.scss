@@ -1045,7 +1045,8 @@ table.members {
   .publication-head, .release-head, .plot-head {
     display: block;
     h2, h3, h4 {
-      display: inline;
+      display: inline-block;
+      margin-bottom: 0;
     }
     .pill {
       background-color: $blue-color-light;

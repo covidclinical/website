@@ -48,7 +48,7 @@ order: 20
                             </div>
                             <div class="plot-right">
                                 <div class="plot-head">
-                                    <h4>{{ plot.title }}</h4>
+                                    <h4 id="publication_{{ publication[0] }}_{{ release[0] }}_{{ plot.title | slugify }}">{{ plot.title }}</h4>
                                     {% case plot.type %}
                                     {% when "plot" %}
                                         <span class="pill pill-plot">Visualization</span>
