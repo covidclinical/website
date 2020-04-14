@@ -3,7 +3,7 @@ type: plot
 title: Normalized Change by Country
 subtitle: Comparison to data from JHU CSSE
 category: Other
-notebook: 04_rate_of_change_per_site_vs_country.ipynb
+notebook: 06_rate_of_change_per_site_vs_country_altair.ipynb
 order: 70
 plots:
     - vega/plot_daily-count_normalized-change-by-country.json
