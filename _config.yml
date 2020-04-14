@@ -20,6 +20,8 @@
 
 title: "4CE"
 description: "Consortium for Clinical Characterization of COVID-19 by EHR"
+description_long: >-
+  4CE is an international consortium for electronic health record (EHR) data-driven studies of the COVID-19 pandemic.
 url: "https://covidclinical.net" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
 
