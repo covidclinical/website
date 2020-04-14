@@ -13,6 +13,10 @@ The plots on this page display change in `New positive cases` by country, compar
 
 ### How to use
 
+- Zooming and panning is allowed using mouse wheel and dragging. Double-clicking on a white space resets the x- and y-axes to the original settings.
+
+- Clicking `4CE` or `JHU CSSE` in the legend will toggle the corresponding lines in the plots. Clicking in the legend white space resets the lines to the original settings.
+
 - To download the figure click the button with the ellipsis in the top right corner and choose either "Save as SVG" or "Save as PNG". The figure will be saved reflecting the current state.
 
 ### Note
