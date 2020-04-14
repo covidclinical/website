@@ -68,6 +68,7 @@ layout: default
     const pageUrl = "{{ page.url | relative_url }}";
     const notebookUrl = "{{ site.data.constants.urls.notebooks_repo }}/blob/master/notebooks/{{ page.notebook }}";
 
+
     const vegaLabelMap = new Map(Object.entries({
         "Lab_loinc_name": "Lab LOINC Name",
         "Lab__Lab": "Lab LOINC Name",
@@ -173,10 +174,15 @@ layout: default
         }
     };
 
+    const tabs = Object.keys(allPlots);
+
     const ListComponent = {
         view: (vnode) => {
             return m("div", { class: "inner-top" }, [
-                m("div", { class: "top-actions" }, m("a", { href: notebookUrl, target: "_blank" }, "View Jupyter Notebook")),
+                m("div", { class: "top-actions" }, [
+                    m("a", { href: notebookUrl, target: "_blank" }, "View Jupyter Notebook"),
+                    ...(plotsType === "hash" ? [ m("a", { href: pageUrl + "?tab=" + tabs.indexOf(currTab) }, "Link to this Tab") ] : [])
+                ]),
                 m("div", { class: "plot-list" }, vnode.attrs.plots.map(plotPath => m(PlotComponent, { plotPath, key: plotPath })))
             ]);
         }
@@ -206,8 +212,6 @@ layout: default
             return m("div", { class: "tab-content" }, m(ListComponent, { plots: allPlots[vnode.attrs.currTab] }));
         }
     };
-
-    const tabs = Object.keys(allPlots);
     
     const TabsComponent = {
         setCurrTab: function(newTab) {
