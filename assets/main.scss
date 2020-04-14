@@ -35,10 +35,10 @@ $table-border-color: #ABA7A7;
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width:    1100px !default;
+$content-width:    1000px !default;
 
 $on-palm:          600px !default;
-$on-laptop:        1100px !default;
+$on-laptop:        1000px !default;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -806,6 +806,16 @@ table.members {
   }
 }
 
+.wrapper-wide {
+  .plot-page-narrow {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+
+  }
+}
+
 .plot-page {
   .paper-info {
     margin-top: 20px;
@@ -830,6 +840,7 @@ table.members {
   .title {
     font-weight: 600;
     color: $black-color-light;
+    margin-bottom: 5px;
   }
 
   .subtitle {
@@ -839,28 +850,37 @@ table.members {
   }
 
   .tabs {
-    border-bottom: 1px solid $grey-color;
+    border-bottom: 0px solid $grey-color;
     display: inline-block;
+    margin-bottom: -7px;
 
     @include media-query($on-palm) {
       margin-top: 10px;
+      margin-bottom: -4px;
     }
 
     .tab {
       cursor: pointer;
       display: inline;
       float: left;
-      border: 1px solid $grey-color;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      border: 1px solid $blue-color-light;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
       border-bottom: 0;
       background-color: #fff;
-      margin: 0 4px;
-      padding: 2px 4px;
+      margin: 0 5px;
+      padding: 4px 4px;
 
       @include media-query($on-palm) {
         font-size: 14px;
         font-weight: 400;
+
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border: 1px solid $grey-color;
+        border-bottom: 1px solid $grey-color;
+
+        margin-bottom: 5px;
       }
 
       &.active {
@@ -873,10 +893,9 @@ table.members {
     }
   }
 
-  .inner {
+  .inner-top {
     position: relative;
     border-top: 4px solid $blue-color-light;
-    border-bottom: 4px solid $blue-color-light;
     background-color: $white-color;
     padding-top: 30px;
     padding-left: 20px;
@@ -897,7 +916,7 @@ table.members {
 
       .vega-plot-container {
         overflow-x: scroll;
-        margin-bottom: 20px;
+        margin-bottom: 0;
         padding-bottom: 20px;
 
         @include media-query($on-palm) {
@@ -924,7 +943,7 @@ table.members {
             }
 
             .vega-bind-name {
-              font-weight: 400;
+              font-weight: 300;
             }
             select {
               margin-left: 5px;
@@ -953,10 +972,20 @@ table.members {
       }
     }
 
-    .description {
-      margin-top: 20px;
-      font-style: italic;
-    }
+  }
+
+  .description {
+
+    margin-top: 0;
+    font-style: italic;
+    border-bottom: 4px solid $blue-color-light;
+    background-color: $white-color;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+    font-weight: 300;
   }
 
   .top-actions {
