@@ -81,6 +81,10 @@ $on-laptop:        1000px !default;
     }
 }
 
+@mixin vega-plot-wide() {
+    max-width: -webkit-calc((1200px) - (#{$spacing-unit} * 2));
+    max-width:         calc((1200px) - (#{$spacing-unit} * 2));
+}
 
 
 // Base (from minima)
@@ -806,6 +810,8 @@ table.members {
   }
 }
 
+
+
 .wrapper-wide {
   .plot-page-narrow {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
@@ -814,7 +820,19 @@ table.members {
     margin-left: auto;
 
   }
+
+  #m-plots {
+    .plot-list {
+      /* PLOT STYLE EXCEPTIONS */
+      #plot-page-narrow_vega_plot_labs_five-lab-values-by-site_json,
+      #plot-page-narrow_vega_plot_daily-count_normalized-change-by-country_json {
+        @include vega-plot-wide();
+      }
+    }
+  }
+  
 }
+
 
 .plot-page {
   .paper-info {
@@ -919,6 +937,7 @@ table.members {
         margin-bottom: 0;
         padding-bottom: 20px;
 
+
         @include media-query($on-palm) {
           overflow-x: visible;
           transform: scale(0.5) translate(-50%, -50%);
@@ -952,6 +971,7 @@ table.members {
             }
           }
 
+          /* PLOT STYLE EXCEPTIONS */
           &#vega_plot_labs_lab-values-by-country_json,
           &#vega_plot_labs_lab-values-by-site_json,
           &#vega_plot_labs_lab-values_json,

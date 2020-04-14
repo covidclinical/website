@@ -23,9 +23,11 @@ layout: default
         <div class="inner">
 
             <div id="m-plots"></div>
-
+            
             <div class="description">
+                <div class="plot-page-narrow">
                 {{ content }}
+                </div>
             </div>
         </div>
     </div>
@@ -163,9 +165,9 @@ layout: default
             const plotPath = vnode.attrs.plotPath;
             const plotType = toPlotType(plotPath);
             const plotId = toPlotId(plotPath);
-            return m("div", { class:  `${plotType}-plot-container` }, 
+            return m("div", { class: "plot-page-narrow", id: `plot-page-narrow_${plotId}` }, m("div", { class:  `${plotType}-plot-container` }, 
                     m("div", { class: "plot-item", id: plotId })
-            );
+            ));
         }
     };
 
