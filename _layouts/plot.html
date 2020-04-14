@@ -52,12 +52,7 @@ layout: default
 </div>
 
 <!-- External -->
-<script type="text/javascript" src="{{ "/assets/js/mithril.min.js" | relative_url }}"></script>
-<script type="text/javascript" src="{{ "/assets/js/vega.js" | relative_url }}"></script>
-<script type="text/javascript" src="{{ "/assets/js/vega-lite.js" | relative_url }}"></script>
-<script type="text/javascript" src="{{ "/assets/js/vega-embed.js" | relative_url }}"></script>
-<script type="text/javascript" src="{{ "/assets/js/d3-fetch.js" | relative_url }}"></script>
-<script type="text/javascript" src="{{ "/assets/js/lineup.js" | relative_url }}"></script>
+{% include js-tags.html %}
 
 <!-- Plots -->
 <script type="text/javascript">
@@ -244,28 +239,11 @@ layout: default
             m.render(mPlotsDiv, m(ListComponent, { plots: allPlots }));
         }
 
-
+        // Expand width.
         const wrapper = document.querySelector('.page-content .wrapper');
 
         if(wrapper) {
             wrapper.classList.add("wrapper-wide");
         }
     };
-
-
-  /*  const expandButton = document.querySelector('#expand-width');
-    expandButton.addEventListener('click', () => {
-        const wrapper = document.querySelector('.page-content .wrapper');
-
-        if(wrapper) {
-            wrapper.classList.toggle("wrapper-wide");
-            renderPlots();
-
-            if(wrapper.classList.contains("wrapper-wide")) {
-                expandButton.innerHTML = "Minimize";
-            } else {
-                expandButton.innerHTML = "Expand";
-            }
-        }
-    });*/
 </script>
