@@ -1,5 +1,5 @@
 ---
-type: dataset
+#type: dataset
 title: Daily Counts Data
 subtitle: Download daily counts data
 category: Daily Counts

@@ -1,5 +1,5 @@
 ---
-type: dataset
+#type: dataset
 title: Demographics Data
 subtitle: Download demographics data
 category: Demographics

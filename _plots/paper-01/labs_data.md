@@ -1,5 +1,5 @@
 ---
-type: dataset
+#type: dataset
 title: Labs Data
 subtitle: Download labs data
 category: Labs

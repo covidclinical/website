@@ -1,7 +1,7 @@
 urls:
   i2b2: https://transmartfoundation.org/
   join: https://transmartfoundation.org/covid-19-community-project/
-  notebooks_repo: https://github.com/hms-dbmi/c19i2b2-notebooks
+  notebooks_repo: https://github.com/covidclinical/visualization-notebooks
   website_repo: https://github.com/covidclinical/website
 
 papers:
