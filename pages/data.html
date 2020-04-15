@@ -30,7 +30,7 @@ order: 20
                         {% when "dataset" %}
                             {% assign plot_url = plot.download_url %}
                         {% endcase %}
-                    <a class="plot" href="{{ plot_url }}" title="{{ plot.title }}">
+                    <a class="plot" href="{{ plot_url }}" title="{{ plot.title }}" {% if plot.type == "dataset" %}target="_blank"{% endif %}>
                         <div class="plot-left">
                             {% case plot.type %}
                             {% when "plot" %}
