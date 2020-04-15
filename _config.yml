@@ -25,6 +25,11 @@ description_long: >-
 url: "https://covidclinical.net" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
 
+data_disclaimer: >-
+  This website and its contents herein, including all data, visualization, and analysis, is provided to the public strictly for academic research purposes. 
+  The data has numerous limitations and confounders that need to be better evaluated as more data is acquired.
+  Reliance on this website for medical guidance or clinical judgement is strictly prohibited.
+
 collections:
   plots:
     output: true

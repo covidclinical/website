@@ -15,12 +15,6 @@ layout: default
 
         <a class="plot-data-back" href="{{ "/data/index.html" | relative_url }}">&larr; Data</a>
 
-        <p class="disclaimer-info">
-            Note: This website and its contents herein, including all data, visualization, and analysis, is provided to the public strictly for academic research purposes. 
-            The data has numerous limitations and confounders that need to be better evaluated as more data is acquired.
-            Reliance on this website for medical guidance or clinical judgements is strictly prohibited.
-        </p>
-
     </div>
 
     <div class="plot-page-container">
@@ -36,6 +30,10 @@ layout: default
             <div class="description">
                 <div class="plot-page-narrow">
                 {{ content }}
+
+                <p class="disclaimer-info">
+                    {{ site.data_disclaimer }}
+                </p>
                 </div>
             </div>
         </div>

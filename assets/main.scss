@@ -995,11 +995,16 @@ table.members {
 
   .description {
 
+    .disclaimer-info {
+      font-size: 15px;
+      font-style: italic;
+      margin-bottom: 25px;
+    }
+
     margin-top: 0;
-    font-style: italic;
     border-bottom: 4px solid $blue-color-light;
     background-color: $white-color;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 0px;
@@ -1047,6 +1052,13 @@ table.members {
 }
 
 .data-page {
+  .disclaimer-info {
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 300;
+
+    margin-top: 25px;
+  }
   .publication-head, .release-head, .plot-head {
     display: block;
     h2, h3, h4 {

@@ -6,6 +6,7 @@ order: 20
 ---
 
 <div class="page data-page">
+
     {% for publication in site.publications %}
     {% assign publication_plots = site.plots | to_publication_plots: publication.slug %}
     <div class="publication">
@@ -62,4 +63,8 @@ order: 20
         </div>
     </div>
     {% endfor%}
+
+    <p class="disclaimer-info">
+        {{ site.data_disclaimer }}
+    </p>
 </div>

@@ -12,7 +12,7 @@ plots:
         - vega/plot_daily-count_cumulative-daily-counts-by-country.json
 ---
 
-The plots on this page display positive cases, new deaths, ICU admissions over time by country.
+The plots on this page display positive cases and new deaths over time by country.
 
 ### How to use
 
