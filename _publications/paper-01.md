@@ -11,8 +11,9 @@ releases:
             This initial release includes data from 21 institutions.
 ---
 
-<img src="{{ "/plots/paper-01/release-2020-04-11/png/4ce-consortium_overview.png" | relative_url }}" />
+{% include_relative paper-01_4ce_consortium_overview.html %}
 
+## Abstract
 
 ### Introduction
     
