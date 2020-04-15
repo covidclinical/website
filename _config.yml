@@ -28,6 +28,10 @@ baseurl: "" # the subpath of your site, e.g. /blog
 collections:
   plots:
     output: true
+    sort_by: order
+  publications:
+    output: true
+    sort_by: order
 
 defaults:
   - scope:
@@ -35,6 +39,11 @@ defaults:
       type: "plots"
     values:
       layout: "plot"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
 
 # Build settings
 theme: minima

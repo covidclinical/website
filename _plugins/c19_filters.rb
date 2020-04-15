@@ -12,6 +12,15 @@ module Jekyll::C19Filters
       end
     end
 
+    def to_plot_publication(publications, plot_relative_path)
+      path_items = plot_relative_path.split(File::SEPARATOR)
+      publications.select do |publication|
+        if path_items[1] == publication.slug
+          return publication
+        end
+      end
+    end
+
     def to_publication_plots(site_plots, key)
       result = site_plots.select do |plot|
         path_items = plot.relative_path.split(File::SEPARATOR)

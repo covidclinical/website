@@ -15,10 +15,11 @@ permalink: /index.html
     <div class="box important">
         <h3>Phase 1 Results</h3>
         <p>
-            Results from the first phase of data acquisition and analysis have been submitted to medRxiv as a preprint, "{{ site.data.publications.paper-01.title }}."
+            {% assign paper-01 = site.publications | where: "slug", "paper-01" | first %}
+            Results from the first phase of data acquisition and analysis have been submitted to medRxiv as a preprint, "{{ paper-01.title }}."
 
             <div class="buttons">
-                <a href="{{ site.data.publications.paper-01.url }}" target="_blank"><span>Read on medRxiv</span>&nbsp;&rarr;</a>
+                <a href="{{ paper-01.paper_url }}" target="_blank"><span>Read on medRxiv</span>&nbsp;&rarr;</a>
                 <a href="{{ "/data/index.html" | relative_url }}"><span>Explore the data</span>&nbsp;&rarr;</a>
             </div>
         </p>

@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="page publication-page">
+  <h1 class="page-heading">{{ page.title }}</h1>
+  <a class="plot-data-back" href="{{ "/data/index.html" | relative_url }}">&larr; Data</a>
+
+  {{ content }}
+
+
+  <a href="{{ page.paper_url }}">Read on {{ page.journal }} &rarr;</a>
+  <br/><br/>
+  <a href="{{ "/data/index.html#publication_" }}{{ page.slug }}">Explore the data &rarr;</a>
+</div>

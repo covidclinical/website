@@ -6,122 +6,60 @@ order: 20
 ---
 
 <div class="page data-page">
-        {% assign sorted_publications = site.data.publications %}
-        {% for publication in sorted_publications %}
-        {% assign publication_plots = site.plots | to_publication_plots: publication[0] %}
-        <div class="publication">
-            <div class="publication-head">
-                <h2 id="publication_{{ publication[0] }}">{{ publication[1].title }}</h2>
-                <span class="pill">Publication</span>
-                {% comment %}
-                <p>{{ publication[1].abstract | markdownify }}</p>
-                {% endcomment %}<br/>
-                <a class="paper-link" href="{{ publication[1].url }}">Read on {{ publication[1].journal }} &rarr;</a>
-            </div>
-            <div class="publication-body">
-                {% assign sorted_releases = publication[1].releases %}
-                {% for release in publication[1].releases %}
-                {% assign release_plots = publication_plots | to_release_plots: release[0] %}
-                <div class="release">
-                    <div class="release-head">
-                        <h3 id="publication_{{ publication[0] }}_{{ release[0] }}">Data Release: {{ release[1].name }}</h3>
-                        <span class="pill">Data Release</span>
-                    </div>
-                    <div class="release-body">
-                        {% assign sorted_release_plots = release_plots | sort: "order" %}
-                        {% for plot in sorted_release_plots %}
-                        {% if plot.type != "hidden" %}
+    {% for publication in site.publications %}
+    {% assign publication_plots = site.plots | to_publication_plots: publication.slug %}
+    <div class="publication">
+        <div class="publication-head">
+            <a href="{{ publication.url | relative_url }}"><h2 id="publication_{{ publication.slug }}">{{ publication.title }}</h2></a>
+            <span class="pill">Publication</span>
+        </div>
+        <div class="publication-body">
+            {% for release in publication.releases %}
+            {% assign release_plots = publication_plots | to_release_plots: release[0] %}
+            <div class="release">
+                <div class="release-head">
+                    <h3 id="publication_{{ publication.slug }}_{{ release[0] }}">Data Release: {{ release[1].name }}</h3>
+                    <span class="pill">Data Release</span>
+                </div>
+                <div class="release-body">
+                    {% for plot in release_plots %}
+                    {% if plot.type != "hidden" %}
+                        {% case plot.type %}
+                        {% when "plot" %}
+                            {% assign plot_url = plot.url | relative_url %}
+                        {% when "dataset" %}
+                            {% assign plot_url = plot.download_url %}
+                        {% endcase %}
+                    <a class="plot" href="{{ plot_url }}" title="{{ plot.title }}">
+                        <div class="plot-left">
                             {% case plot.type %}
                             {% when "plot" %}
-                                {% assign plot_url = plot.url | relative_url %}
+                                {% include icon-plot.html %}
                             {% when "dataset" %}
-                                {% assign plot_url = plot.download_url %}
+                                {% include icon-dataset.html %}
                             {% endcase %}
-                        <a class="plot" href="{{ plot_url }}" title="{{ plot.title }}">
-                            <div class="plot-left">
+                        </div>
+                        <div class="plot-right">
+                            <div class="plot-head">
+                                <h4 id="publication_{{ publication.slug }}_{{ release[0] }}_{{ plot.title | slugify }}">{{ plot.title }}</h4>
                                 {% case plot.type %}
                                 {% when "plot" %}
-                                    {% include icon-plot.html %}
+                                    <span class="pill pill-plot">Visualization</span>
                                 {% when "dataset" %}
-                                    {% include icon-dataset.html %}
+                                    <span class="pill pill-dataset">Download</span>
                                 {% endcase %}
                             </div>
-                            <div class="plot-right">
-                                <div class="plot-head">
-                                    <h4 id="publication_{{ publication[0] }}_{{ release[0] }}_{{ plot.title | slugify }}">{{ plot.title }}</h4>
-                                    {% case plot.type %}
-                                    {% when "plot" %}
-                                        <span class="pill pill-plot">Visualization</span>
-                                    {% when "dataset" %}
-                                        <span class="pill pill-dataset">Download</span>
-                                    {% endcase %}
-                                </div>
-                                <div class="plot-body">
-                                    <h5>{{ plot.subtitle }}</h5>
-                                </div>
+                            <div class="plot-body">
+                                <h5>{{ plot.subtitle }}</h5>
                             </div>
-                        </a>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
-        </div>
-        {% endfor%}
-
-
-        {% comment %}
-        {% for release in site.data.releases %}
-
-        <div class="release-container">
-            <p class="release-name">{{ release.name }}</p>
-            {% assign items_by_category = site.plots | where: "release", release.key | group_by: 'category' | sort: "name" %}
-            {% for item_category in items_by_category %}
-                {% assign category_plots = item_category.items | where: "type", "plot" | sort: "order" %}
-                {% assign category_datasets = item_category.items | where: "type", "dataset" | sort: "order" %}
-                <div class="category-card">
-                    <div class="category-card-header">
-                        <h3 class="category-name">{{ item_category.name }}</h3>
-                        <div class="category-column-name">
-                            <div>{% if category_plots.size > 0 %}Visualizations{% endif %}</div>
-                            <div>{% if category_datasets.size > 0 %}Downloads{% endif %}</div>
-                        </div>
-                    </div>
-
-                    <div class="category-columns">
-                        <div class="category-column-plots">
-                            {% for plot in category_plots %}
-                                <div class="item">
-                                    <div class="item-info">
-                                        <a href="{{ plot.url | relative_url }}" title="View plots">{{ plot.title }}</a>
-                                        <h5>{{ plot.subtitle }}</h5>
-                                    </div>
-                                    <div class="item-icon">
-                                        <a href="{{ plot.url | relative_url }}" title="View plots">{% include icon-plot.html %}</a>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                        <div class="category-column-datasets">
-                            {% for dataset in category_datasets %}
-                                <div class="item">
-                                    <div class="item-info">
-                                        {{ dataset.title }}
-                                        <h5>{{ dataset.subtitle }}</h5>
-                                    </div>
-                                    <div class="item-icon">
-                                        <a href="{{ dataset.file_url | relative_url }}" title="Download data">{% include icon-dataset.html %}</a>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
             {% endfor %}
         </div>
-        {%  endfor %}
-        {% endcomment %}
-   
-
+    </div>
+    {% endfor%}
 </div>

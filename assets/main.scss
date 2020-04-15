@@ -807,25 +807,26 @@ table.members {
   
 }
 
+.plot-data-back {
+  font-size: 14px;
+  margin-right: 10px;
+
+  color: $brand-color;
+  text-decoration: none;
+  
+  &:visited {
+    color: $brand-color;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  display: inline-block;
+}
+
 
 .plot-page {
-  .plot-data-back {
-    font-size: 14px;
-    margin-right: 10px;
-  
-    color: $brand-color;
-    text-decoration: none;
-    
-    &:visited {
-      color: $brand-color;
-    }
-  
-    &:hover {
-      text-decoration: underline;
-    }
-  
-    display: inline-block;
-  }
   
   .paper-info {
     margin-top: 20px;
@@ -1062,20 +1063,20 @@ table.members {
 
   .publication {
     .publication-head {
+      a {
+        color: $black-color-light;
+        text-decoration: none;
+      }
       h2 {
         @include relative-font-size(1.25);
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
       p {
         margin-top: 10px;
         font-size: 12px;
-      }
-      a.paper-link {
-        font-size: 14px;
-        color: $brand-color;
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-        }
       }
       margin-bottom: 15px;
       .pill {
@@ -1147,5 +1148,16 @@ table.members {
         margin-bottom: 0;
       }
     }
+  }
+}
+
+
+.publication-page {
+  h1 {
+    margin-bottom: 5px;
+  }
+
+  .plot-data-back {
+    margin-bottom: 15px;
   }
 }
