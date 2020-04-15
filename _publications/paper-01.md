@@ -1,5 +1,7 @@
 ---
 title: "International Electronic Health Record-Derived COVID-19 Clinical Course Profile: The 4CE Consortium"
+author: 4CE Consortium
+date:   2020-04-13 00:00:00 -0500
 paper_url: https://covidclinical.net/#
 paper_type: preprint
 journal: medRxiv (currently undergoing screening)

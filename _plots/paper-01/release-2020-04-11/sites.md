@@ -1,6 +1,6 @@
 ---
 type: plot
-title: Site Locations by Continent
+title: Participating Healthcare Systems by Continent
 subtitle: Maps of continents on which there are participating sites
 category: Other
 notebook: 07_map_altair.ipynb
