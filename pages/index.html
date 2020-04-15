@@ -33,6 +33,7 @@ permalink: /index.html
         </p>
     </div>
     
+
     <div class="home-map-horizontal">
         <div id="continents-map-horizontal"></div>
     </div>
@@ -45,11 +46,14 @@ permalink: /index.html
 <!-- External -->
 {% include js-tags.html %}
 
+<!-- Maps -->
 <script type="text/javascript">
 
     const horizontalPlotUrl = "{{ "/plots/paper-01/release-2020-04-11/vega/plot_map_sites-by-continent-horizontal.json" | relative_url }}";
     const verticalPlotUrl = "{{ "/plots/paper-01/release-2020-04-11/vega/plot_map_sites-by-continent-vertical.json" | relative_url }}";
     
+    const fontName = "Inter";
+
     vegaEmbed(
         `#continents-map-horizontal`,
         horizontalPlotUrl,
@@ -63,7 +67,24 @@ permalink: /index.html
         verticalPlotUrl,
         {
             renderer: "canvas",
-            actions: false
+            actions: false,
+            config: { // https://vega.github.io/vega/docs/config/
+                title: {
+                    font: fontName,
+                    subtitleFont: fontName
+                },
+                legend: {
+                    titleFont: fontName,
+                    labelFont: fontName
+                },
+                axis: {
+                    titleFont: fontName,
+                    labelFont: fontName
+                },
+                text: {
+                    font: fontName
+                }
+            }
         }
     );
 </script>

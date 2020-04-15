@@ -11,6 +11,9 @@ releases:
             This initial release includes data from 21 institutions.
 ---
 
+<img src="{{ "/plots/paper-01/release-2020-04-11/png/4ce-consortium_overview.png" | relative_url }}" />
+
+
 ### Introduction
     
 The Coronavirus Disease 2019 (COVID-19) epidemic has caused extreme strains on health systems, public health infrastructure, and economies of many countries. 
@@ -31,3 +34,7 @@ These non-interlinked files encompassed, for COVID-19 patients, daily case count
 ### Conclusions
 
 In under two weeks, we formed an international community of researchers to answer critical clinical and epidemiological questions around COVID-19. Harmonized data sets analyzed locally and shared as aggregate data has allowed for rapid analysis and visualization of regional differences and global commonalities. Despite the limitations of our datasets, we have established a framework to capture the trajectory of COVID-19 disease in various subsets of patients and in response to interventions.
+
+<a href="{{ page.paper_url }}">Read on {{ page.journal }} &rarr;</a>
+<br/><br/>
+<a href="{{ "/data/index.html" | relative_url }}#publication_{{ page.slug }}">Explore the data &rarr;</a>
