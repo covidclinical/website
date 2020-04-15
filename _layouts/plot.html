@@ -68,7 +68,7 @@ layout: default
     const pageUrl = "{{ page.url | relative_url }}";
     const notebookUrl = "https://github.com/{{ site.data.constants.repos.notebooks }}/blob/master/notebooks/{{ page.notebook }}";
     const binderUrl = "https://mybinder.org/v2/gh/{{ site.data.constants.repos.notebooks }}/master?filepath=notebooks%2F{{ page.notebook }}";
-    const showBinderLink = {{ page.binder | jsonify }};
+    const showBinder = {{ page.binder | jsonify }};
 
 
     const vegaLabelMap = new Map(Object.entries({
@@ -182,7 +182,8 @@ layout: default
         view: (vnode) => {
             return m("div", { class: "inner-top" }, [
                 m("div", { class: "top-actions" }, [
-                    m("a", { href: notebookUrl, target: "_blank" }, "View Notebook on GitHub"),
+                    ...(showBinder ? [ m("a", { href: binderUrl, target: "_blank" }, "Launch Jupyter Notebook") ] : []),
+                    m("a", { href: notebookUrl, target: "_blank" }, "View Jupyter Notebook"),
                     ...(plotsType === "hash" ? [ m("a", { href: pageUrl + "?tab=" + tabs.indexOf(currTab) }, "Link to this Tab") ] : [])
                 ]),
                 m("div", { class: "plot-list" }, vnode.attrs.plots.map(plotPath => m(PlotComponent, { plotPath, key: plotPath })))
