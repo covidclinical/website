@@ -20,67 +20,38 @@ bundle exec jekyll serve
 
 - Home page: edit `pages/index.html`
 - Members list: edit `_data/members.yml`
-- News: edit/add `_posts/{year}-{month}-{day}-your-post-title-here.markdown`
+- News: edit/add `_posts/{year}-{month}-{day}-your-post-title-here.md`
 - styles: edit `assets/main.scss`
+- external urls: edit `_data/constants.yml`
+- site title, subtitle, description, and short disclaimer: edit `config.yml`
 
-### Adding plots
+### Adding a publication and associated plots
 
-#### Making a new data release
+#### Adding a new publication
 
-- List the data release in `_data/releases.yml` and provide a name, unique key, and description.
-- Add a new directory in `_plots` with the new release name, for example `_plots/release-2020-mm-dd/` or `_plots/paper-02`
+- Add a new markdown file `_publications/{paper_slug}.md` with the proper frontmatter (see existing publication markdown files).
+- Add an abstract or description as the contents of the markdown file.
 
 #### Adding plot pages
 
+- Plots must be associated with a particular "data release". Be sure to add one under `releases:` in the publication frontmatter.
+
 - Add plot files to the release directory
-    - Add Vega-Lite files: `_plots/{release}/vega/{my_plot_file}.json`
-    - Add LineUp files: `_plots/{release}/lineup/{my_plot_file}.json`
+    - Add Vega-Lite files: `_plots/{paper_slug}/{release_slug}/vega/{my_plot_file}.json`
+    - Add LineUp files: `_plots/{paper_slug}/{release_slug}/lineup/{my_plot_file}.json`
     - Add image files:
-        - as PNG: `_plots/{release}/png/{my_plot_file}.png`
-        - as SVG: `_plots/{release}/svg/{my_plot_file}.svg`
+        - as PNG: `_plots/{paper_slug}/{release_slug}/png/{my_plot_file}.png`
+        - as SVG: `_plots/{paper_slug}/{release_slug}/svg/{my_plot_file}.svg`
 
-- Add a markdown file for each plot page: `_plots/{release}/{my_plot_page}.md`
-    - A plot page can contain multiple plots, either vertically stacked or in a tabbed layout.
-    - Add page properties as "frontmatter" to the top of the markdown file:
+- Add a markdown file for each plot page: `_plots/{paper_slug}/{release_slug}/{my_plot_page}.md`
+    - Add frontmatter to the top of the markdown file, and be sure to set `type: plot` (see existing plot markdown files).
+    - A plot page can contain multiple plots, either vertically stacked or in a tabbed layout (based on whether the `plots:` field is a hash vs. an array).
 
-Vertical stack example (use a list as the `plots` value):
-```yml
----
-title: Demographics for All Participating Sites
-subtitle: This is a subtitle
-category: Demographics
-notebook: 02_demographics.ipynb
-release: release-2020-mm-dd
-plots:
-    - vega/plot_age_by_country.json
-    - vega/plot_age_by_site.json
-    - lineup/plot_demographics_all.json
-    - png/plot_demographics_overview.png
----
+#### Adding dataset downloads
 
-The plots can be given a description in markdown here...
-```
-
-Tabbed layout example (use a dictionary as the `plots` value, mapping tabs to lists of plots):
-```yml
----
-title: Demographics for All Participating Sites
-subtitle: This is a subtitle
-category: Demographics
-notebook: 02_demographics.ipynb
-release: release-2020-mm-dd
-plots:
-    Overview:
-        - png/plot_demographics_all.png
-        - svg/plot_labs_all.svg
-    By Country:
-        - vega/plot_age_by_country.json
-    By Site:
-        - vega/plot_age_by_site.json
----
-
-The plots can be given a description in markdown here...
-```
+- Like plots, dataset downlaods must be associated with a particular release.
+- Add a markdown file for each dataset: `_plots/{paper_slug}/{release_slug}/{my_dataset}_data.md`
+    - Add frontmatter to the top of the markdown file, and be sure to set `type: dataset` (see existing dataset markdown files).
 
 ### Adding a new page
 
