@@ -54,39 +54,37 @@ permalink: /index.html
     const verticalPlotUrl = "{{ "/plots/paper-01/release-2020-04-11/vega/plot_map_sites-by-continent-vertical.json" | relative_url }}";
     
     const fontName = "Inter";
+    const vegaOptions = {
+        renderer: "canvas",
+        actions: false,
+        config: { // https://vega.github.io/vega/docs/config/
+            title: {
+                font: fontName,
+                color: "#424242",
+                subtitleFont: fontName
+            },
+            legend: {
+                titleFont: fontName,
+                labelFont: fontName
+            },
+            axis: {
+                titleFont: fontName,
+                labelFont: fontName
+            },
+            text: {
+                font: fontName
+            }
+        }
+    };
 
     vegaEmbed(
         `#continents-map-horizontal`,
         horizontalPlotUrl,
-        {
-            renderer: "canvas",
-            actions: false
-        }
+        vegaOptions
     );
     vegaEmbed(
         `#continents-map-vertical`,
         verticalPlotUrl,
-        {
-            renderer: "canvas",
-            actions: false,
-            config: { // https://vega.github.io/vega/docs/config/
-                title: {
-                    font: fontName,
-                    color: "#424242",
-                    subtitleFont: fontName
-                },
-                legend: {
-                    titleFont: fontName,
-                    labelFont: fontName
-                },
-                axis: {
-                    titleFont: fontName,
-                    labelFont: fontName
-                },
-                text: {
-                    font: fontName
-                }
-            }
-        }
+        vegaOptions
     );
 </script>
