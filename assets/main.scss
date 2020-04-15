@@ -320,7 +320,7 @@ $on-laptop:        1000px !default;
  /**
   * Tables
   */
- table {
+.table {
    margin-bottom: $spacing-unit;
    width: 100%;
    text-align: $table-text-align;
@@ -782,22 +782,23 @@ table.members {
       }
     }
   }
-
-  .home-map-vertical, .home-map-horizontal {
+  .home-map {
     width: 100%;
     overflow-x: hidden;
     margin-left: -6px;
-  }
 
-  .home-map-vertical {
-    @media screen and (min-width: 960px) {
-      display: none;
+    .home-map-vertical {
+      width: 312px;
+      margin: 0 auto;
+      @media screen and (min-width: 960px) {
+        display: none;
+      }
     }
-  }
 
-  .home-map-horizontal {
-    @media screen and (max-width: 960px) {
-      display: none;
+    .home-map-horizontal {
+      @media screen and (max-width: 960px) {
+        display: none;
+      }
     }
   }
 }
