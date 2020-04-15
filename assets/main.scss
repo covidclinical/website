@@ -941,6 +941,10 @@ table.members {
     box-sizing: border-box;
     font-weight: 300;
 
+    @include media-query($on-palm) {
+      padding-top: 2px;
+    }
+
     .tab-content {
       margin-top: 10px;
     }
@@ -949,6 +953,7 @@ table.members {
 
       @include media-query($on-palm) {
         overflow-x: scroll;
+        margin-top: 10px;
       }
 
       .vega-plot-container {
@@ -1039,6 +1044,15 @@ table.members {
     top: 5px;
     width: 100%;
 
+    @include media-query($on-palm) {
+      position: relative;
+      right: 0;
+      left: 0;
+      margin-left: 0;
+      padding-left: 0;
+      margin-top: 0;
+    }
+
     a, button {
       cursor: pointer;
       font-size: 14px;
@@ -1060,6 +1074,19 @@ table.members {
       &:hover {
         text-decoration: underline;
         color: $blue-color;
+      }
+
+      @include media-query($on-palm) {
+        float: none;
+        position: relative;
+        margin-left: 0;
+        margin-right: 0;
+        display: block;
+        font-size: 11px;
+        height: 16px;
+        line-height: 16px;
+        margin-left: 15px;
+        text-align: right;
       }
     }
   }
