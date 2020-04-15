@@ -32,8 +32,38 @@ permalink: /index.html
             If you are interested in joining the 4CE project, please visit the <a href="{{ "/join/index.html" | relative_url }}">join page</a>.
         </p>
     </div>
+    
+    <div class="home-map-horizontal">
+        <div id="continents-map-horizontal"></div>
+    </div>
+    <div class="home-map-vertical">
+        <div id="continents-map-vertical"></div>
+    </div>
 
 </div>
 
 <!-- External -->
 {% include js-tags.html %}
+
+<script type="text/javascript">
+
+    const horizontalPlotUrl = "{{ "/plots/paper-01/release-2020-04-11/vega/plot_map_sites-by-continent-horizontal.json" | relative_url }}";
+    const verticalPlotUrl = "{{ "/plots/paper-01/release-2020-04-11/vega/plot_map_sites-by-continent-vertical.json" | relative_url }}";
+    
+    vegaEmbed(
+        `#continents-map-horizontal`,
+        horizontalPlotUrl,
+        {
+            renderer: "canvas",
+            actions: false
+        }
+    );
+    vegaEmbed(
+        `#continents-map-vertical`,
+        verticalPlotUrl,
+        {
+            renderer: "canvas",
+            actions: false
+        }
+    );
+</script>

@@ -782,6 +782,24 @@ table.members {
       }
     }
   }
+
+  .home-map-vertical, .home-map-horizontal {
+    width: 100%;
+    overflow-x: hidden;
+    margin-left: -6px;
+  }
+
+  .home-map-vertical {
+    @media screen and (min-width: 960px) {
+      display: none;
+    }
+  }
+
+  .home-map-horizontal {
+    @media screen and (max-width: 960px) {
+      display: none;
+    }
+  }
 }
 
 
