@@ -43,7 +43,7 @@ layout: default
         <h3>Source Code</h3>
         <p>
             The code used to generate the plots on this page can be found in the 
-            <a href="{{ site.data.constants.urls.notebooks_repo }}">covidclinical/visualization-notebooks</a>
+            <a href="{{ site.data.constants.repos.notebooks }}">covidclinical/visualization-notebooks</a>
             GitHub repository.
         </p>
 
@@ -66,7 +66,9 @@ layout: default
     const plotsType = "{{ plots_type }}";
     const allPlots = {{ page.plots | jsonify }};
     const pageUrl = "{{ page.url | relative_url }}";
-    const notebookUrl = "{{ site.data.constants.urls.notebooks_repo }}/blob/master/notebooks/{{ page.notebook }}";
+    const notebookUrl = "https://github.com/{{ site.data.constants.repos.notebooks }}/blob/master/notebooks/{{ page.notebook }}";
+    const binderUrl = "https://mybinder.org/v2/gh/{{ site.data.constants.repos.notebooks }}/master?filepath=notebooks%2F{{ page.notebook }}";
+    const showBinderLink = {{ page.binder | jsonify }};
 
 
     const vegaLabelMap = new Map(Object.entries({
@@ -180,7 +182,7 @@ layout: default
         view: (vnode) => {
             return m("div", { class: "inner-top" }, [
                 m("div", { class: "top-actions" }, [
-                    m("a", { href: notebookUrl, target: "_blank" }, "View Jupyter Notebook"),
+                    m("a", { href: notebookUrl, target: "_blank" }, "View Notebook on GitHub"),
                     ...(plotsType === "hash" ? [ m("a", { href: pageUrl + "?tab=" + tabs.indexOf(currTab) }, "Link to this Tab") ] : [])
                 ]),
                 m("div", { class: "plot-list" }, vnode.attrs.plots.map(plotPath => m(PlotComponent, { plotPath, key: plotPath })))

@@ -4,6 +4,7 @@ title: Participating Healthcare Systems by Continent
 subtitle: Maps of continents on which there are participating sites
 category: Other
 notebook: 07_map_altair.ipynb
+binder: true
 order: 80
 plots:
     - vega/plot_map_sites-by-continent-horizontal.json
