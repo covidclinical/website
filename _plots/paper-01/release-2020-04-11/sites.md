@@ -8,6 +8,7 @@ binder: true
 order: 80
 plots:
     - vega/plot_map_sites-by-continent-horizontal.json
+    - lineup/plot_sites_site-metadata.json
 ---
 
 The plots on this page display participating sites in North America, Europe, and Asia.

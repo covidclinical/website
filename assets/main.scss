@@ -808,6 +808,7 @@ table.members {
 
 .wrapper-wide {
   .plot-page-narrow {
+    position: relative;
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
@@ -952,8 +953,19 @@ table.members {
     .plot-list {
 
       @include media-query($on-palm) {
-        overflow-x: scroll;
+        overflow-x: hidden;
         margin-top: 10px;
+      }
+
+      .vega-plot-container-outer {
+        width: 100%;
+        @include media-query($on-palm) {
+          position: relative;
+          overflow-y: hidden;
+          overflow-x: scroll;
+          display: inline-block;
+          max-height: 400px;
+        }
       }
 
       .vega-plot-container {
@@ -965,7 +977,7 @@ table.members {
         @include media-query($on-palm) {
           overflow-x: visible;
           transform: scale(0.5) translate(-50%, -50%);
-          height: 390px;
+          height: 200%;
         }
 
         .plot-item {
@@ -1029,7 +1041,7 @@ table.members {
     margin-top: 0;
     border-bottom: 4px solid $blue-color-light;
     background-color: $white-color;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 0px;

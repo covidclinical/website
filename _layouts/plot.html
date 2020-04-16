@@ -56,7 +56,7 @@ layout: default
 
 </div>
 
-<!-- External -->
+<!-- External (Mithril, Vega, LineUp) -->
 {% include js-tags.html %}
 
 <!-- Plots -->
@@ -102,14 +102,22 @@ layout: default
     function lineupEmbed(selector, fileUrl, options) {
         const el = document.querySelector(selector);
 
-        try {
-            d3.json(fileUrl).then(function(data) {
-                const lineup = LineUpJS.asLineUp(el, data);
-            });
-        } catch(e) {
-            console.warn(e);
-            console.warn("Warning: please make sure d3-fetch and lineup.js are uncommented in _includes/js-tags.html");
-        }
+        d3.json(fileUrl).then(function(data) {
+            const lineupBuilder = LineUpJS.builder(data)
+                .deriveColumns()
+                .deriveColors()
+                .defaultRanking(false);
+
+            for(let col of lineupBuilder.columns) {
+                if(col.type == "number") {
+                    col.domain[0] = 0;
+                }
+            }
+             
+            const lineup = lineupBuilder.build(el);
+            lineup.options.rowHeight = 25;
+            lineup.panel.collapsed = true;
+        });
     }
 
     function imgEmbed(selector, fileUrl, options) {
@@ -175,9 +183,13 @@ layout: default
             const plotPath = vnode.attrs.plotPath;
             const plotType = toPlotType(plotPath);
             const plotId = toPlotId(plotPath);
-            return m("div", { class: "plot-page-narrow", id: `plot-page-narrow_${plotId}` }, m("div", { class:  `${plotType}-plot-container` }, 
-                    m("div", { class: "plot-item", id: plotId })
-            ));
+            return m("div", { class: "plot-page-narrow", id: `plot-page-narrow_${plotId}` }, 
+                m("div", { class:  `${plotType}-plot-container-outer` }, 
+                    m("div", { class:  `${plotType}-plot-container` }, 
+                        m("div", { class: "plot-item", id: plotId })
+                    )
+                )
+            );
         }
     };
 
