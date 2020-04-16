@@ -1,11 +1,8 @@
+<!-- This site was last updated at {{ site.time | date: "%Y-%m-%d %H:%M" }} -->
 <head>
-
-  <!-- This site was last updated at {{ site.time | date: "%Y-%m-%d %H:%M" }} -->
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   
   <link rel="icon" href="{{ "/assets/images/favicon.ico" | relative_url }}" type="image/x-icon">
   <link rel="icon" href="{{ "/assets/images/favicon-96x96.png" | relative_url }}" type="image/png" sizes="96x96">
@@ -21,8 +18,9 @@
   <meta name="twitter:image" content="{{ "/assets/images/socialmedia-banner.png" | absolute_url }}">
   <meta name="twitter:card" content="summary_large_image">
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" async>
+  <link rel="stylesheet" href="{{ "/assets/css/lineup.css" | relative_url }}" async>
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/lineup.css" | relative_url }}">
 
   {%- if page.title -%}
     <title>{{ page.title }} - {{ site.title }}</title>

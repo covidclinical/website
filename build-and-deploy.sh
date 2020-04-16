@@ -7,7 +7,7 @@ if [ "$1" == "--prod" ]; then
     bundle exec jekyll build
     echo "* For production: syncing with bucket '$S3_BUCKET_4CE_PROD'"
     rm -f _site/robots.txt
-    aws s3 sync _site/ s3://$S3_BUCKET_4CE_PROD/
+    aws s3 sync _site/ s3://$S3_BUCKET_4CE_PROD/ --cache-control max-age=3600
 else
     bundle exec jekyll build --baseurl /$S3_DEV_BASE
 

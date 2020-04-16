@@ -76,14 +76,16 @@ permalink: /index.html
         }
     };
 
-    vegaEmbed(
-        `#continents-map-horizontal`,
-        horizontalPlotUrl,
-        vegaOptions
-    );
-    vegaEmbed(
-        `#continents-map-vertical`,
-        verticalPlotUrl,
-        vegaOptions
-    );
+    window.onload = () => {
+        vegaEmbed(
+            `#continents-map-horizontal`,
+            horizontalPlotUrl,
+            vegaOptions
+        );
+        vegaEmbed(
+            `#continents-map-vertical`,
+            verticalPlotUrl,
+            vegaOptions
+        );
+    }
 </script>

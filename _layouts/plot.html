@@ -102,9 +102,14 @@ layout: default
     function lineupEmbed(selector, fileUrl, options) {
         const el = document.querySelector(selector);
 
-        d3.json(fileUrl).then(function(data) {
-            const lineup = LineUpJS.asLineUp(el, data);
-        });
+        try {
+            d3.json(fileUrl).then(function(data) {
+                const lineup = LineUpJS.asLineUp(el, data);
+            });
+        } catch(e) {
+            console.warn(e);
+            console.warn("Warning: please make sure d3-fetch and lineup.js are uncommented in _includes/js-tags.html");
+        }
     }
 
     function imgEmbed(selector, fileUrl, options) {
