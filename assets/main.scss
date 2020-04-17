@@ -510,7 +510,7 @@ $on-laptop:        1000px !default;
 .footer-col-2 {
   width: 30%;
 
-  a {
+  span {
     float: right;
     margin: 0 5px;
   }
@@ -820,7 +820,8 @@ table.members {
     .plot-list {
       /* PLOT STYLE EXCEPTIONS */
       #plot-page-narrow_vega_plot_labs_five-lab-values-by-site_json,
-      #plot-page-narrow_vega_plot_daily-count_normalized-change-by-country_json {
+      #plot-page-narrow_vega_plot_daily-count_normalized-change-by-country_json,
+      #plot-page-narrow_lineup_plot_sites_site-metadata_json {
         @include vega-plot-wide();
       }
     }

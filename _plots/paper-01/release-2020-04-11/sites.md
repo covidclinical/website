@@ -7,7 +7,9 @@ notebook: 07_map_altair.ipynb
 binder: true
 order: 80
 plots:
+    Map View:
     - vega/plot_map_sites-by-continent-horizontal.json
+    Table View:
     - lineup/plot_sites_site-metadata.json
 ---
 
