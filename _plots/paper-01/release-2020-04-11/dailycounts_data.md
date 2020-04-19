@@ -1,5 +1,5 @@
 ---
-type: hidden
+type: dataset
 title: Daily Counts Data
 subtitle: Download daily patient counts data
 category: Daily Counts

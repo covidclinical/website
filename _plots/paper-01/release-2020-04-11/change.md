@@ -4,6 +4,7 @@ title: Normalized Change by Country
 subtitle: Comparison to data from JHU CSSE
 category: Other
 notebook: 06_change_in_new_cases_by_country_altair.ipynb
+binder: true
 order: 70
 plots:
     - vega/plot_daily-count_normalized-change-by-country.json
