@@ -4,6 +4,7 @@ title: Labs by Country and Site
 subtitle: Lab values corresponding to fourteen LOINC codes
 category: Labs
 notebook: 03_lab_results_altair.ipynb
+binder: true
 order: 50
 plots:
     Key Labs Overview:
