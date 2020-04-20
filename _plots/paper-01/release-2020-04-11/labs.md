@@ -3,22 +3,33 @@ type: plot
 title: Labs by Country and Site
 subtitle: Lab values corresponding to fourteen LOINC codes
 category: Labs
-notebook: 03_lab_results_altair.ipynb
 binder: true
 order: 50
 plots:
     Key Labs Overview:
-        - vega/plot_labs_five-lab-values-by-site.json
+        notebook: 03_lab_results_altair.ipynb
+        items:
+            - vega/plot_labs_five-lab-values-by-site.json
     By Country:
-        - vega/plot_labs_lab-values-by-country.json
+        notebook: 03_lab_results_altair.ipynb
+        items:
+            - vega/plot_labs_lab-values-by-country.json
     By Site:
-        - vega/plot_labs_lab-values-by-site.json
+        notebook: 03_lab_results_altair.ipynb
+        items:
+            - vega/plot_labs_lab-values-by-site.json
     Variation:
-        - vega/plot_labs_lab-variation-across-sites-on-day-0.json
+        notebook: 04_lab_variation_altair.ipynb
+        items:
+            - vega/plot_labs_lab-variation-across-sites-on-day-0.json
     Drop Ratio By Country:
-        - vega/plot_labs_percentage-of-measured-relative-to-baseline-by-country.json
+        notebook: 05_lab_drop_plots_altair.ipynb
+        items:
+            - vega/plot_labs_percentage-of-measured-relative-to-baseline-by-country.json
     Drop Ratio By Site:
-        - vega/plot_labs_percentage-of-measured-relative-to-baseline-by-site.json
+        notebook: 05_lab_drop_plots_altair.ipynb
+        items:
+            - vega/plot_labs_percentage-of-measured-relative-to-baseline-by-site.json
 ---
 
 The plots on this page display values corresponding to LOINC codes, stratified by country or by site.

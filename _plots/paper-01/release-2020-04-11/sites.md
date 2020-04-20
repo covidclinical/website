@@ -3,14 +3,17 @@ type: plot
 title: Participating Healthcare Systems by Continent
 subtitle: Maps of continents on which there are participating sites
 category: Other
-notebook: 07_map_altair.ipynb
 binder: true
 order: 80
 plots:
     Map View:
-    - vega/plot_map_sites-by-continent-horizontal.json
+        notebook: 07_map_altair.ipynb
+        items:
+            - vega/plot_map_sites-by-continent-horizontal.json
     Table View:
-    - lineup/plot_sites_site-metadata.json
+        notebook: 08_sites_lineup.ipynb
+        items:
+            - lineup/plot_sites_site-metadata.json
 ---
 
 The plots on this page display participating sites in North America, Europe, and Asia.

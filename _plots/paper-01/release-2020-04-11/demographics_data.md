@@ -1,5 +1,5 @@
 ---
-type: dataset
+type: hidden
 title: Demographics Data
 subtitle: Download demographics data
 category: Demographics

@@ -59,11 +59,17 @@ layout: default
 
     // Global variables.
     const plotsType = "{{ plots_type }}";
-    const allPlots = {{ page.plots | jsonify }};
+    const plotsJson = {{ page.plots | jsonify }};
     const pageUrl = "{{ page.url | relative_url }}";
-    const notebookUrl = "https://github.com/{{ site.data.constants.repos.notebooks }}/blob/master/notebooks/{{ page.notebook }}";
-    const binderUrl = "https://mybinder.org/v2/gh/{{ site.data.constants.repos.notebooks }}/master?filepath=notebooks%2F{{ page.notebook }}";
+    const notebookUrlBase = "https://github.com/{{ site.data.constants.repos.notebooks }}/blob/master/notebooks/";
+    const binderUrlBase = "https://mybinder.org/v2/gh/{{ site.data.constants.repos.notebooks }}/master?filepath=notebooks%2F";
+    const notebook = {{ page.notebook | jsonify }};
     const showBinder = {{ page.binder | jsonify }};
+
+    let allPlots;
+    let allNotebooks;
+    let tabs;
+    let currTab;
 
 
     const vegaLabelMap = new Map(Object.entries({
@@ -78,7 +84,6 @@ layout: default
         "Sex_sex": "Sex"
     }));
 
-    let currTab;
 
     // Helper functions.
     function toPlotType(plotPath) {
@@ -188,14 +193,12 @@ layout: default
         }
     };
 
-    const tabs = Object.keys(allPlots);
-
     const ListComponent = {
         view: (vnode) => {
             return m("div", { class: "inner-top" }, [
                 m("div", { class: "top-actions" }, [
-                    ...(showBinder ? [ m("a", { href: binderUrl, target: "_blank" }, "Launch Jupyter Notebook") ] : []),
-                    m("a", { href: notebookUrl, target: "_blank" }, "View Jupyter Notebook"),
+                    ...(showBinder ? [ m("a", { href: binderUrlBase + (plotsType === "hash" ? allNotebooks[currTab] : notebook), target: "_blank" }, "Launch Jupyter Notebook") ] : []),
+                    m("a", { href: notebookUrlBase + (plotsType === "hash" ? allNotebooks[currTab] : notebook), target: "_blank" }, "View Jupyter Notebook"),
                     ...(plotsType === "hash" ? [ m("a", { href: pageUrl + "?tab=" + tabs.indexOf(currTab) }, "Link to this Tab") ] : [])
                 ]),
                 m("div", { class: "plot-list" }, vnode.attrs.plots.map(plotPath => m(PlotComponent, { plotPath, key: plotPath })))
@@ -242,6 +245,21 @@ layout: default
         const mPlotsDiv = document.querySelector("#m-plots");
 
         if(plotsType === "hash") {
+            tabs = Object.keys(plotsJson);
+            allPlots = Object.fromEntries(
+                Object.entries(plotsJson)
+                    .map(([k, v]) => ([
+                        k, 
+                        (Array.isArray(v) ? v : v.items)
+                    ]))
+            );
+            allNotebooks = Object.fromEntries(
+                Object.entries(plotsJson)
+                    .map(([k, v]) => ([
+                        k,
+                        (Array.isArray(v) ? notebook : v.notebook)
+                    ]))
+            );
             try {
                 const urlParams = new URLSearchParams(window.location.search);
                 const tabParam = urlParams.get('tab');
@@ -256,6 +274,7 @@ layout: default
             }
             m.mount(mPlotsDiv, TabsComponent);
         } else {
+            allPlots = plotsJson;
             m.render(mPlotsDiv, m(ListComponent, { plots: allPlots }));
         }
 
