@@ -61,8 +61,8 @@ layout: default
     const plotsType = "{{ plots_type }}";
     const plotsJson = {{ page.plots | jsonify }};
     const pageUrl = "{{ page.url | relative_url }}";
-    const notebookUrlBase = "https://github.com/{{ site.data.constants.repos.notebooks }}/blob/master/notebooks/";
-    const binderUrlBase = "https://mybinder.org/v2/gh/{{ site.data.constants.repos.notebooks }}/master?filepath=notebooks%2F";
+    const notebookUrlBase = "https://github.com/{{ site.data.constants.repos.notebooks }}/blob/v1.0/notebooks/";
+    const binderUrlBase = "https://mybinder.org/v2/gh/{{ site.data.constants.repos.notebooks }}/v1.0?filepath=notebooks%2F";
     const notebook = {{ page.notebook | jsonify }};
     const showBinder = {{ page.binder | jsonify }};
 
