@@ -8,9 +8,9 @@ binder: true
 order: 30
 plots:
     By Sex:
-        - vega/plot_demographics_demographics-by-sex.json
+        - vega/plot_demographics_demographics-by-sex-with-confidence-intervals.json
     By Country:
-        - vega/plot_demographics_demographics-by-country.json
+        - vega/plot_demographics_demographics-by-country-with-confidence-intervals.json
 ---
 
 The plot on this page displays the number of patients by country, sex, and age group.

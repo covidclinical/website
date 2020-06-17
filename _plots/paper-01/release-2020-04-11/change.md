@@ -1,16 +1,16 @@
 ---
 type: plot
-title: Normalized Change by Country
+title: Case Rate by Country
 subtitle: Comparison to data from JHU CSSE
 category: Other
-notebook: 06_change_in_new_cases_by_country_altair.ipynb
+notebook: 06_case_rate_by_country_7_day_avg_altair.ipynb
 binder: true
 order: 70
 plots:
-    - vega/plot_daily-count_normalized-change-by-country.json
+    - vega/plot_daily-count_country-level-rate-of-positive-cases.json
 ---
 
-The plots on this page display change in `New positive cases` by country, comparing the normalized change in 4CE daily counts to the country-level confirmed case data provided by [Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE)](https://systems.jhu.edu/research/public-health/ncov/).
+The plots on this page display 7-day average of the adjusted rate of change in `New positive cases` by country, comparing the rates of 4CE daily counts to the country-level confirmed case data provided by [Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE)](https://systems.jhu.edu/research/public-health/ncov/).
 
 ### How to use
 
