@@ -7,9 +7,7 @@ notebook:
 binder: false
 order: 10
 plots:
-    - vega/plot_1-1-lab_lab-by-site.json
-    - vega/plot_1-1-labs_lab-roc-distrubution.json
-    - vega/plot_1-1-labs_lab-variation-across-sites-on-day-0.json
+
 ---
 
 
