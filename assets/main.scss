@@ -1137,8 +1137,15 @@ table.members {
     }
   }
 
+  .release-head h3 {
+    color: #8e8e8e;
+    font-size: 15px;
+  }
+
   .publication {
+    margin-bottom: 25px;
     .publication-head {
+      margin-bottom: 5px;
       a {
         color: $black-color-light;
         text-decoration: none;
@@ -1154,14 +1161,10 @@ table.members {
         margin-top: 10px;
         font-size: 12px;
       }
-      margin-bottom: 15px;
       .pill {
         display: none;
         background-color: rgb(240, 163, 176);
       }
-    }
-    .publication-body {
-
     }
   }
 
