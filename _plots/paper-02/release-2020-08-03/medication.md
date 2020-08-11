@@ -9,7 +9,7 @@ order: 10
 plots:
     - vega/plot_1-1-med_medication-risk-difference.json
     - vega/plot_1-1-med_medication-risk-difference-before-admission.json
-    - vega/plot_1-1-med_medication-risk-difference-after-admission.json
+    - vega/plot_1-1-med_medication-risk-difference-since-admission.json
     - vega/plot_1-1-med_diuretic-vs-creatine.json
 ---
 
