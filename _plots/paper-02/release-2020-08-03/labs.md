@@ -11,7 +11,6 @@ plots:
     - vega/plot_1-1-lab_lab-by-country.json
     - vega/plot_1-1-labs_lab-roc-distrubution.json
     - vega/plot_1-1-labs_lab-variation-across-sites-on-day-0.json
-    - vega/plot_1-1-med_medication-risk-difference.json
 ---
 
 
