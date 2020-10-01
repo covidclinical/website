@@ -1,6 +1,6 @@
 urls:
   i2b2: https://transmartfoundation.org/
-  join: https://transmartfoundation.org/covid-19-community-project/
+  join: https://i2b2transmart.org/covid-19-community-project/
 repos:
   notebooks: covidclinical/visualization-notebooks
   website: covidclinical/website
