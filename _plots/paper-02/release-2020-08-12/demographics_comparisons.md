@@ -7,6 +7,9 @@ notebook:
 binder: false
 order: 10
 plots:
+    - vega/plot_demographics_plot-risk-comparison-for-age-group-with-country-rowfacet.json
+    - vega/plot_demographics_plot-risk-comparison-for-race-with-country-rowfacet.json
+    - vega/plot_demographics_plot-risk-comparison-for-sex-with-country-rowfacet.json
     - vega/plot_demographics_plot-risk-comparison-for-age-group-by-country.json
     - vega/plot_demographics_plot-risk-comparison-for-race-by-country.json
     - vega/plot_demographics_plot-risk-comparison-for-sex-by-country.json
