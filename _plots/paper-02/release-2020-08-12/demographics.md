@@ -7,6 +7,10 @@ notebook:
 binder: false
 order: 10
 plots:
+    - vega/plot_demographics-adult_plot-race-country-dropdown-usa.json
+    - vega/plot_demographics-adult_plot-race-country-dropdown.json
+    - vega/plot_demographics-adult_plot-age-group-country-dropdown.json
+    - vega/plot_demographics-adult_plot-sex-country-dropdown.json
     - vega/plot_demographics-adult_percentage-plot-age-group-colfacet-sex-x-and-severity-and-country.json
     - vega/plot_demographics-adult_percentage-plot-age-group-colfacet-sex-dropdown-and-severity-and-country.json
     - vega/plot_demographics-adult_percentage-plot-age-group-colfacet-race-x-and-severity-and-country.json
