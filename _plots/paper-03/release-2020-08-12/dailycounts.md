@@ -9,9 +9,11 @@ order: 10
 plots:
     - vega/plot_daily-counts-pediatric_cumulative-daily-counts-by-country-and-severity.json
     - vega/plot_daily-counts-pediatric_cumulative-daily-counts-by-severity-with-country-dropdown.json
-    - vega/plot_daily-counts-pediatric_daily-counts-by-country-and-severity.json
+    - vega/plot_daily-counts-pediatric_new-hospitalized-patients-by-country-and-severity.json
+    - vega/plot_daily-counts-pediatric_new-hospitalized-patients-by-severity-with-country-dropdown.json
+    - vega/plot_daily-counts-pediatric_num-hospitalized-patients-by-country-and-severity.json
+    - vega/plot_daily-counts-pediatric_num-hospitalized-patients-by-severity-with-country-dropdown.json
     - vega/plot_daily-counts-pediatric_daily-counts-by-country-with-variable-dropdown.json
-    - vega/plot_daily-counts-pediatric_daily-counts-by-severity-with-country-dropdown.json
 ---
 
 The plots on this page display the number of pediatric patients over time by country and severity.
