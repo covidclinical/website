@@ -297,6 +297,27 @@
         - MDS
         - DSI
         - AT
+    - name: Deanne Taylor
+      affiliations:
+        - Children's Hospital of Philadelphia
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Ian Krantz
+      affiliations:
+        - Children's Hospital of Philadelphia
+      working_groups:
+        - MDS
+        - DSI
+        - AT
+    - name: Nadir Yehya
+      affiliations:
+        - Children's Hospital of Philadelphia
+      working_groups:
+        - MDS
+        - DSI
+        - AT
 - cluster: Mannheim
   location: Germany
   institutions:
