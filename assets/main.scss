@@ -19,6 +19,7 @@ $background-color: #edece8 !default;
 $brand-color:      #3170AD !default;
 
 $blue-color: #3170AD;
+$blue-color-dark: #23507e;
 $blue-color-light: #BFD4E7; 
 
 $black-color: #000000;
@@ -779,6 +780,10 @@ table.members {
       }
       p {
         color: $white-color;
+      }
+
+      &.dark {
+          background-color: $blue-color-dark;
       }
     }
   }
