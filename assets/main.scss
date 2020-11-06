@@ -802,6 +802,7 @@ table.members {
     }
 
     .home-map-horizontal {
+      text-align: center;
       @media screen and (max-width: 960px) {
         display: none;
       }
