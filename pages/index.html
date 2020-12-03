@@ -24,6 +24,18 @@ permalink: /index.html
             </div>
         </p>
     </div>
+
+    <div class="box important dark">
+        <h3>Phase 1.1 Severity Definition Results</h3>
+        <p>
+            {% assign paper-02 = site.publications | where: "slug", "paper-02" | first %}
+            Results from Phase 1.1 of data acquisition and analysis have been submitted to medRxiv as a preprint, "{{ paper-02.title }}."
+
+            <div class="buttons">
+                <a href="{{ paper-02.paper_url }}" target="_blank"><span>Read on {{ paper-02.journal }}</span>&nbsp;&rarr;</a>
+            </div>
+        </p>
+    </div>
     
     <div class="home-map">
         <div class="home-map-horizontal">
@@ -52,8 +64,8 @@ permalink: /index.html
 <!-- Maps -->
 <script type="text/javascript">
 
-    const horizontalPlotUrl = "{{ "/plots/paper-01/release-2020-04-11/vega/plot_map_sites-by-continent-horizontal.json" | relative_url }}";
-    const verticalPlotUrl = "{{ "/plots/paper-01/release-2020-04-11/vega/plot_map_sites-by-continent-vertical.json" | relative_url }}";
+    const horizontalPlotUrl = "{{ "/assets/plots/vega/plot_map_sites-by-continent-horizontal.json" | relative_url }}";
+    const verticalPlotUrl = "{{ "/assets/plots/vega/plot_map_sites-by-continent-vertical.json" | relative_url }}";
     
     const fontName = "Inter";
     const vegaOptions = {

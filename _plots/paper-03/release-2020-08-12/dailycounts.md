@@ -7,13 +7,17 @@ notebook:
 binder: false
 order: 10
 plots:
-    - vega/plot_daily-counts-pediatric_new-hospitalized-patients-by-country-with-country-rate.json
-    - vega/plot_daily-counts-pediatric_new-hospitalized-patients-by-country-with-country-rate-and-dropdown.json
+    - vega/plot_daily-counts-adult_cumulative-daily-counts-by-country-and-severity.json
+    - vega/plot_daily-counts-adult_cumulative-daily-counts-by-severity-with-country-dropdown.json
+    - vega/plot_daily-counts-adult_new-hospitalized-patients-by-country-and-severity.json
+    - vega/plot_daily-counts-adult_new-hospitalized-patients-by-severity-with-country-dropdown.json
+    - vega/plot_daily-counts-adult_num-hospitalized-patients-by-country-and-severity.json
+    - vega/plot_daily-counts-adult_num-hospitalized-patients-by-severity-with-country-dropdown.json
+    - vega/plot_daily-counts-adult_daily-counts-by-country-with-variable-dropdown.json
+    
+
 ---
-
-The plots on this page display the number of pediatric patients over time by country.
-
-Country panels are ordered according to timing of national spikes in COVID cases. Top row: number of new hospitalized pediatric patients per day in 4CE hospitals, as a rolling 7-day mean, aggregated by country. Middle row: number of new hospitalized pediatric patients per day at the country level. France daily hospitalization data was obtained from Santé Publique France. UK daily hospitalization data was obtained from the Royal College of Paediatrics and Child Health. USA weekly hospitalization data was obtained from the American Academy of Pediatrics and the Children’s Hospital Association. The USA data on 10/8/20 includes a downward revision of child hospitalization data from the state of Arizona. Bottom row: number of 4CE hospitals contributing pediatric hospitalization data per day in each country.
+The plots on this page display the number of adult patients over time by country and severity.
 
 ### How to use
 
