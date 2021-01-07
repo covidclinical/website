@@ -6,9 +6,9 @@ paper_url: covidclinical.slack.com
 paper_type: slack/google doc
 journal: 
 releases:
-    release-2020-08-12:
+    release-0:
         order: 3
-        name: August 12, 2020
+        name: Release 0
         description: >-
             {description of Phase 1.1 here}
 ---

@@ -12,7 +12,6 @@ plots:
     - vega/plot_demographics-pediatric_plot-race-country-dropdown-usa.json
     - vega/plot_demographics-pediatric_plot-age-group-country-dropdown.json
     - vega/plot_demographics-pediatric_plot-sex-country-dropdown.json
-    - vega/plot_demographics-pediatric_plot-age-group-colfacet-race-x-and-severity-and-country.json
 ---
 
 The plots on this page display the number of patients by country, sex, race, and age group.
