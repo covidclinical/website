@@ -11,7 +11,7 @@ releases:
         order: 3
         name: Release 0
         description: >-
-            {description of Phase 1.1 here}
+            Importance: Additional sources of pediatric epidemiological and clinical data are needed to...
 ---
 
 ## Abstract

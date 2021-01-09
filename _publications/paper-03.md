@@ -11,7 +11,7 @@ releases:
         order: 2
         name: December 18, 2020
         description: >-
-            {description of Phase 1.1 here}
+            Objectives: To perform an international comparison of the trajectory...
 ---
 
 ## Abstract
