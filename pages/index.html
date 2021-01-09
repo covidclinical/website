@@ -26,10 +26,22 @@ permalink: /index.html
     </div>
 
     <div class="box important dark">
+        <h3>Phase 1.1 Main Results</h3>
+        <p>
+            {% assign paper-03 = site.publications | where: "slug", "paper-03" | first %}
+            Results from Phase 1.1 of data acquisition and analysis have been submitted to medRxiv as a preprint, "{{ paper-03.title }}."
+
+            <div class="buttons">
+                <a href="{{ paper-03.paper_url }}" target="_blank"><span>Read on {{ paper-03.journal }}</span>&nbsp;&rarr;</a>
+            </div>
+        </p>
+    </div>
+
+    <div class="box important dark">
         <h3>Phase 1.1 Severity Definition Results</h3>
         <p>
             {% assign paper-02 = site.publications | where: "slug", "paper-02" | first %}
-            Results from Phase 1.1 of data acquisition and analysis have been submitted to medRxiv as a preprint, "{{ paper-02.title }}."
+            Results from the severity definition process during Phase 1.1 have been submitted to medRxiv as a preprint, "{{ paper-02.title }}."
 
             <div class="buttons">
                 <a href="{{ paper-02.paper_url }}" target="_blank"><span>Read on {{ paper-02.journal }}</span>&nbsp;&rarr;</a>

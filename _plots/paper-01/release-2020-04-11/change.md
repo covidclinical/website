@@ -4,6 +4,7 @@ title: Case Rate by Country
 subtitle: Comparison to data from JHU CSSE
 category: Other
 notebook: 06_case_rate_by_country_7_day_avg_altair.ipynb
+tag: v1.0
 binder: true
 order: 70
 plots:

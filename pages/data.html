@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Data
+title: Adult Data
 permalink: /data/index.html
 order: 20
 ---
@@ -8,6 +8,7 @@ order: 20
 <div class="page data-page">
 
     {% for publication in site.publications %}
+    {% if publication.cohort != "Pediatric" %}
     {% assign publication_plots = site.plots | to_publication_plots: publication.slug %}
     <div class="publication">
         <div class="publication-head">
@@ -62,6 +63,7 @@ order: 20
             {% endfor %}
         </div>
     </div>
+    {% endif %}
     {% endfor%}
 
     <p class="disclaimer-info">

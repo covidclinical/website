@@ -1,0 +1,72 @@
+---
+layout: page
+title: Pediatric Data
+permalink: /data-pediatric/index.html
+order: 21
+---
+
+<div class="page data-page">
+
+    {% for publication in site.publications %}
+    {% if publication.cohort == "Pediatric" %}
+    {% assign publication_plots = site.plots | to_publication_plots: publication.slug %}
+    <div class="publication">
+        <div class="publication-head">
+            <a href="{{ publication.url | relative_url }}"><h2 id="publication_{{ publication.slug }}">{{ publication.title }}</h2></a>
+            <span class="pill">Publication</span>
+        </div>
+        <div class="publication-body">
+            {% for release in publication.releases %}
+            {% assign release_plots = publication_plots | to_release_plots: release[0] %}
+            <div class="release">
+                <div class="release-head">
+                    <h3 id="publication_{{ publication.slug }}_{{ release[0] }}">Data Release: {{ release[1].name }}</h3>
+                    <span class="pill">Data Release</span>
+                </div>
+                <div class="release-body">
+                    {% for plot in release_plots %}
+                    {% if plot.type != "hidden" %}
+                        {% case plot.type %}
+                        {% when "plot" %}
+                            {% assign plot_url = plot.url | relative_url %}
+                        {% when "dataset" %}
+                            {% assign plot_url = plot.download_url %}
+                        {% endcase %}
+                    <a class="plot" href="{{ plot_url }}" title="{{ plot.title }}" {% if plot.type == "dataset" %}target="_blank"{% endif %}>
+                        <div class="plot-left">
+                            {% case plot.type %}
+                            {% when "plot" %}
+                                {% include icon-plot.html %}
+                            {% when "dataset" %}
+                                {% include icon-dataset.html %}
+                            {% endcase %}
+                        </div>
+                        <div class="plot-right">
+                            <div class="plot-head">
+                                <h4 id="publication_{{ publication.slug }}_{{ release[0] }}_{{ plot.title | slugify }}">{{ plot.title }}</h4>
+                                {% case plot.type %}
+                                {% when "plot" %}
+                                    <span class="pill pill-plot">Visualization</span>
+                                {% when "dataset" %}
+                                    <span class="pill pill-dataset">Download</span>
+                                {% endcase %}
+                            </div>
+                            <div class="plot-body">
+                                <h5>{{ plot.subtitle }}</h5>
+                            </div>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor%}
+
+    <p class="disclaimer-info">
+        {{ site.data_disclaimer }}
+    </p>
+</div>

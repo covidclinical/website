@@ -4,6 +4,7 @@ title: Daily Counts by Country
 subtitle: Positive cases and new deaths over time by country
 category: Daily Counts
 notebook: 02_daily_counts_altair.ipynb
+tag: v1.0
 binder: true
 order: 10
 plots:

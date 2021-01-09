@@ -4,6 +4,7 @@ title: Labs by Country and Site
 subtitle: Lab values corresponding to fourteen LOINC codes
 category: Labs
 binder: true
+tag: v1.0
 order: 50
 plots:
     Key Labs Overview:
