@@ -12,8 +12,12 @@ layout: default
         <p class="paper-info">
             The visualizations on this page are from our publication "{{ publication.title }}" (see <a href="{{ publication.paper_url }}" target="_blank">{{ publication.journal }} {{ publication.paper_type }}</a>).
         </p>
-
-        <a class="plot-data-back" href="{{ "/data/index.html" | relative_url }}">&larr; Data</a>
+        {% if publication.cohort != "Pediatric" %}
+        <a class="plot-data-back" href="{{ "/data/index.html" | relative_url }}">&larr; Adult Data</a>
+        {% endif %}
+        {% if publication.cohort == "Pediatric" %}
+        <a class="plot-data-back" href="{{ "/data-pediatric/index.html" | relative_url }}">&larr; Pediatric Data</a>
+        {% endif %}
 
     </div>
 
@@ -61,8 +65,8 @@ layout: default
     const plotsType = "{{ plots_type }}";
     const plotsJson = {{ page.plots | jsonify }};
     const pageUrl = "{{ page.url | relative_url }}";
-    const notebookUrlBase = "https://github.com/{{ site.data.constants.repos.notebooks }}/blob/v1.0/notebooks/";
-    const binderUrlBase = "https://mybinder.org/v2/gh/{{ site.data.constants.repos.notebooks }}/v1.0?filepath=notebooks%2F";
+    const notebookUrlBase = "https://github.com/{{ site.data.constants.repos.notebooks }}/blob/{{ page.tag }}/notebooks/";
+    const binderUrlBase = "https://mybinder.org/v2/gh/{{ site.data.constants.repos.notebooks }}/{{ page.tag }}?filepath=notebooks%2F";
     const notebook = {{ page.notebook | jsonify }};
     const showBinder = {{ page.binder | jsonify }};
 

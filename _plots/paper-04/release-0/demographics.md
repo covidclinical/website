@@ -1,11 +1,12 @@
 ---
 type: plot
-title: "In Progress: Demographics"
+title: "Demographics"
 subtitle: Number of pediatric patients by severity, country, sex, race, and age group.
 category: Demographics
-notebook: 
+notebook: 1.1.12_demographics_pediatric_for_website.ipynb
+tag: v1.1-pediatrics-0
 binder: false
-order: 10
+order: 20
 plots:
     - vega/plot_demographics-pediatric_race-distribution-with-country-facet.json
     - vega/plot_demographics-pediatric_age-group-distribution-with-country-facet.json

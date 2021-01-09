@@ -4,6 +4,7 @@ title: Participating Healthcare Systems by Continent
 subtitle: Maps of continents on which there are participating sites
 category: Other
 binder: true
+tag: v1.0
 order: 80
 plots:
     Map View:

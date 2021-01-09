@@ -1,14 +1,14 @@
 ---
 layout: page
-title: Adult Data
-permalink: /data/index.html
-order: 20
+title: Pediatric Data
+permalink: /data-pediatric/index.html
+order: 21
 ---
 
 <div class="page data-page">
 
     {% for publication in site.publications %}
-    {% if publication.cohort != "Pediatric" %}
+    {% if publication.cohort == "Pediatric" %}
     {% assign publication_plots = site.plots | to_publication_plots: publication.slug %}
     <div class="publication">
         <div class="publication-head">

@@ -1,9 +1,10 @@
 ---
 type: plot
-title: "In Progress: Daily Counts"
-subtitle: 
+title: "Daily Counts"
+subtitle: Counts of pediatric patients hospitalized, with country-level comparisons
 category: Daily Counts
-notebook: 
+notebook: 1.1.17_daily_counts_pediatric_with_country_rate.ipynb
+tag: v1.1-pediatrics-0
 binder: false
 order: 10
 plots:
@@ -11,12 +12,20 @@ plots:
     - vega/plot_daily-counts-pediatric_new-hospitalized-patients-by-country-with-country-rate-and-dropdown.json
 ---
 
-The plots on this page display the number of pediatric patients over time by country.
+The plots on this page display the number of pediatric patients over time by country. Both plots display the same data, but the lower plot highlights one country at a time.
 
-Country panels are ordered according to timing of national spikes in COVID cases. Top row: number of new hospitalized pediatric patients per day in 4CE hospitals, as a rolling 7-day mean, aggregated by country. Middle row: number of new hospitalized pediatric patients per day at the country level. France daily hospitalization data was obtained from Santé Publique France. UK daily hospitalization data was obtained from the Royal College of Paediatrics and Child Health. USA weekly hospitalization data was obtained from the American Academy of Pediatrics and the Children’s Hospital Association. The USA data on 10/8/20 includes a downward revision of child hospitalization data from the state of Arizona. Bottom row: number of 4CE hospitals contributing pediatric hospitalization data per day in each country.
+
+#### Legend
+Top row of each plot: number of new hospitalized pediatric patients per day in 4CE hospitals, as a rolling 14-day mean, aggregated by country.
+
+Middle row of each plot: number of new hospitalized pediatric patients per day at the country level. For France, daily pediatric hospitalization data were obtained from Santé Publique France. For Germany, weekly pediatric hospitalization data were obtained from the German Society for Pediatric Infectious Diseases. For Spain, weekly pediatric hospitalization data were obtained from the Spanish National Epidemiological Surveillance Network (RENAVE), which lacks hospitalization counts between May 11 and July 15, 2020. For the UK, daily pediatric hospitalization data were obtained from the Royal College of Paediatrics and Child Health and represent pediatric hospitalizations in England. For the USA, weekly pediatric hospitalization data between July 31, 2020 and October 9, 2020 were obtained from the Department of Health and Human Services. The Y-axis scales for country-level data are independent in order to compare country-level trends to 4CE trends.
+
+Bottom row of each plot: number of 4CE hospitals contributing pediatric hospitalization data per day in each country.
+
 
 ### How to use
 
+Hover over the lines to view more details. Use the dropdown to select a country.
 
 ### Note
 
