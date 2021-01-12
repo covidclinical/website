@@ -39,3 +39,6 @@ Trends in hospitalizations for 671 children mirrored national-level pediatric ho
 ### Conclusions and Relevance
 
 Large-scale informatics-based approaches used to incorporate EHR data across healthcare systems can provide an efficient source of information on pediatric patients hospitalized with COVID-19. These observational data complement other methods of disease surveillance and help define epidemiological and clinical features associated with COVID-19 in children. 
+
+
+<a href="{{ "/data-pediatric/index.html" | relative_url }}#publication_{{ page.slug }}">Explore the data &rarr;</a>

@@ -6,7 +6,12 @@ layout: default
   <h1 class="page-heading">{{ page.title }}</h1>
 
   <p class="post-meta">
-    <a class="post-news-back" href="{{ "/data/index.html" | relative_url }}">&larr;&nbsp;Data</a>
+    {%- if page.cohort != "Pediatric" -%}
+    <a class="post-news-back" href="{{ "/data/index.html" | relative_url }}">&larr;&nbsp;Adult Data</a>
+    {%- endif -%}
+    {%- if page.cohort == "Pediatric" -%}
+    <a class="post-news-back" href="{{ "/data-pediatric/index.html" | relative_url }}">&larr;&nbsp;Pediatric Data</a>
+    {%- endif -%}
   {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
   <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
     {{ page.date | date: date_format }}
