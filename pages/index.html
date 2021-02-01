@@ -48,6 +48,18 @@ permalink: /index.html
             </div>
         </p>
     </div>
+
+    <div class="box important dark">
+        <h3>Phase 1.1 Neurological Phenotype Analysis Results</h3>
+        <p>
+            {% assign paper-05 = site.publications | where: "slug", "paper-05" | first %}
+            Results from neurological phenotype analysis during Phase 1.1 have been submitted to medRxiv as a preprint, "{{ paper-05.title }}."
+
+            <div class="buttons">
+                <a href="{{ paper-05.paper_url }}" target="_blank"><span>Read on {{ paper-05.journal }}</span>&nbsp;&rarr;</a>
+            </div>
+        </p>
+    </div>
     
     <div class="home-map">
         <div class="home-map-horizontal">
