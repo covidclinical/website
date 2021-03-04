@@ -318,6 +318,24 @@
         - MDS
         - DSI
         - AT
+- cluster: Pittsburgh
+  location: Pennsylvania, United States
+  members:
+    - name: Malarkodi J Samayamuthu
+      affiliations:
+        - University of Pittsburgh
+    - name: Michele Morris
+      affiliations:
+        - University of Pittsburgh
+    - name: Jiyeon Son
+      affiliations:
+        - University of Pittsburgh Medical Center
+    - name: Shyam Visweswaran
+      affiliations:
+        - University of Pittsburgh
+    - name: Zongqi Xia
+      affiliations:
+        - University of Pittsburgh
 - cluster: Mannheim
   location: Germany
   institutions:
