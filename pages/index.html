@@ -61,6 +61,18 @@ permalink: /index.html
         </p>
     </div>
     
+    <div class="box important dark">
+        <h3>Considerations on Utilizing EHR Data</h3>
+        <p>
+            {% assign paper-06 = site.publications | where: "slug", "paper-06" | first %}
+            A viewpoint article on considerations that are crucial for appraising studies utilizing EHR data has been submitted to JMIR, "{{ paper-06.title }}."
+
+            <div class="buttons">
+                <a href="{{ paper-06.paper_url }}" target="_blank"><span>Read on {{ paper-06.journal }}</span>&nbsp;&rarr;</a>
+            </div>
+        </p>
+    </div>
+
     <div class="home-map">
         <div class="home-map-horizontal">
             <div id="continents-map-horizontal"></div>
