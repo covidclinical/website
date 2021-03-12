@@ -149,7 +149,7 @@
   - name: Griffin M Weber, MD, PhD
     affiliations:
     - Harvard Medical School
-  - name: Yuan William
+  - name: William Yuan
     affiliations:
     - Harvard Medical School
   - name: Harrison G Zhang
@@ -755,6 +755,9 @@
   - Department of Veterans Affairs
   members:
   - name: Rachel B Ramoni, DMD, ScD
+    affiliations:
+    - Department of Veterans Affairs
+  - name: Kelly Cho
     affiliations:
     - Department of Veterans Affairs
 - cluster: Winston-Salem, North Carolina, United States
