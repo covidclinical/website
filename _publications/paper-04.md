@@ -1,5 +1,5 @@
 ---
-title: "International Analysis of Children Hospitalized with COVID-19: Leveraging 4CE Electronic Health Record Data across 27 Hospitals in 6 Countries"
+title: "International Analysis of Electronic Health Records of Children and Youth Hospitalized with COVID-19 Infection in 6 Countries"
 cohort: Pediatric
 author: 4CE Consortium
 date:   2021-01-08 00:00:00 -0500
