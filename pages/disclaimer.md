@@ -23,6 +23,14 @@ The content of this website, such as graphics, images, text and all other materi
 
 This website is not an attempt to practice medicine or provide specific medical advice, and it should not be used to make a diagnosis or to replace or overrule a qualified health care provider's judgment. Users should not rely on this website for emergency medical treatment. **The content on this website is not intended to be a substitute for professional medical advice, diagnosis or treatment. Always consult with a qualified and licensed physician or other medical care provider, and follow their advice without delay regardless of anything read on this website.**
 
+## Race & Ethnicity
+
+The 4CE Consortium acknowledges that characterizing the significance of race and ethnicity in the COVID-19 pandemic is essential.
+In an effort to produce rapid results, sites initially mapped their local race/ethnicity ontology terms to the US-based NIH race categories.
+While this standardization gives us a broad sense of race and ethnicity across the 4CE Consortium, it cannot address the complex social and genetic relationship between race/ethnicity and illness on a global scale.
+We recommend early-phase race data only be included in analysis for U.S. sites at this juncture.
+Future iterations of our data will include country-specific race and ethnicity categorizations to more accurately, rather than broadly, capture this information.
+
 
 ## Liability
 
