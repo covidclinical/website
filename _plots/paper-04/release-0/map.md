@@ -1,7 +1,7 @@
 ---
 type: plot
 title: "Map"
-subtitle: Geographic distribution of pediatric hospitals in 4CE
+subtitle: Geographic distribution of pediatric hospitals in 4CE.
 category: Map
 notebook: 1.1.20_map_pediatric.ipynb
 tag: v1.1-pediatrics-0

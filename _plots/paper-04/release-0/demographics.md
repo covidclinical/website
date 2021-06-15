@@ -1,7 +1,7 @@
 ---
 type: plot
 title: "Demographics"
-subtitle: Number of pediatric patients by severity, country, sex, race, and age group.
+subtitle: Number of pediatric patients by country, sex, race, and age group.
 category: Demographics
 notebook: 1.1.12_demographics_pediatric_for_website.ipynb
 tag: v1.1-pediatrics-0

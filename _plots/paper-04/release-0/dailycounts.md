@@ -1,7 +1,7 @@
 ---
 type: plot
 title: "Daily Counts"
-subtitle: Counts of pediatric patients hospitalized, with country-level comparisons
+subtitle: Counts of pediatric patients hospitalized over time, with country-level comparisons.
 category: Daily Counts
 notebook: 1.1.17_daily_counts_pediatric_with_country_rate.ipynb
 tag: v1.1-pediatrics-0
