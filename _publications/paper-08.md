@@ -1,11 +1,11 @@
 ---
-title: "International Analysis of Electronic Health Records of Children and Youth Hospitalized With COVID-19 Infection in 6 Countries"
-cohort: Pediatric
+title: "International Changes in COVID-19 Clinical Trajectories Across 315 Hospitals and 6 Countries: a 4CE Consortium Study"
+cohort: Adult & Pediatric
 author: 4CE Consortium
-date:   2021-06-11 00:00:00 -0500
-paper_url: https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2780925
-paper_type: published
-journal: JAMA Network
+date:   2021-06-23 00:00:00 -0500
+paper_url: https://preprints.jmir.org/preprint/31400
+paper_type: preprint
+journal: JMIR
 ---
 
 

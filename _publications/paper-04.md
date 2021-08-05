@@ -1,17 +1,11 @@
 ---
-title: "International Analysis of Electronic Health Records of Children and Youth Hospitalized with COVID-19 Infection in 6 Countries"
+title: "International Analysis of Electronic Health Records of Children and Youth Hospitalized With COVID-19 Infection in 6 Countries"
 cohort: Pediatric
 author: 4CE Consortium
-date:   2021-01-08 00:00:00 -0500
+date:   2021-06-11 00:00:00 -0500
 paper_url: https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2780925
-paper_type: journal
+paper_type: published
 journal: JAMA Network Open
-releases:
-    release-0:
-        order: 3
-        name: Release 0
-        description: >-
-            Importance: Additional sources of pediatric epidemiological and clinical data are needed to...
 ---
 
 ## Abstract
