@@ -3,9 +3,9 @@ title: "Validation of a Derived International Patient Severity Phenotype to Supp
 cohort: Adult & Pediatric
 author: 4CE Consortium
 date:   2020-10-16 00:00:00 -0500
-paper_url: https://www.medrxiv.org/content/10.1101/2020.10.13.20201855v1
-paper_type: preprint
-journal: medRxiv
+paper_url: https://academic.oup.com/jamia/article/28/7/1411/6132348?login=true
+paper_type: journal
+journal: JAMIA
 ---
 
 <a href="{{ page.paper_url }}">Read on {{ page.journal }} &rarr;</a>
