@@ -13,4 +13,4 @@ In this first phase we are reaching out to other collaborators to join our 96 ho
 
 ### Contact
 
-For any questions about the 4CE consortium please email [4CE@i2b2transmart.org](mailto:4CE@i2b2transmart.org).
+For any questions about the 4CE consortium please email [4ce@transmartfoundation.org](mailto:4ce@transmartfoundation.org).
