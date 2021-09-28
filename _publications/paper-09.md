@@ -3,9 +3,9 @@ title: "Evolving Phenotypes of non-hospitalized Patients that Indicate Long Covi
 cohort: Adult
 author: 4CE Consortium
 date:   2021-07-10 00:00:00 -0500
-paper_url: https://www.medrxiv.org/content/10.1101/2021.04.25.21255923v3
-paper_type: preprint
-journal: medRxiv
+paper_url: https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-021-02115-0
+paper_type: journal
+journal: BMC Medicine
 ---
 
 
