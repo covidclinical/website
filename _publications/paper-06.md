@@ -3,8 +3,8 @@ title: "What Every Reader Should Know About Studies Using Electronic Health Reco
 cohort: Adult & Pediatric
 author: 4CE Consortium
 date:   2021-02-24 00:00:00 -0500
-paper_url: https://preprints.jmir.org/preprint/22219/accepted
-paper_type: preprint
+paper_url: https://www.jmir.org/2021/3/e22219
+paper_type: journal
 journal: JMIR
 ---
 
