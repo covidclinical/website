@@ -1,5 +1,5 @@
 ---
-title: "Multinational characterization of neurological phenotypes in patients hospitalized with COVID-19"
+title: "Multinational Characterization of Neurological Phenotypes in Patients Hospitalized with COVID-19"
 cohort: Adult & Pediatric
 author: 4CE Consortium
 date:   2021-10-12 00:00:00 -0500
