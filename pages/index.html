@@ -15,8 +15,9 @@ permalink: /index.html
         <h2>4CE Fall Symposium</h2>
         <div class="container">
             <div id="symp_left"><img src="https://i2.wp.com/i2b2transmart.org/wp-content/uploads/2021/08/Fall2021-symposium.jpg?resize=800%2C412&ssl=1" width="600"></div>
-            <div id="symp_right"><p style="text-align: center;"><a target="_blank" and rel="noopener noreferrer" href="https://www.eventbrite.com/e/4ce-international-consortium-fall-2021-symposium-tickets-180397512817"><button class="button button_symposium">Register</button></a>
-                <a target="_blank" and rel="noopener noreferrer" href="https://i2b2transmart.org/4ce-fall-2021-symposium/"><button class="button button_symposium">Schedule</button></a></p></div>
+            <div id="symp_right"><p style="text-align: center;"><a target="_blank" and rel="noopener noreferrer" href="https://www.eventbrite.com/e/4ce-international-consortium-fall-2021-symposium-tickets-180397512817">
+<!--                <button class="button button_symposium">Register</button></a>-->
+                <a target="_blank" and rel="noopener noreferrer" href="https://i2b2transmart.org/4ce-fall-2021-symposium/"><button class="button button_symposium">Slides and Recordings</button></a></p></div>
         </div>
     </div>
     
@@ -108,7 +109,7 @@ permalink: /index.html
         <h3>Phase 1.1 Severity Definition Results</h3>
         <p>
             {% assign paper-02 = site.publications | where: "slug", "paper-02" | first %}
-            Results from the severity definition process during Phase 1.1 have been submitted to medRxiv as a preprint, "{{ paper-02.title }}."
+            Results from the severity definition process during Phase 1.1 have been published in JAMIA, "{{ paper-02.title }}."
 
             <div class="buttons">
                 <a href="{{ paper-02.paper_url }}" target="_blank"><span>Read on {{ paper-02.journal }}</span>&nbsp;&rarr;</a>
