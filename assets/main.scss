@@ -1253,47 +1253,47 @@ a.inactive {
 
 
 
-//this part should be removed after the Symposium
-.button {
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 1px;
-  width:80%;
-  height: 80%;
-  margin-left:25%;
-  margin-right:25%;
-
-}
-
-.button_symposium {background-color: #117b9e;} 
-
-#symp_left { 
- float:left;}
-#symp_right { 
-  width: 30%;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.container {
-    padding-bottom: 20px;
-}
-
-.container:before,
-.container:after {
-    content: "";
-    display: table;
-}
-
-.container:after {
-    clear: both;
-}
+////this part should be removed after the Symposium
+//.button {
+//  border: none;
+//  color: white;
+//  padding: 10px 20px;
+//  text-align: center;
+//  text-decoration: none;
+//  display: inline-block;
+//  font-size: 16px;
+//  margin: 4px 2px;
+//  cursor: pointer;
+//  border-radius: 1px;
+//  width:80%;
+//  height: 80%;
+//  margin-left:25%;
+//  margin-right:25%;
+//
+//}
+//
+//.button_symposium {background-color: #117b9e;} 
+//
+//#symp_left { 
+// float:left;}
+//#symp_right { 
+//  width: 30%;
+//  height: 300px;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//}
+//
+//.container {
+//    padding-bottom: 20px;
+//}
+//
+//.container:before,
+//.container:after {
+//    content: "";
+//    display: table;
+//}
+//
+//.container:after {
+//    clear: both;
+//}
