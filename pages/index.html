@@ -22,6 +22,18 @@ permalink: /index.html
         </div>
     </div>
 -->
+    <div class="box important dark">
+        <h3>SurvMaximin</h3>
+        <p>
+            {% assign paper-10 = site.publications | where: "slug", "paper-10" | first %}
+            The SurvMaximin algorithm to estimate Cox model feature coefficients for multi-center heterogeneous Real-World Data (RWD) with time-to-event outcomes and high-dimensional features has been submitted to medRxiv as a preprint, "{{ paper-10.title }}."
+
+            <div class="buttons">
+                <a href="{{ paper-10.paper_url }}" target="_blank"><span>Read on {{ paper-10.journal }}</span>&nbsp;&rarr;</a>
+            </div>
+        </p>
+    </div>
+    
     
     <div class="box important dark">
         <h3>Phase 2.1 Multivariate PheWAS of the Post-acute Sequelae of COVID-19</h3>
