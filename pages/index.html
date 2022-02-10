@@ -198,6 +198,9 @@ permalink: /index.html
     };
 
     window.onload = () => {
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        if(isSafari) return;
+        
         vegaEmbed(
             `#continents-map-horizontal`,
             horizontalPlotUrl,
