@@ -22,6 +22,19 @@ permalink: /index.html
         </div>
     </div>
 -->
+
+    <div class="box important dark">
+        <h3>Distinguishing Incidental COVID-19 Admissions</h3>
+        <p>
+            {% assign paper-11 = site.publications | where: "slug", "paper-11" | first %}
+            A chart-reviewed characterization of the frequency that SARS-CoV-2-positive hospital admissions were not COVID-19 related and application of an Apriori-like itemset-mining algorithm to find phenotypes of patients admitted for COVID has been submitted to medRxiv as a preprint, "{{ paper-11.title }}."
+            <div class="buttons">
+                <a href="{{ paper-11.paper_url }}" target="_blank"><span>Read on {{ paper-11.journal }}</span>&nbsp;&rarr;</a>
+            </div>
+        </p>
+    </div>
+
+
     <div class="box important dark">
         <h3>SurvMaximin</h3>
         <p>
