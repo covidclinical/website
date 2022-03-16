@@ -24,6 +24,17 @@ permalink: /index.html
 -->
 
     <div class="box important dark">
+        <h3>Phase 2.1 Outcomes of Hospitalized COVID-19 Patients with Neurological Diagnosis</h3>
+        <p>
+            {% assign paper-12 = site.publications | where: "slug", "paper-12" | first %}
+            In "{{ paper-12.title }}" based on the Phase 2.1 data, we reported that patients with diagnosis involving the central nervous system during COVID-19 hospitalization harbored a greater burden of pre-existing comorbidities and had greater risk for adverse outcomes than patients with diagnosis involving the peripheral nervous system or with no neurological condition.
+            <div class="buttons">
+                <a href="{{ paper-12.paper_url }}" target="_blank"><span>Read on {{ paper-12.journal }}</span>&nbsp;&rarr;</a>
+            </div>
+        </p>
+    </div>
+    
+    <div class="box important dark">
         <h3>Distinguishing Incidental COVID-19 Admissions</h3>
         <p>
             {% assign paper-11 = site.publications | where: "slug", "paper-11" | first %}
