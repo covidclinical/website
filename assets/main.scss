@@ -709,9 +709,12 @@ table.members {
   tbody {
     border: none;
       tr {
-        border: none;
+        border: 1px solid lightgrey;
           td {
             border: none;
+          }
+          .member-name {
+            border-right: 1px solid lightgrey;
           }
       }
   }
