@@ -17,14 +17,14 @@ order: 40
         <tbody>
             {% assign clusters = site.data.members | sort: "cluster" %}
             {% for cluster in clusters %}
-                <tr class="cluster">
+                <!-- <tr class="cluster">
                     <td colspan="3">
                         {{ cluster.cluster }}{% if cluster.location %}, {{ cluster.location }}{% endif %}
                     </td>
-                </tr>
+                </tr> -->
                 {% for member in cluster.members %}
                     <tr>
-                        <td class="cluster-space"></td>
+                        <!-- <td class="cluster-space"></td> -->
                         <td class="member-name">
                             {{ member.name }}
                         </td>
