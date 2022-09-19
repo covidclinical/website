@@ -22,7 +22,18 @@ permalink: /index.html
         </div>
     </div>
 -->
-
+    <div class="box important dark">
+        <h3>Phase 1.2 Post-acute Sequelae Profiles of COVID-19 Patients</h3>
+        <p>
+            {% assign paper-13 = site.publications | where: "slug", "paper-13" | first %}
+            In "{{ paper-13.title }}" using a federated international network of healthcare systems, we systematically identified robust conditions associated with PASC compared to appropriate control groups, underscoring the multifaceted cardiovascular and neurological phenotype profiles of PASC.
+            <div class="buttons">
+                <a href="{{ paper-13.paper_url }}" target="_blank"><span>Read on {{ paper-13.journal }}</span>&nbsp;&rarr;</a>
+            </div>
+        </p>
+    </div>  
+    
+    
     <div class="box important dark">
         <h3>Phase 2.1 Outcomes of Hospitalized COVID-19 Patients with Neurological Diagnosis</h3>
         <p>
