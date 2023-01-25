@@ -1,6 +1,5 @@
 - cluster: 4CE
   members:
-
   - name: Vincent Benoit
     affiliations:
     - APHP Greater Paris University Hospital
