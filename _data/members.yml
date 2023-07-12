@@ -45,9 +45,6 @@
   - name: Patricia Serre
     affiliations:
     - APHP Greater Paris University Hospital
-  - name: Arnaud Serret-Larmande
-    affiliations:
-    - APHP Greater Paris University Hospital
   - name: Christel Daniel
     affiliations:
     - APHP Greater Paris University Hospital, INSERM
@@ -66,18 +63,18 @@
   - name: Mario Alessiani
     affiliations:
     - ASST Pavia, Lombardia Region Health System
-  - name: Anna Alloni
-    affiliations:
-    - BIOMERIS (BIOMedical Research Informatics Solutions)
-  - name: Mauro Bucalo
-    affiliations:
-    - BIOMERIS (BIOMedical Research Informatics Solutions)
   - name: Jayson Marwaha
     affiliations:
     - Beth Israel Deaconess Medical Center
   - name: Ashley Pfaff
     affiliations:
     - Beth Israel Deaconess Medical Center, Harvard Medical School
+  - name: Anna Alloni
+    affiliations:
+    - BIOMERIS (BIOMedical Research Informatics Solutions)
+  - name: Mauro Bucalo
+    affiliations:
+    - BIOMERIS (BIOMedical Research Informatics Solutions)
   - name: Bertrand Moal
     affiliations:
     - Bordeaux University Hospital
@@ -111,13 +108,16 @@
   - name: Karen Olson
     affiliations:
     - Boston Children's Hospital and Harvard Medical School
+  - name: Jane Newburger
+    affiliations:
+    - Boston Children's Hospital, Harvard Medical School
   - name: Emily Bucholz
     affiliations:
     - Boston Children's Hospital, Harvard Medical School
   - name: Audrey Dionne
     affiliations:
     - Boston Children's Hospital, Harvard Medical School
-  - name: Jane Newburger
+  - name: Francesca Sperotto
     affiliations:
     - Boston Children's Hospital, Harvard Medical School
   - name: Paula Azevedo
@@ -125,7 +125,7 @@
     - Botucatu Medical School, São Paulo State University, Botucatu, Brazil
   - name: Andrew South
     affiliations:
-    - Brenner Children's, Wake Forest School of Medicine
+    - Brenner Children’s, Wake Forest University School of Medicine
   - name: Jason Moore
     affiliations:
     - Cedars-Sinai Medical Center
@@ -141,10 +141,16 @@
   - name: Nadir Yehya
     affiliations:
     - Children's Hospital of Philadelphia and University of Pennsylvania
+  - name: Kate Kernan
+    affiliations:
+    - Children's Hospital of PIttsburgh
+  - name: Surbhi Bhatnagar
+    affiliations:
+    - Cincinnati Children's Hospital Medical Center
   - name: Bruce Aronow
     affiliations:
     - Cincinnati Children's Hospital Medical Center, University of Cincinnati
-  - name: Surbhi Bhatnagar
+  - name: Janet Zahner
     affiliations:
     - Cincinnati Children's Hospital Medical Center, University of Cincinnati
   - name: Damien Leprovost
@@ -153,9 +159,6 @@
   - name: Andrew Vallejos
     affiliations:
     - Clinical & Translational Science Institute, Medical College of Wisconsin
-  - name: Robson Prudente
-    affiliations:
-    - Clinical Research Unit São Paulo State University, Brazil
   - name: Danilo Amendola
     affiliations:
     - Clinical Research Unit of Botucatu Medical School, São Paulo State University, Botucatu, Brazil
@@ -165,6 +168,9 @@
   - name: Janaina Santos
     affiliations:
     - Clinical Research Unit of Botucatu Medical School, São Paulo State University, Botucatu, Brazil
+  - name: Robson Prudente
+    affiliations:
+    - Clinical Research Unit São Paulo State University, Brazil
   - name: Marcelo Martins
     affiliations:
     - Clinics hospital of the Botucatu Medical School, São Paulo State University, Botucatu, Brazil
@@ -240,13 +246,16 @@
   - name: Anastasia Spiridou
     affiliations:
     - Great Ormond Street Hospital for Children, UK
-  - name: Anne Sophie Jannot
-    affiliations:
-    - HEGP, APHP Greater Paris University Hospital
   - name: Paul Avillach
     affiliations:
     - Harvard Medical School
+  - name: Vidul Ayakulangara Panickan
+    affiliations:
+    - Harvard Medical School
   - name: Brett Beaulieu-Jones
+    affiliations:
+    - Harvard Medical School
+  - name: Brendin Beaulieu-Jones
     affiliations:
     - Harvard Medical School
   - name: Clara-Lea Bonzel
@@ -285,6 +294,9 @@
   - name: Sehi L'Yi
     affiliations:
     - Harvard Medical School
+  - name: Simran Makwana
+    affiliations:
+    - Harvard Medical School
   - name: Anupama Maram
     affiliations:
     - Harvard Medical School
@@ -303,9 +315,6 @@
   - name: Danielle Pillion
     affiliations:
     - Harvard Medical School
-  - name: Zahra Shakeri Hossein Abad
-    affiliations:
-    - Harvard Medical School
   - name: Amelia Tan
     affiliations:
     - Harvard Medical School
@@ -321,19 +330,22 @@
   - name: William Yuan
     affiliations:
     - Harvard Medical School
+  - name: Joany Zachariasse
+    affiliations:
+    - Harvard Medical School
   - name: Harrison Zhang
     affiliations:
     - Harvard Medical School
   - name: Molei Liu
     affiliations:
     - Harvard T. H. Chan School of Public Health
-  - name: Rui Duan
-    affiliations:
-    - Harvard T.H. Chan School of Public Health
   - name: Larry Han
     affiliations:
     - Harvard T.H. Chan School of Public Health
   - name: Xin Xiong
+    affiliations:
+    - Harvard T.H. Chan School of Public Health
+  - name: Rui Duan
     affiliations:
     - Harvard T.H. Chan School of Public Health
   - name: Adem Albayrak
@@ -345,6 +357,18 @@
   - name: Maryna Raskin
     affiliations:
     - Health Catalyst, INC.
+  - name: Anne Sophie Jannot
+    affiliations:
+    - HEGP, APHP Greater Paris University Hospital
+  - name: Antoine Neuraz
+    affiliations:
+    - Hôpital Necker-Enfants Malade, Assistance Publique Hôpitaux de Paris (APHP), University of Paris
+  - name: François Angoulvant
+    affiliations:
+    - Hôpital Necker-Enfants Malades, Assistance Public-Hôpitaux de Paris, Paris
+  - name: Arnaud Serret-Larmande
+    affiliations:
+    - Hôpital Saint-Louis, APHP Greater Paris University Hospital, Paris University
   - name: José Luis Bernal-Sobrino
     affiliations:
     - Hospital Universitario 12 de Octubre, Madrid, Spain
@@ -358,6 +382,9 @@
     affiliations:
     - Hospital Universitario 12 de Octubre, Madrid, Spain
   - name: Noelia García-Barrio
+    affiliations:
+    - Hospital Universitario 12 de Octubre, Madrid, Spain
+  - name: Tomás González González
     affiliations:
     - Hospital Universitario 12 de Octubre, Madrid, Spain
   - name: Cinta Moraleda
@@ -384,27 +411,15 @@
   - name: Ana Terriza-Torres
     affiliations:
     - Hospital Universitario 12 de Octubre, Madrid, Spain
-  - name: Antoine Neuraz
+  - name: Anna Maria Cattelan
     affiliations:
-    - Hôpital Necker-Enfants Malade, Assistance Publique Hôpitaux de Paris (APHP), University of Paris
-  - name: François Angoulvant
+    - Infectious and Tropical Disease Unit, Padua University Hospital
+  - name: Maria Mazzitelli
     affiliations:
-    - Hôpital Necker-Enfants Malades, Assistance Public-Hôpitaux de Paris, Paris
-  - name: Michele Vitacca
-    affiliations:
-    - ICS S. Maugeri IRCCS Pavia Italy
+    - Infectious and Tropical Disease Unit, Padua University Hospital
   - name: Julien Champ
     affiliations:
     - INRIA Sophia-Antipolis – ZENITH team, LIRMM, Montpellier, France
-  - name: Silvano Bosari
-    affiliations:
-    - IRCCS Ca' Granda Ospedale Maggiore Policlinico di Milano
-  - name: Sara Pizzimenti
-    affiliations:
-    - IRCCS Ca' Granda Ospedale Maggiore Policlinico di Milano
-  - name: Luigia Scudeller
-    affiliations:
-    - IRCCS Ca' Granda Ospedale Maggiore Policlinico di Milano
   - name: Derek Hazard
     affiliations:
     - Institute of Medical Biometry and Statistics, Medical Center, University of Freiburg
@@ -423,15 +438,30 @@
   - name: Suzana Tanni
     affiliations:
     - Internal Medicine Department of Botucatu Medical School, São Paulo State University, Botucatu, Brazil
+  - name: Silvano Bosari
+    affiliations:
+    - IRCCS Ca' Granda Ospedale Maggiore Policlinico di Milano
+  - name: Sara Pizzimenti
+    affiliations:
+    - IRCCS Ca' Granda Ospedale Maggiore Policlinico di Milano
+  - name: Luigia Scudeller
+    affiliations:
+    - IRCCS Ca' Granda Ospedale Maggiore Policlinico di Milano
   - name: Luca Chiovato
     affiliations:
-    - Istituti Clinici Scientifici Maugeri SpA SB IRCCS
+    - Istituti Clinici Scientifici Maugeri IRCCS
   - name: Alberto Malovini
     affiliations:
-    - Istituti Clinici Scientifici Maugeri SpA SB IRCCS, Pavia, Italy.
+    - Istituti Clinici Scientifici Maugeri IRCCS
   - name: Valentina Tibollo
     affiliations:
-    - Istituti Clinici Scientifici Maugeri SpA SB IRCCS, Pavia, Italy.
+    - Istituti Clinici Scientifici Maugeri IRCCS
+  - name: Michele Vitacca
+    affiliations:
+    - Istituti Clinici Scientifici Maugeri IRCCS
+  - name: Atif Adam
+    affiliations:
+    - Joslin Diabetes Center
   - name: Maria Savino
     affiliations:
     - Management Engineer, Direction
@@ -474,9 +504,6 @@
   - name: Li Anthony
     affiliations:
     - National Center for Infectious Diseases, Tan Tock Seng Hospital, Singapore
-  - name: Yi-Ju Tseng
-    affiliations:
-    - National Central University
   - name: Kee Yuan Ngiam
     affiliations:
     - National University Health System Singapore
@@ -498,6 +525,9 @@
   - name: Robert Bradford
     affiliations:
     - North Carolina Translational and Clinical Sciences (NC TraCS) Institute, UNC Chapel Hill
+  - name: Mundeep Kainth
+    affiliations:
+    - Northwell Health - Cohen Children's Medical Center
   - name: Meghan Hutch
     affiliations:
     - Northwestern University
@@ -507,6 +537,9 @@
   - name: Chengsheng Mao
     affiliations:
     - Northwestern University
+  - name: Tanu Priya
+    affiliations:
+    - Northwestern University Feinberg School of Medicine
   - name: L. Nelson Sanchez-Pinto
     affiliations:
     - Northwestern University Feinberg School of Medicine
@@ -546,6 +579,24 @@
   - name: Carlos Sáez
     affiliations:
     - Universitat Politècnica de València, Spain
+  - name: Charlotte Caucheteux
+    affiliations:
+    - Université Paris-Saclay, Inria, CEA
+  - name: Alexandre Gramfort
+    affiliations:
+    - Université Paris-Saclay, Inria, CEA
+  - name: Olivier Grisel
+    affiliations:
+    - Université Paris-Saclay, Inria, CEA
+  - name: Guillaume Lemaitre
+    affiliations:
+    - Université Paris-Saclay, Inria, CEA
+  - name: Demian Wassermann
+    affiliations:
+    - Université Paris-Saclay, Inria, CEA
+  - name: Gael Varoquaux
+    affiliations:
+    - Université Paris-Saclay, Inria, CEA, Montréal Neurological Institute, McGill University
   - name: Detlef Kraska
     affiliations:
     - University Hospital Erlangen
@@ -556,9 +607,6 @@
     affiliations:
     - University Magna Graecia of Catanzaro, Italy
   - name: Mario Cannataro
-    affiliations:
-    - University Magna Graecia of Catanzaro, Italy
-  - name: Maria Mazzitelli
     affiliations:
     - University Magna Graecia of Catanzaro, Italy
   - name: Marianna Milano
@@ -582,18 +630,24 @@
   - name: Nandhini Santhanam
     affiliations:
     - University Medicine Mannheim, Heidelberg University
-  - name: Lav Patel
-    affiliations:
-    - University Of Kansas Medical Center
   - name: James Cimino
     affiliations:
     - University of Alabama at Birmingham
   - name: Tiago Colicchio
     affiliations:
     - University of Alabama at Birmingham
+  - name: pietro guzzi
+    affiliations:
+    - university of catanzaro department of surgical medical sciences
   - name: Hans Prokosch
     affiliations:
     - University of Erlangen-Nürnberg
+  - name: Diego Mazzotti
+    affiliations:
+    - University of Kansas Medical Center
+  - name: Lav Patel
+    affiliations:
+    - University Of Kansas Medical Center
   - name: James Aaron
     affiliations:
     - University of Kentucky
@@ -645,6 +699,9 @@
   - name: Emily Schriver
     affiliations:
     - University of Pennsylvania Health System
+  - name: Ashley Batugo
+    affiliations:
+    - University of Pennsylvania Perelman School of Medicine
   - name: Trang Le
     affiliations:
     - University of Pennsylvania Perelman School of Medicine
@@ -681,28 +738,19 @@
   - name: Jiyeon Son
     affiliations:
     - University of Pittsburgh Medical Center
-  - name: Charlotte Caucheteux
+  - name: Zahra Shakeri Hossein Abad
     affiliations:
-    - Université Paris-Saclay, Inria, CEA
-  - name: Alexandre Gramfort
-    affiliations:
-    - Université Paris-Saclay, Inria, CEA
-  - name: Olivier Grisel
-    affiliations:
-    - Université Paris-Saclay, Inria, CEA
-  - name: Guillaume Lemaitre
-    affiliations:
-    - Université Paris-Saclay, Inria, CEA
-  - name: Demian Wassermann
-    affiliations:
-    - Université Paris-Saclay, Inria, CEA
-  - name: Gael Varoquaux
-    affiliations:
-    - Université Paris-Saclay, Inria, CEA, Montréal Neurological Institute, McGill University
+    - University of Toronto
   - name: Kelly Cho
     affiliations:
     - VA Boston Healthcare System
   - name: Yuk-Lam Ho
+    affiliations:
+    - VA Boston Healthcare System
+  - name: Jacqueline Honerlaw
+    affiliations:
+    - VA Boston Healthcare System
+  - name: Monika Maripuri
     affiliations:
     - VA Boston Healthcare System
   - name: Petra Schubert
